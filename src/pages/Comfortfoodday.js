@@ -3,8 +3,10 @@ import axios from "axios";
 import MealDataList from "../components/MealDataList";
 import DietVariations from "../components/DietVariations";
 import { useHistory } from "react-router-dom";
+// import PageHeader from '../components/PageHeader';
+// import workout from '../assets/bicycle.svg';
 
-// const apiKey = '02105724086e470e88f525d3ba28227f'
+const apiKey = '02105724086e470e88f525d3ba28227f'
 
 function Comfortfoodday() {
     const [comfortDayMeal, setComfortDayMeal] = useState('');
@@ -25,7 +27,7 @@ function Comfortfoodday() {
         toggleLoading(true);
 
         try {
-            const resultComfort = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&type=${dishType}&targetCalories=${calories}&number=3&diet=${diet}&sort=random`);
+            const resultComfort = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&type=${dishType}&targetCalories=${calories}&number=3&diet=${diet}&sort=random`);
             // console.log("Wat is resultComfort?", resultComfort);
             setComfortDayMeal(resultComfort.data);
 
@@ -44,6 +46,8 @@ function Comfortfoodday() {
 
     return (
         <div className="comfort-container">
+
+            {/*<PageHeader icon={comfort} title="comfort-food day" />*/}
 
             <button
                 type="button"

@@ -13,7 +13,7 @@ function Footer() {
     }
 
     return (
-        <React.Fragment>
+        <>
             <div className="footer-container">
                 <div className="footer-icon">
                     <h5>facebook</h5>
@@ -58,7 +58,7 @@ function Footer() {
                     <p>Contact: Gigi Lukacs 1034LJ Amsterdam  Bramzeilhof 66  gy.lakilukacs@gmail.com</p>
                 </div>
             </div>
-        </React.Fragment>
+        </>
     )
 };
 

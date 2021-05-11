@@ -17,7 +17,7 @@ import './App.css';
 function App() {
 
   return (
-      <React.Fragment>
+      <>
         <Header />
         <div className="content">
           <Switch>
@@ -53,7 +53,7 @@ function App() {
           <Footer />
 
         </div>
-      </React.Fragment>
+      </>
   );
 }
 

@@ -3,8 +3,10 @@ import axios from 'axios';
 import Balancemeallist from "../components/Balancemeallist";
 import DietVariations from "../components/DietVariations";
 import { useHistory} from "react-router-dom";
+// import PageHeader from '../components/PageHeader';
+// import workout from '../assets/bicycle.svg';
 
-// const apiKey = '02105724086e470e88f525d3ba28227f'
+const apiKey = '02105724086e470e88f525d3ba28227f'
 
 
 function Balanceday() {
@@ -36,7 +38,7 @@ function Balanceday() {
         toggleLoading(true);
 
         try {
-            const result = await axios.get(`https://api.spoonacular.com/mealplanner/generate?apiKey=${process.env.REACT_APP_API_KEY}&timeFrame=day&targetCalories=${calories}&diet=${diet}`);
+            const result = await axios.get(`https://api.spoonacular.com/mealplanner/generate?apiKey=${apiKey}&timeFrame=day&targetCalories=${calories}&diet=${diet}`);
             // console.log('Wat is result?', result);
             // console.log('Wat is result.data?', result.data.meals);
             setMealData(result.data);
@@ -52,6 +54,8 @@ function Balanceday() {
 
     return (
         <div className="balance-container">
+
+            {/*<PageHeader icon={balance} title="balance day" />*/}
 
             <button
                 type="button"

@@ -10,7 +10,7 @@ function Header() {
     // console.log(user);
 
     return (
-        <React.Fragment>
+        <>
             <nav>
                 <div className="nav-container">
                     <h4 className="header-title">food operator</h4>
@@ -59,7 +59,7 @@ function Header() {
                 </div>
             </nav>
 
-        </React.Fragment>
+        </>
     );
 };
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 // import './MealData.css';
 
-// const apiKey = '02105724086e470e88f525d3ba28227f'
+const apiKey = '02105724086e470e88f525d3ba28227f'
 
 function MealData({result}) {
     const [imageUrl, setImageUrl] = useState('');
@@ -19,7 +19,7 @@ function MealData({result}) {
             toggleLoading(true);
 
             try {
-                const responseMeal = await axios.get(`https://api.spoonacular.com/recipes/${result.id}/information?apiKey=${process.env.REACT_APP_API_KEY}&includeNutrition=true`);
+                const responseMeal = await axios.get(`https://api.spoonacular.com/recipes/${result.id}/information?apiKey=${apiKey}&includeNutrition=true`);
                 // console.log('Wat is responseMeal?', responseMeal.data);
                 setMealData(responseMeal.data);
                 setImageUrl(responseMeal.data.image);

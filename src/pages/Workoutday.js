@@ -4,8 +4,11 @@ import ProteinPerKilogram from "../helpers/ProteinPerKilogram";
 import DietVariations from "../components/DietVariations";
 import MealDataList from "../components/MealDataList";
 import { useHistory } from "react-router-dom";
+// import PageHeader from '../components/PageHeader';
+// import workout from '../assets/bicycle.svg';
 
-// const apiKey = '02105724086e470e88f525d3ba28227f'
+const apiKey = '02105724086e470e88f525d3ba28227f'
+
 
 function Workoutday() {
     const [workoutDayMeal, setWorkoutDayMeal] = useState('');
@@ -48,7 +51,7 @@ function Workoutday() {
         toggleLoading(true);
 
         try {
-            const resultWorkout = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&type=main course&number=3&minProtein=${protein}&diet=${diet}&sort=random`);
+            const resultWorkout = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&type=main course&number=3&minProtein=${protein}&diet=${diet}&sort=random`);
             console.log("Wat is resultWorkout?", resultWorkout);
             setWorkoutDayMeal(resultWorkout.data);
 
@@ -67,6 +70,8 @@ function Workoutday() {
     return (
         <div className="workout-container">
 
+            {/*<PageHeader icon={workout} title="work-out day" />*/}
+
             <button
                 type="button"
                 onClick={() => history.push('/profile')}
@@ -76,7 +81,7 @@ function Workoutday() {
 
             <section className="workout-day">
                 <h1>workout day</h1>
-                <h3>How much protein do we need?</h3>
+                <h3>How much protein do we actually need?</h3>
                 <p>The amount of protein that the human body requires daily is dependent on many conditions including overall energy intake, growth of the individual, and physical activity level. It is often estimated based on body weight, as a percentage of total caloric intake (10-35%), or based on age alone. 0.8g/kg of body weight is a commonly cited recommended dietary allowance (RDA). This value is the minimum recommended value to maintain basic nutritional requirements, but consuming more protein, up to a certain point, may be beneficial, depending on the sources of the protein.
                     The recommended range of protein intake is between 0.8 g/kg and 1.8 g/kg of body weight, dependent on the many factors listed above. People who are highly active, or who wish to build more muscle should generally consume more protein. Some sources2 suggest consuming between 1.8 to 2 g/kg for those who are highly active. The amount of protein a person should consume, to date, is not an exact science, and each individual should consult a specialist, be it a dietitian, doctor, or personal trainer, to help determine their individual needs.</p>
 

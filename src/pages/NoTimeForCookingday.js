@@ -4,8 +4,10 @@ import MealDataList from '../components/MealDataList';
 import DietVariations from "../components/DietVariations";
 import { useHistory } from "react-router-dom";
 // import './NoTimeForCookingday.css'
+// import PageHeader from '../components/PageHeader';
+// import workout from '../assets/bicycle.svg';
 
-// const apiKey = '02105724086e470e88f525d3ba28227f'
+const apiKey = '02105724086e470e88f525d3ba28227f'
 
 function NoTimeForCookingday() {
     const [noTimeMealData, setNoTimeMealData] = useState(null);
@@ -36,7 +38,7 @@ function NoTimeForCookingday() {
         toggleLoading(true);
 
         try {
-            const resultNotime = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&type=main course&number=3&maxReadyTime=${minutes}&diet=${diet}&sort=random`);
+            const resultNotime = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&type=main course&number=3&maxReadyTime=${minutes}&diet=${diet}&sort=random`);
             // console.log("Wat is resultNotime?", resultNotime);
             setNoTimeMealData(resultNotime.data);
 
@@ -54,6 +56,8 @@ function NoTimeForCookingday() {
 
     return (
         <div className="no-time-container">
+
+            {/*<PageHeader icon={notime} title="no-time-for-cooking day" />*/}
 
             <button
                 type="button"
