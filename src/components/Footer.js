@@ -55,7 +55,7 @@ function Footer() {
                 </form>
 
                 <div className="footer-contact">
-                    <p>Contact: Gigi Lukacs 1034LJ Amsterdam  Bramzeilhof 66  gy.lakilukacs@gmail.com</p>
+                    <p>Contact<br /> Gigi Lukacs 1034LJ Amsterdam<br />  Bramzeilhof 66 <br /> gy.lakilukacs@gmail.com</p>
                 </div>
             </div>
         </>

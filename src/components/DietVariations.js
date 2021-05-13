@@ -27,7 +27,7 @@ function DietVariations({ setDiettype }) {
                     type="radio"
                     name="radio"
                     value={typeOfDiet}
-                    onChange={() => setDiettype('dairyFree')}
+                    onChange={() => setDiettype('dairy free')}
                 />
 
             <label>gluten free</label>
@@ -35,7 +35,7 @@ function DietVariations({ setDiettype }) {
                     type="radio"
                     name="radio"
                     value={typeOfDiet}
-                    onChange={() => setDiettype('glutenFree')}
+                    onChange={() => setDiettype('gluten free')}
                 />
 
         </span>

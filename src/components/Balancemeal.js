@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 // import './Balancemeal.css';
 
-// const apiKey = '02105724086e470e88f525d3ba28227f'
+const apiKey = '02105724086e470e88f525d3ba28227f'
 
 function Balancemeal({meal}) {
     const [imageUrl, setImageUrl] = useState('');
@@ -19,7 +19,7 @@ function Balancemeal({meal}) {
             toggleLoading(true);
 
             try {
-                const responseBalance = await axios.get(`https://api.spoonacular.com/recipes/${meal.id}/information?apiKey=${process.env.REACT_APP_API_KEY}&includeNutrition=true`);
+                const responseBalance = await axios.get(`https://api.spoonacular.com/recipes/${meal.id}/information?apiKey=${apiKey}&includeNutrition=true`);
 
                 console.log('Wat is responseBalance?', responseBalance.data);
                 setImageUrl(responseBalance.data.image);

@@ -22,7 +22,9 @@ function MealData({result}) {
                 const responseMeal = await axios.get(`https://api.spoonacular.com/recipes/${result.id}/information?apiKey=${apiKey}&includeNutrition=true`);
                 // console.log('Wat is responseMeal?', responseMeal.data);
                 setMealData(responseMeal.data);
+                console.log("Wat is setMealDaya?", responseMeal.data)
                 setImageUrl(responseMeal.data.image);
+                // console.log(setImageUrl)
                 setCaloricBreakdown(responseMeal.data.nutrition.caloricBreakdown);
                 // console.log(responseMeal.data.nutrition.caloricBreakdown);
 

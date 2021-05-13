@@ -72,7 +72,10 @@ function Comfortfoodday() {
                    id="dessert-checkbox"
                    name="dessert-checkbox"
                    value={dishType}
-                   onChange={() => setDishType('dessert')}
+                   // checked={setDishType('dessert')}
+                   onChange={() => {
+                       dishType && dishType === 'main course' ? setDishType('dessert') : setDishType('main course')
+                   }}
             />
 
             <button
