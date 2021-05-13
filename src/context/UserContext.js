@@ -88,36 +88,8 @@ function UserContextProvider({ children }) {
         // gebruikersdata ophalen
         fetchUserData(jwtToken);
 
-    //     // axios, async.get, try/catch, request
-    //     try {
-    //         // console.log('hallllloooo!')
-    //         const result = await axios.get(`http://localhost:3000/600/users/${userId}`, {
-    //             headers: {
-    //                 "Content-Type": "application/json",
-    //                 Authorization: `Bearer ${jwtToken}`,
-    //             }
-    //         });
-    //         console.log(result);
-    //
-    //         // die data gebruike om de context te vullen
-    //         setUserAuth({
-    //             user: {
-    //                 firstname: result.data.firstname,
-    //                 lastname: result.data.lastname,
-    //                 email: result.data.email,
-    //                 username: result.data.username,
-    //                 id: result.data.id,
-    //                 country: result.data.country,
-    //             },
-    //             status: 'done',
-    //         });
-    //
-            // doorlinken naar de profiel pagina
-            history.push('/profile');
-    //
-    //     }catch(e) {
-    //         console.error(e);
-    //     }
+        // doorlinken naar de profiel pagina
+        history.push('/profile');
     };
 
     //----------------------------------------------------------------------------------------------------------------

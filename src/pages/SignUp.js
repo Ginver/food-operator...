@@ -9,7 +9,7 @@ function SignUp() {
     const [loading, toggleLoading] = useState(false);
 
     const history = useHistory(); // to push someone to another page to login
-    const { handleSubmit, register } = useForm({
+    const { handleSubmit, register,  formState: { errors } } = useForm({
         mode: 'onchange'
     });
 
@@ -47,35 +47,56 @@ function SignUp() {
         <>
             <h1>register</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum debitis dolor dolore fuga id molestias qui quo unde?</p>
+
             <form onSubmit={handleSubmit(onSubmit)}>
 
-                <label htmlFor="firstname-field">
+                <label htmlFor="field-firstname">
                     firstname
                     <input
                         type="text"
                         id="firstname-field"
                         name="firstname"
-                        {...register("firstname")}
+                        {...register("firstname", {
+                            required: {
+                                value: true,
+                                message: 'This field should not be empty, please fill in your firstname, e.g. Ester',
+                            },
+                        })}
                     />
                 </label>
+                {errors.firstname && <p>{errors.firstname.message}</p>}
+
                 <label htmlFor="lastname-field">
                     lastname
                     <input
                         type="text"
                         id="lastname-field"
                         name="lastname"
-                        {...register("lastname")}
+                        {...register("lastname", {
+                            required: {
+                                value: true,
+                                message: 'This field should not be empty, please fill in your lastname, e.g. Mulder',
+                            },
+                        })}
                     />
                 </label>
+                {errors.lastname && <p>{errors.lastname.message}</p>}
+
                 <label htmlFor="email-field">
                     email
                     <input
                         type="email"
                         id="email-field"
                         name="email"
-                        {...register("email")}
+                        {...register("email", {
+                            required: true,
+                                validate: (value) => value.includes('@'),
+                                message: 'A valid email address should contain @',
+                            },
+                        )}
                     />
                 </label>
+                {errors.email && <p>{errors.email.message}</p>}
 
                 <label htmlFor="username-field">
                     username
@@ -83,9 +104,15 @@ function SignUp() {
                         type="text"
                         id="username-field"
                         name="username"
-                        {...register("username")}
+                        {...register("username", {
+                            required: {
+                                value: true,
+                                message: 'This field should not be left empty'
+                            },
+                        })}
                     />
                 </label>
+                {errors.username && <p>{errors.username.message}</p>}
 
                 <label htmlFor="password-field">
                     password
@@ -93,9 +120,18 @@ function SignUp() {
                         type="password"
                         id="password-field"
                         name="password"
-                        {...register("password")}
+                        {...register("password", {
+                                required: {
+                                    value: true,
+                                    min: 8,
+                                    message: 'Your password should contain at least one capital letter, a special character and it should be a minimum of 6 characters'
+                                },
+                            },
+                        )}
                     />
                 </label>
+                {errors.username && <p>{errors.username.message}</p>}
+
                 <button
                     type="submit"
                     className="form-button"

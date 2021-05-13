@@ -11,7 +11,7 @@ function SignIn() {
     const [loading, toggleLoading] = useState(false);
 
     // const  history = useHistory(); // niet meer nodig, kan weg nadat we het in de context component hebben geplaatsd
-    const { handleSubmit, register } = useForm();
+    const { handleSubmit, register, formState: { errors } } = useForm({mode: "onBlur"});
 
     async function onSubmit(data) {
         console.log(data);
@@ -45,9 +45,15 @@ function SignIn() {
                         type="email"
                         id="email-field"
                         name="email"
-                        {...register("email")}
+                        {...register("email", {
+                                required: true,
+                                validate: (value) => value.includes('@'),
+                                message: 'A valid email address should contain @',
+                            },
+                        )}
                     />
                 </label>
+                {errors.email && <p>{errors.email.message}</p>}
 
                 <label htmlFor="password-field">
                     password
@@ -55,9 +61,18 @@ function SignIn() {
                         type="password"
                         id="password-field"
                         name="password"
-                        {...register("password")}
+                        {...register("password", {
+                                required: {
+                                    value: true,
+                                    min: 8,
+                                    message: 'Your password should contain at least one capital letter, a special character and it should be a minimum of 6 characters'
+                                },
+                            },
+                        )}
                     />
                 </label>
+                {errors.username && <p>{errors.username.message}</p>}
+
                 <button
                     type="submit"
                     className="form-button"
@@ -65,7 +80,7 @@ function SignIn() {
                     login
                 </button>
 
-                {error && (<span className="wrong-img-error">Something went wrong!</span>)}
+                {error && (<span className="wrong-img-error">Oops, something went wrong, please check your email and password!</span>)}
                 {loading && (<span>Loading...</span>)}
 
             </form>

@@ -8,7 +8,8 @@ function Profile() {
 
     return (
         <>
-            <p>Welcome, {user && user.username}, on our website!</p>
+            <p>Welcome {user && user.username}, on our website!</p>
+            <p>On your profile page you have access to for options to plan your daily meal.</p>
 
             <div className="day-button">
                 <button className="balance-button"> <Link to="/balanceday">balance day</Link></button>

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import Home from './pages/Home';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
@@ -12,9 +12,21 @@ import Coaching from './pages/Coaching';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import './App.css';
+import {UserContext} from "./context/UserContext";
 
+function PrivateRoute({children, user}) {
+  // omdat we nog steeds alle mogelijke properties zoals exact etc. op Route willen zetten, kunnen we met de ...rest operator zeggen:
+  // al die andere props die je verder nog ontvangt, zet die ook allemaal maar op <Route>
+  return (
+      <Route>
+        {user !== null ? children : <Redirect to="/profile" />}
+      </Route>
+  )
+}
 
 function App() {
+
+  const { user } = useContext(UserContext);
 
   return (
       <>
@@ -24,9 +36,9 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route path="/profile">
+            <PrivateRoute path="/profile" user={user}>
               <Profile />
-            </Route>
+            </PrivateRoute>
             <Route path="/signin">
               <SignIn />
             </Route>
@@ -45,7 +57,7 @@ function App() {
             <Route path="/comfortfoodday">
               <Comfortfoodday />
             </Route>
-            <Route path="/comfortfoodday">
+            <Route path="/coaching">
               <Coaching />
             </Route>
           </Switch>

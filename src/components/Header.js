@@ -18,6 +18,8 @@ function Header() {
                         <li>
                             <NavLink exact to="/" activeClassName="active-link">home</NavLink>
                         </li>
+                        {user !== null &&
+                            <>
                         <li>
                             <NavLink exact to="/balanceday" activeClassName="active-link">balance day</NavLink>
                         </li>
@@ -30,8 +32,10 @@ function Header() {
                         <li>
                             <NavLink exact to="/comfortfoodday" activeClassName="active-link">comfort-food day</NavLink>
                         </li>
+                            </>
+                        }
                         <li>
-                            <NavLink exact to="/coaching" activeClassName="active-link">coaching</NavLink>
+                            <NavLink exact to="/coaching" activeClassName="active-link">personal coaching</NavLink>
                         </li>
                     </ul>
 
