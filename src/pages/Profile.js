@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-// import { UserContext } from "../context/UserContext";
+import { UserContext } from "../context/UserContext";
 
 function Profile() {
-    // const { user } = useContext(UserContext);
-    // console.log(user);
+    const { user } = useContext(UserContext);
+    console.log(user);
 
     return (
-        <React.Fragment>
-            {/*<p>Welcome, {user && user.username}, on our website!</p>*/}
+        <>
+            <p>Welcome, {user && user.username}, on our website!</p>
 
             <div className="day-button">
                 <button className="balance-button"> <Link to="/balanceday">balance day</Link></button>
@@ -20,7 +20,7 @@ function Profile() {
             <p><Link className="home-link" to="/">home</Link></p>
             <p><Link className="coaching-link" to="/">personal coaching</Link></p>
 
-        </React.Fragment>
+        </>
     );
 }
 

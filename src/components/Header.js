@@ -1,13 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {NavLink, useHistory} from 'react-router-dom';
-// import { UserContext } from "../context/UserContext";
-// import { ReactComponent as ShoppingCart } from './assets/winkelmandje.svg';
+import { UserContext } from "../context/UserContext";
 // import './Header.css';
 
 function Header() {
     const history = useHistory();
-    // const { user } = useContext(UserContext);
-    // console.log(user);
+    const { logoutFunc, user } = useContext(UserContext);
+    console.log(user);
 
     return (
         <>
@@ -35,27 +34,35 @@ function Header() {
                             <NavLink exact to="/coaching" activeClassName="active-link">coaching</NavLink>
                         </li>
                     </ul>
-                    {/*<ShoppingCart className="shopping-cart-icon" />*/}
 
+                    <section>
                     <h1>profile</h1>
-
-                    {/*<p><strong>username:</strong> {user && user.username}</p>*/}
-                    {/*<p><strong>email:</strong> {user && user.email}</p>*/}
+                    <p><strong>username:</strong> {user && user.username}</p>
+                    <p><strong>email:</strong> {user && user.email}</p>
+                    </section>
 
                     <div className="header-button">
                         <button
                             type="button"
-                            onClick={() => history.push('/signIn')}
+                            onClick={() => history.push('/signin')}
                         >
                             log in
                         </button>
                         <button
                             type="button"
-                            onClick={() => history.push('/signUp')}
+                            onClick={() => history.push('/signup')}
                         >
                             register
                         </button>
+
+                        <button
+                            type="button"
+                            onClick={logoutFunc}
+                        >
+                            log out
+                        </button>
                     </div>
+
                 </div>
             </nav>
 
