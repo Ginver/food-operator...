@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Home from './pages/Home';
 import SignIn from './pages/SignIn';
-import SignUp from './pages/SignUp';
+import Register from './pages/Register';
 import Profile from './pages/Profile';
 import Balanceday from './pages/Balanceday';
 import Workoutday from './pages/Workoutday';
@@ -42,8 +42,8 @@ function App() {
             <Route path="/signin">
               <SignIn />
             </Route>
-            <Route path="/signup">
-              <SignUp />
+            <Route path="/register">
+              <Register />
             </Route>
             <Route path="/balanceday">
               <Balanceday />

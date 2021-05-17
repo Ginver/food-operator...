@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import axios from "axios";
 import { UserContext } from "../context/UserContext";
 
@@ -35,7 +35,7 @@ function SignIn() {
 
     return (
         <>
-            <h1>login</h1>
+            <h1 className="page-titles">login</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum debitis dolor dolore fuga id molestias qui quo unde?</p>
 
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -75,16 +75,16 @@ function SignIn() {
 
                 <button
                     type="submit"
-                    className="form-button"
+                    className="logging-button"
                 >
-                    login
+                    log in
                 </button>
 
                 {error && (<span className="wrong-img-error">Oops, something went wrong, please check your email and password!</span>)}
                 {loading && (<span>Loading...</span>)}
 
             </form>
-            <p>If you don't have an account please, <Link to="/signup">register </Link> first.</p>
+            {/*<p>If you don't have an account please, <Link to="/signup">register </Link> first.</p>*/}
         </>
     );
 }

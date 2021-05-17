@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import axios from "axios";
 
-function SignUp() {
+function Register() {
     const [registerSuccess, toggleRegisterSuccess] = useState(false);
     const [error, setError] = useState(false);
     const [loading, toggleLoading] = useState(false);
@@ -19,7 +19,7 @@ function SignUp() {
         toggleLoading(true);
 
         try {
-            const result = await axios.post('http://localhost:3000/signup',{
+            const result = await axios.post('http://localhost:3000/register',{
                 firstname: data.firstname,
                 lastname: data.lastname,
                 email: data.email,
@@ -45,7 +45,7 @@ function SignUp() {
 
     return (
         <>
-            <h1>register</h1>
+            <h1 className="page-titles">register</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum debitis dolor dolore fuga id molestias qui quo unde?</p>
 
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -134,9 +134,9 @@ function SignUp() {
 
                 <button
                     type="submit"
-                    className="form-button"
+                    className="logging-button"
                 >
-                    Create an account
+                    register
                 </button>
 
                 {registerSuccess && <p>Registration was successful, please log in!</p>}
@@ -150,4 +150,4 @@ function SignUp() {
     );
 }
 
-export default SignUp;
+export default Register;

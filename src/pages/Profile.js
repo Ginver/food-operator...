@@ -12,10 +12,14 @@ function Profile() {
             <p>On your profile page you have access to for options to plan your daily meal.</p>
 
             <div className="day-button">
-                <button className="balance-button"> <Link to="/balanceday">balance day</Link></button>
+                <button className="balance-button"> <Link classto="/balanceday">balance day</Link></button>
                 <button className="notime-button"> <Link to="/noTimeForCookingDay">no-time-for-cooking day</Link></button>
                 <button className="workout-button"> <Link to="/workoutday">work-out day</Link></button>
                 <button className="comfort-button"> <Link to="/comfortfoodday">comfort-food day</Link></button>
+                {/*<Link to="/balanceday">balance day</Link>*/}
+                {/*<Link to="/noTimeForCookingDay">no-time-for-cooking day</Link>*/}
+                {/*<Link to="/workoutday">work-out day</Link>*/}
+                {/*<Link to="/comfortfoodday">comfort-food day</Link>*/}
             </div>
 
             <p><Link className="home-link" to="/">home</Link></p>

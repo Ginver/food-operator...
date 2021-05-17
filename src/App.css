@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #EEEDDD;
+    font-family: 'Roboto', sans-serif;
+}
+
+.logging-button {
+    border: 3px solid #A5A769;
+    background-color: #EFC1CC;
+    border-radius: 13px;
+    padding: 3px 8px 3px 8px;
+    text-align: center;
+    color: #EEEDDD;
+    font-weight: bold;
+}
+
+.page-titles {
+    color: #A5A769;
+    font-size: 20px;
+}

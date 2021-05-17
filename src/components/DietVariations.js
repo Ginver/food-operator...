@@ -1,44 +1,42 @@
 import React, { useState } from "react";
+import './DietVariations.css';
+
 
 function DietVariations({ setDiettype }) {
     // console.log('Wat is setDiettype?', setDiettype)
     const [typeOfDiet, setTypeOfDiet] = useState('');
 
     return (
-        <span className="diettype-radio">
-            <label>vegetarian</label>
-                <input
+        <div className="diettypes">
+            <input className="diet-radio"
                     type="radio"
                     name="radio"
                     value={typeOfDiet}
                     onChange={() => (setDiettype('vegetarian'))}
-
                 />
-            <label>vegan</label>
-                <input
+            <label className="diet-label">vegetarian</label>
+            <input className="diet-radio"
                     type="radio"
                     name="radio"
                     value={typeOfDiet}
                     onChange={() => setDiettype('vegan')}
                 />
-
-            <label>dairy free</label>
-                <input
+            <label className="diet-label">vegan</label>
+            <input className="diet-radio"
                     type="radio"
                     name="radio"
                     value={typeOfDiet}
                     onChange={() => setDiettype('dairy free')}
                 />
-
-            <label>gluten free</label>
-                <input
+            <label className="diet-label">dairy free</label>
+            <input className="diet-radio"
                     type="radio"
                     name="radio"
                     value={typeOfDiet}
                     onChange={() => setDiettype('gluten free')}
                 />
-
-        </span>
+            <label className="diet-label">gluten free</label>
+        </div>
     );
 };
 

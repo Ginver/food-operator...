@@ -1,0 +1,19 @@
+.diettypes {
+    border: 3px solid #A5A769;
+    background-color: #EFC1CC;
+    border-radius: 12px;
+    padding: 3px;
+    text-align: center;
+}
+
+.diet-label {
+    color: #A5A769;
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 4px;
+    margin-right: 15px;
+}
+
+.diet-radio {
+    border: 3px solid #A5A769;
+}
