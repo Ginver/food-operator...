@@ -57,11 +57,11 @@ function Balanceday() {
 
             {/*<PageHeader icon={balance} title="balance day" />*/}
 
-            <button
+            <button className="action-button"
                 type="button"
                 onClick={() => history.push('/profile')}
             >
-                back to profile
+                back to overview
             </button>
 
             <section className="balance-day">
@@ -124,8 +124,9 @@ function Balanceday() {
             <DietVariations setDiettype={setDiet}/>
 
             <button
+                className="action-button"
                 onClick={getMealData}>
-                Show my balance day meal plan!
+                show recipes
             </button>
 
             <div className="totalresults">
@@ -138,13 +139,12 @@ function Balanceday() {
 
             {loading && (<span className="loading-balance">Loading...</span>)}
 
-            <button
+            <button className="action-button"
                 type="button"
                 onClick={() => history.push('/profile')}
             >
-                back to profile
+                back to overview
             </button>
-            {/*<p>Go back to your <Link to="/profile">Profile page</Link></p>*/}
 
         </div>
     )

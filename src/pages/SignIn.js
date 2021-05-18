@@ -74,8 +74,8 @@ function SignIn() {
                 {errors.username && <p>{errors.username.message}</p>}
 
                 <button
+                    className="action-button"
                     type="submit"
-                    className="logging-button"
                 >
                     log in
                 </button>

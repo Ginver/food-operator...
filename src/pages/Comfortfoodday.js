@@ -49,11 +49,11 @@ function Comfortfoodday() {
 
             {/*<PageHeader icon={comfort} title="comfort-food day" />*/}
 
-            <button
-                type="button"
-                onClick={() => history.push('/profile')}
+            <button className="action-button"
+                    type="button"
+                    onClick={() => history.push('/profile')}
             >
-                back to profile
+                back to overview
             </button>
 
             <section className="comfort-day">
@@ -79,8 +79,9 @@ function Comfortfoodday() {
             />
 
             <button
+                className="action-button"
                 onClick={getComfortMealData}>
-                Show my comfort-food recipe for today
+                show recipes
             </button>
 
             <div className="totalresults">
@@ -94,11 +95,11 @@ function Comfortfoodday() {
 
             {loading && (<span className="loading-balance">Loading...</span>)}
 
-            <button
-                type="button"
-                onClick={() => history.push('/profile')}
+            <button className="action-button"
+                    type="button"
+                    onClick={() => history.push('/profile')}
             >
-                back to profile
+                back to overview
             </button>
         </div>
     )

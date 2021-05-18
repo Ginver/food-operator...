@@ -133,8 +133,8 @@ function Register() {
                 {errors.username && <p>{errors.username.message}</p>}
 
                 <button
+                    className="action-button"
                     type="submit"
-                    className="logging-button"
                 >
                     register
                 </button>
@@ -145,7 +145,7 @@ function Register() {
                 {loading && (<span>Loading...</span>)}
 
             </form>
-            <p>Heb je al een account? Je kunt je <Link to="/signin">hier</Link> inloggen.</p>
+            <p>already have an account? just log in <Link to="/signin">hier</Link></p>
         </>
     );
 }

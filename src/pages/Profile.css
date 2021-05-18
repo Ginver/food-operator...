@@ -1,4 +1,35 @@
-.day-button {
+.planner-container {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.planner-button {
     border-radius: 15px;
     color: #EEEDDD;
+    font-weight: bold;
+    font-size: 25px;
+    padding: 50px 20px 50px 20px;
+    border: unset;
+    width: 250px;
+    height: 250px;
+    margin: 60px;
+    cursor: pointer;
+
+}
+
+.balance-button {
+    background-color: #657F92;
+}
+
+.workout-button {
+    background-color: #3E6439;
+}
+
+.notime-button {
+    background-color: #CFB351;
+}
+
+.comfort-button {
+    background-color: #7C6C9E;
 }

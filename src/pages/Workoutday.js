@@ -72,11 +72,11 @@ function Workoutday() {
 
             {/*<PageHeader icon={workout} title="work-out day" />*/}
 
-            <button
-                type="button"
-                onClick={() => history.push('/profile')}
+            <button className="action-button"
+                    type="button"
+                    onClick={() => history.push('/profile')}
             >
-                back to profile
+                back to overview
             </button>
 
             <section className="workout-day">
@@ -112,8 +112,9 @@ function Workoutday() {
             <DietVariations setDiettype={setDiet}/>
 
             <button
+                className="action-button"
                 onClick={getWorkoutMealData}>
-                Show my no-time-for-cooking meal plan
+                show recipes
             </button>
 
             <div className="totalresults">
@@ -127,11 +128,11 @@ function Workoutday() {
 
             {loading && (<span className="loading-balance">Loading...</span>)}
 
-            <button
+            <button className="action-button"
                 type="button"
                 onClick={() => history.push('/profile')}
             >
-                back to profile
+                back to overview
             </button>
         </div>
     )

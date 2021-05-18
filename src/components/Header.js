@@ -1,12 +1,12 @@
 import React, { useState, useContext } from 'react';
-import {NavLink, useHistory} from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { UserContext } from "../context/UserContext";
 import './Header.css';
 // import { MdClose } from "react-icons/md"
 import { FiMenu } from "react-icons/fi"
 
 function Header() {
-    const history = useHistory();
+    const history = useHistory()
     const { logoutFunc, user } = useContext(UserContext);
     console.log(user);
 
@@ -23,7 +23,33 @@ function Header() {
     return (
         <>
         <div className="header-container">
-                <h4 className="header-appTitle">food operator...</h4>
+
+            <div className="headerProfile-container">
+                <section className="header-profile">
+                    {user !== null &&
+                    <>
+                        {/*<h1>profile</h1>*/}
+                        <p>hello<strong> {user && user.username}</strong>!</p>
+                        <p><strong>{user && user.email}</strong></p>
+                    </>
+                    }
+                </section>
+                <div>
+                    <button className="action-button"
+                            type="button"
+                            onClick={logoutFunc}
+                    >
+                        log out
+                    </button>
+                </div>
+            </div>
+
+                <div className="headerInfo-container">
+                    <h4
+                        className="header-appTitle"
+                    onClick={() => history.push('/')}
+                    >food operator...
+                    </h4>
 
                     <nav className="navBar">
 
@@ -48,6 +74,9 @@ function Header() {
                             {user !== null &&
                                 <>
                             <li>
+                                <NavLink exact to="/profile" activeClassName="active-link" onClick={() => closeMenu()}>overview</NavLink>
+                            </li>
+                            <li>
                                 <NavLink exact to="/balanceday" activeClassName="active-link" onClick={() => closeMenu()}>balance day</NavLink>
                             </li>
                             <li>
@@ -66,24 +95,9 @@ function Header() {
                             </li>
                         </ul>
                     </nav>
+                </div>
 
-                    <section className="header-profile">
-                        {user !== null &&
-                        <>
-                            {/*<h1>profile</h1>*/}
-                            <p><strong>username:</strong> {user && user.username}</p>
-                            <p><strong>email:</strong> {user && user.email}</p>
-                        </>
-                        }
-                        <div>
-                            <button className="logging-button"
-                                type="button"
-                                onClick={logoutFunc}
-                            >
-                                log out
-                            </button>
-                        </div>
-                    </section>
+
 
             </div>
         </>

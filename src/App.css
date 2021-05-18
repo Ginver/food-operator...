@@ -10,7 +10,7 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.logging-button {
+.action-button {
     border: 3px solid #A5A769;
     background-color: #EFC1CC;
     border-radius: 13px;
@@ -18,9 +18,15 @@ body {
     text-align: center;
     color: #EEEDDD;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .page-titles {
     color: #A5A769;
     font-size: 20px;
+}
+
+img {
+    width: 100%;
+    margin-bottom: 1rem;
 }

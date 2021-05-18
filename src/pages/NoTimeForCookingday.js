@@ -59,11 +59,11 @@ function NoTimeForCookingday() {
 
             {/*<PageHeader icon={notime} title="no-time-for-cooking day" />*/}
 
-            <button
-                type="button"
-                onClick={() => history.push('/profile')}
+            <button className="action-button"
+                    type="button"
+                    onClick={() => history.push('/profile')}
             >
-                back to profile
+                back to overview
             </button>
 
             <section className="no-time-day">
@@ -81,8 +81,9 @@ function NoTimeForCookingday() {
             <DietVariations setDiettype={setDiet}/>
 
             <button
+                className="action-button"
                 onClick={getMealData}>
-                Show my no-time-for-cooking meal plan
+                show recipes
             </button>
 
             <div className="totalresults">
@@ -96,11 +97,11 @@ function NoTimeForCookingday() {
 
             {loading && (<span className="loading-balance">Loading...</span>)}
 
-            <button
-                type="button"
-                onClick={() => history.push('/profile')}
+            <button className="action-button"
+                    type="button"
+                    onClick={() => history.push('/profile')}
             >
-                back to profile
+                back to overview
             </button>
 
         </div>

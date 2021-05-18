@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-// import './MealData.css';
+import './MealData.css';
 
 const apiKey = '02105724086e470e88f525d3ba28227f'
 
@@ -44,17 +44,20 @@ function MealData({result}) {
     return(
         <article>
 
+            <div className="meal-container">
             <h1>{mealData.title}</h1>
             <img src={imageUrl} alt="recipe" />
-            <p>Preparation time: {mealData.readyInMinutes} minutes</p>
+            <p>preparation time: {mealData.readyInMinutes} minutes</p>
 
-            <ul>Caloric breakdown:
-                <li>Percent protein: {caloricBreakdown.percentProtein}</li>
-                <li>Percent fat: {caloricBreakdown.percentFat}</li>
-                <li>Percent carbs: {caloricBreakdown.percentCarbs}</li>
+            <ul>caloric breakdown:
+                <li>protein: {caloricBreakdown.percentProtein}%</li>
+                <li>fat: {caloricBreakdown.percentFat}%</li>
+                <li>carbs: {caloricBreakdown.percentCarbs}%</li>
             </ul>
 
-            <a href={mealData.sourceUrl}>Go to the recipe</a>
+            <a href={mealData.sourceUrl}>go to recipe</a>
+
+            </div>
 
             {error && (<span className="wrong-error">Something went wrong!</span>)}
 

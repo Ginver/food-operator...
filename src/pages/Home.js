@@ -15,13 +15,13 @@ function Home() {
 
 
                 <div className="home-button">
-                    <button className="logging-button"
+                    <button className="action-button"
                         type="button"
                         onClick={() => history.push('/signin')}
                     >
                         log in
                     </button>
-                    <button className="logging-button"
+                    <button className="action-button"
                         type="button"
                         onClick={() => history.push('/register')}
                     >
