@@ -8,6 +8,12 @@
 body {
     background-color: #EEEDDD;
     font-family: 'Roboto', sans-serif;
+    color: #68530E;
+}
+
+.content {
+    width: 650px;
+    margin: 0 auto;
 }
 
 .action-button {
@@ -19,6 +25,20 @@ body {
     color: #EEEDDD;
     font-weight: bold;
     cursor: pointer;
+    margin: 13px;
+}
+
+.recipes-button {
+    border: 3px solid #A5A769;
+    background-color: #EFC1CC;
+    border-radius: 17px;
+    padding: 3px 8px 3px 8px;
+    text-align: center;
+    color: #EEEDDD;
+    font-weight: bold;
+    font-size: 25px;
+    cursor: pointer;
+    margin: 13px;
 }
 
 .page-titles {
@@ -26,7 +46,14 @@ body {
     font-size: 20px;
 }
 
-img {
-    width: 100%;
-    margin-bottom: 1rem;
+input {
+    border: 2px solid #68530E;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 3px 8px 3px 8px;
+    text-align: center;
+    color: #68530E;
+    font-weight: bold;
+    margin: 13px;
 }
+

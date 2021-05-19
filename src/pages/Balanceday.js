@@ -7,7 +7,7 @@ import { useHistory} from "react-router-dom";
 // import workout from '../assets/bicycle.svg';
 
 const apiKey = '02105724086e470e88f525d3ba28227f'
-
+//process.env.REACT_APP_API_KEY
 
 function Balanceday() {
 
@@ -113,7 +113,8 @@ function Balanceday() {
                 </p>
                 <input
                     type="number"
-                    placeholder="Calories (e.g. 2000)"
+                    placeholder="calories (e.g. 2000)"
+                    // onClick={() => }
                     onChange={handleChange}
                     // setting up the calory change> handleChange function
                     onKeyDown={keyPressCheck}
@@ -124,14 +125,12 @@ function Balanceday() {
             <DietVariations setDiettype={setDiet}/>
 
             <button
-                className="action-button"
+                className="recipes-button"
                 onClick={getMealData}>
                 show recipes
             </button>
 
-            <div className="totalresults">
-                <p>If you don't like this recipe, hit the button again!</p>
-            </div>
+            <h6>* if you don't like this recipe, hit the button again!</h6>
 
             {mealData && <Balancemeallist mealListData={mealData}/>}
 

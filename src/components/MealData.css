@@ -1,3 +1,48 @@
 .meal-container {
+    position: relative;
+    margin-bottom: 25px;
+    /*background-color: lightgoldenrodyellow;*/
+    border-radius: 8px;
+    height: 300px;
+    padding: 15px;
+    color: #68530E;
+}
 
+.meal-title {
+    border: 2px solid #A5A769;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    padding: 3px 8px 3px 8px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    top: 30px;
+    right: 325px;
+    z-index: 99;
+
+}
+
+.meal-photo {
+    border: 2px solid #A5A769;
+    border-radius: 6px;
+    position: absolute;
+    max-width: 380px;
+    right: 15px;
+}
+
+.meal-info {
+    border: 2px solid #A5A769;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    font-size: 12px;
+    position: absolute;
+    right: 340px;
+    bottom: 25px;
+    padding: 10px;
+    padding-right: 44px;
+}
+
+li {
+    list-style: none;
 }

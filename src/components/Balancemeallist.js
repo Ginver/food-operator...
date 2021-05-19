@@ -8,8 +8,8 @@ function Balancemeallist({mealListData}) {
 
     return (
         <main>
-            <section className="nutrients">
-                <h1>Nutrients for the day:</h1>
+            <section className="meal-info">
+                <h1>Nutrients for the day</h1>
                 <ul>
                     <li>Calory: {nutrients.calories.toFixed(0)}</li>
                     <li>Carbohydrates: {nutrients.carbohydrates.toFixed(0)}</li>
@@ -18,7 +18,7 @@ function Balancemeallist({mealListData}) {
                 </ul>
             </section>
 
-            <section className="balance-meals">
+            <section>
                 {mealListData.meals.map((meal) => {
                     return <Balancemeal key={meal.id} meal={meal} />
                 })}

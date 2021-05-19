@@ -3,6 +3,7 @@ import axios from 'axios';
 import './MealData.css';
 
 const apiKey = '02105724086e470e88f525d3ba28227f'
+//process.env.REACT_APP_API_KEY
 
 function MealData({result}) {
     const [imageUrl, setImageUrl] = useState('');
@@ -45,18 +46,21 @@ function MealData({result}) {
         <article>
 
             <div className="meal-container">
-            <h1>{mealData.title}</h1>
-            <img src={imageUrl} alt="recipe" />
-            <p>preparation time: {mealData.readyInMinutes} minutes</p>
+                    <h1 className="meal-title">{mealData.title}</h1>
 
-            <ul>caloric breakdown:
-                <li>protein: {caloricBreakdown.percentProtein}%</li>
-                <li>fat: {caloricBreakdown.percentFat}%</li>
-                <li>carbs: {caloricBreakdown.percentCarbs}%</li>
-            </ul>
+                    <img className="meal-photo" src={imageUrl} alt="recipe" />
 
-            <a href={mealData.sourceUrl}>go to recipe</a>
+                <div className="meal-info">
+                    <p>preparation time: {mealData.readyInMinutes} minutes</p>
 
+                    <ul>caloric breakdown:
+                        <li>protein: {caloricBreakdown.percentProtein}%</li>
+                        <li>fat: {caloricBreakdown.percentFat}%</li>
+                        <li>carbs: {caloricBreakdown.percentCarbs}%</li>
+                    </ul>
+
+                    <a href={mealData.sourceUrl}>go to recipe</a>
+                </div>
             </div>
 
             {error && (<span className="wrong-error">Something went wrong!</span>)}

@@ -23,7 +23,7 @@ function Home() {
                     </button>
                     <button className="action-button"
                         type="button"
-                        onClick={() => history.push('/register')}
+                        onClick={() => history.push('/signup')}
                     >
                         register
                     </button>

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-// import './Balancemeal.css';
+import './MealData.css';
 
 const apiKey = '02105724086e470e88f525d3ba28227f'
+//process.env.REACT_APP_API_KEY
 
 function Balancemeal({meal}) {
     const [imageUrl, setImageUrl] = useState('');
@@ -41,28 +42,31 @@ function Balancemeal({meal}) {
 
     return(
         <article>
+            <div className="meal-container">
 
-            <h1>{meal.title}</h1>
-            <img src={imageUrl} alt="recipe" />
-            <ul>
-                <li>Preparation time: {meal.readyInMinutes} minutes</li>
-                <li>Diets: {dietTypes && dietTypes.map((dietType) => {
-                    return dietType
-                })}</li>
-            </ul>
+                <h1 className="meal-title">{meal.title}</h1>
+                <img className="meal-photo" src={imageUrl} alt="recipe" />
 
-            <ul>Caloric breakdown per meal:
-                <li>Percent protein: {caloricBreakdown.percentProtein}</li>
-                <li>Percent fat: {caloricBreakdown.percentFat}</li>
-                <li>Percent carbs: {caloricBreakdown.percentCarbs}</li>
-            </ul>
-            <a href={meal.sourceUrl}>Go to the recipe</a>
+                <div className="meal-info">
+                    <ul>
+                        <li>Preparation time: {meal.readyInMinutes} minutes</li>
+                        {/*<li>Diets: {dietTypes && dietTypes.map((dietType) => {*/}
+                        {/*    return dietType*/}
+                        {/*})}</li>*/}
+                    </ul>
 
-            {error && (<span className="wrong-error">Something went wrong!</span>)}
+                    <ul>Caloric breakdown per meal:
+                        <li>Percent protein: {caloricBreakdown.percentProtein}</li>
+                        <li>Percent fat: {caloricBreakdown.percentFat}</li>
+                        <li>Percent carbs: {caloricBreakdown.percentCarbs}</li>
+                    </ul>
+                    <a href={meal.sourceUrl}>show recipe</a>
+                </div>
 
-            {loading && (<span>Loading...</span>)}
+                {error && (<span className="wrong-error">Something went wrong!</span>)}
 
-
+                {loading && (<span>Loading...</span>)}
+            </div>
         </article>
     )
 };

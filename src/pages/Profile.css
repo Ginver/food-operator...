@@ -1,7 +1,7 @@
 .planner-container {
     display: flex;
     justify-content: space-evenly;
-
+    padding: 25px;
 }
 
 .planner-button {
@@ -13,7 +13,7 @@
     border: unset;
     width: 250px;
     height: 250px;
-    margin: 60px;
+    margin: 15px;
     cursor: pointer;
 
 }

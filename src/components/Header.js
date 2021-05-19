@@ -30,12 +30,12 @@ function Header() {
                     <>
                         {/*<h1>profile</h1>*/}
                         <p>hello<strong> {user && user.username}</strong>!</p>
-                        <p><strong>{user && user.email}</strong></p>
+                        {/*<p><strong>{user && user.email}</strong></p>*/}
                     </>
                     }
                 </section>
                 <div>
-                    <button className="action-button"
+                    <button className="logout-button"
                             type="button"
                             onClick={logoutFunc}
                     >
@@ -69,7 +69,7 @@ function Header() {
                                 <NavLink exact to="/signin" activeClassName="active-link" onClick={() => closeMenu()}>log in</NavLink>
                             </li>
                             <li>
-                                <NavLink exact to="/register" activeClassName="active-link" onClick={() => closeMenu()}>register</NavLink>
+                                <NavLink exact to="/signup" activeClassName="active-link" onClick={() => closeMenu()}>sign up</NavLink>
                             </li>
                             {user !== null &&
                                 <>

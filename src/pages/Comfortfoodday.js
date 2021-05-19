@@ -7,6 +7,7 @@ import { useHistory } from "react-router-dom";
 // import workout from '../assets/bicycle.svg';
 
 const apiKey = '02105724086e470e88f525d3ba28227f'
+//process.env.REACT_APP_API_KEY
 
 function Comfortfoodday() {
     const [comfortDayMeal, setComfortDayMeal] = useState('');
@@ -84,9 +85,11 @@ function Comfortfoodday() {
                 show recipes
             </button>
 
+            <h6>* if you don't like this recipe, hit the button again!</h6>
+
             <div className="totalresults">
-                <p>There are {totalResults} results.</p>
-                <p>If you don't like this recipe, hit the button again!</p>
+                <p>there are {totalResults} results</p>
+
             </div>
 
             {comfortDayMeal && <MealDataList meallistData={comfortDayMeal}/>}

@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 // import workout from '../assets/bicycle.svg';
 
 const apiKey = '02105724086e470e88f525d3ba28227f'
-
+// process.env.REACT_APP_API_KEY
 
 function Workoutday() {
     const [workoutDayMeal, setWorkoutDayMeal] = useState('');
@@ -72,12 +72,14 @@ function Workoutday() {
 
             {/*<PageHeader icon={workout} title="work-out day" />*/}
 
-            <button className="action-button"
-                    type="button"
-                    onClick={() => history.push('/profile')}
-            >
-                back to overview
-            </button>
+            <div className="toProfile-button">
+                <button className="action-button"
+                        type="button"
+                        onClick={() => history.push('/profile')}
+                >
+                    back to overview
+                </button>
+            </div>
 
             <section className="workout-day">
                 <h1>workout day</h1>
@@ -86,7 +88,8 @@ function Workoutday() {
                     The recommended range of protein intake is between 0.8 g/kg and 1.8 g/kg of body weight, dependent on the many factors listed above. People who are highly active, or who wish to build more muscle should generally consume more protein. Some sources2 suggest consuming between 1.8 to 2 g/kg for those who are highly active. The amount of protein a person should consume, to date, is not an exact science, and each individual should consult a specialist, be it a dietitian, doctor, or personal trainer, to help determine their individual needs.</p>
 
                 <div className="protein-calculator">
-                    <label>How much protein do I need after my workout? <h6>*Our calculation is based on 1.2g protein / kg / 3 meals a day</h6>
+
+                    <label>How much protein do I need after my workout?
                         <input
                             type="number"
                             placeholder="your weight in kg"
@@ -95,7 +98,9 @@ function Workoutday() {
                             onKeyUp={keyPressCheckP}
                             // when user presses enter it will also pull the request
                         />
+                        <h6>*Our calculation is based on 1.2g protein / kg / 3 meals a day</h6>
                     </label>
+
                     <p>Your protein / meal: {ProteinPerKilogram(kilogram)} g</p>
                 </div>
 
@@ -112,15 +117,17 @@ function Workoutday() {
             <DietVariations setDiettype={setDiet}/>
 
             <button
-                className="action-button"
+                className="recipes-button"
                 onClick={getWorkoutMealData}>
                 show recipes
             </button>
 
+            <h6>* if you don't like this recipe, hit the button again!</h6>
+
             <div className="totalresults">
-                <p>There are {totalResults} results.</p>
-                <p>If you don't like this recipe, hit the button again!</p>
+                <p>there are {totalResults} results</p>
             </div>
+
 
             {workoutDayMeal && <MealDataList meallistData={workoutDayMeal}/>}
 
@@ -128,12 +135,15 @@ function Workoutday() {
 
             {loading && (<span className="loading-balance">Loading...</span>)}
 
-            <button className="action-button"
-                type="button"
-                onClick={() => history.push('/profile')}
-            >
-                back to overview
-            </button>
+            <div className="toProfile-button">
+                <button className="action-button"
+                        type="button"
+                        onClick={() => history.push('/profile')}
+                >
+                    back to overview
+                </button>
+            </div>
+
         </div>
     )
 };

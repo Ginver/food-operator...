@@ -16,9 +16,9 @@ function Footer() {
         <>
             <div className="footer-container">
                 <div className="footer-icon">
-                    <h5>facebook</h5>
-                    <h5>instagram</h5>
-                    <h5>pinterest</h5>
+                    {/*<h5>facebook</h5>*/}
+                    {/*<h5>instagram</h5>*/}
+                    {/*<h5>pinterest</h5>*/}
                 </div>
                 <h2>Share your thoughts</h2>
                 <form className="footer-form">
@@ -46,7 +46,7 @@ function Footer() {
                         />I'd like to receive your newsbrief'
                     </label>
 
-                    <button className="footer-button"
+                    <button className="action-button"
                             type="submit"
                             disabled={!checkedTerms}
                             onClick={() => setSubmitted(true)}

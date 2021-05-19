@@ -8,6 +8,7 @@ import { useHistory } from "react-router-dom";
 // import workout from '../assets/bicycle.svg';
 
 const apiKey = '02105724086e470e88f525d3ba28227f'
+//process.env.REACT_APP_API_KEY
 
 function NoTimeForCookingday() {
     const [noTimeMealData, setNoTimeMealData] = useState(null);
@@ -68,6 +69,7 @@ function NoTimeForCookingday() {
 
             <section className="no-time-day">
                 <h1>no-time-for-cooking day</h1>
+                <p>no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!vno time!</p>
                 <input
                     type="number"
                     placeholder="minutes (e.g. 30)"
@@ -86,9 +88,11 @@ function NoTimeForCookingday() {
                 show recipes
             </button>
 
+            <h6>* if you don't like this recipe, hit the button again!</h6>
+
             <div className="totalresults">
-                <p>There are {totalResults} results.</p>
-                <p>If you don't like this recipe, hit the button again!</p>
+                <p>there are {totalResults} results.</p>
+
             </div>
 
             {noTimeMealData && <MealDataList meallistData={noTimeMealData}/>}
