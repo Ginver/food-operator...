@@ -4,11 +4,11 @@ import ProteinPerKilogram from "../helpers/ProteinPerKilogram";
 import DietVariations from "../components/DietVariations";
 import MealDataList from "../components/MealDataList";
 import { useHistory } from "react-router-dom";
-// import PageHeader from '../components/PageHeader';
-// import workout from '../assets/bicycle.svg';
+import PageHeader from '../components/PageHeader';
+import workout from '../assets/dumbbell.png';
 
-const apiKey = '02105724086e470e88f525d3ba28227f'
-// process.env.REACT_APP_API_KEY
+const apiKey = process.env.REACT_APP_RECIPE_API_KEY
+
 
 function Workoutday() {
     const [workoutDayMeal, setWorkoutDayMeal] = useState('');
@@ -70,7 +70,7 @@ function Workoutday() {
     return (
         <div className="workout-container">
 
-            {/*<PageHeader icon={workout} title="work-out day" />*/}
+            <PageHeader icon={workout} title="work-out day" />
 
             <div className="toProfile-button">
                 <button className="action-button"
@@ -131,7 +131,7 @@ function Workoutday() {
 
             {workoutDayMeal && <MealDataList meallistData={workoutDayMeal}/>}
 
-            {error && (<span className="error-balance">Oops, something went wrong!</span>)}
+            {error && (<span className="error-msg">Oops, something went wrong!</span>)}
 
             {loading && (<span className="loading-balance">Loading...</span>)}
 

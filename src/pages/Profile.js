@@ -11,8 +11,6 @@ function Profile() {
 
     return (
         <>
-            {/*<p>Welcome {user && user.username}, on our website!</p>*/}
-            {/*<p>On your profile page you have access to for options to plan your daily meal.</p>*/}
 
             <div className="planner-container">
                 <button className="planner-button balance-button" onClick={() => history.push('/balanceday')}>balance day</button>

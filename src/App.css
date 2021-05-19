@@ -41,11 +41,6 @@ body {
     margin: 13px;
 }
 
-.page-titles {
-    color: #A5A769;
-    font-size: 20px;
-}
-
 input {
     border: 2px solid #68530E;
     background-color: #FFFFFF;
@@ -55,5 +50,13 @@ input {
     color: #68530E;
     font-weight: bold;
     margin: 13px;
+}
+
+input:active {
+    border: 3px solid lightpink;
+}
+
+.error-msg {
+    color: red;
 }
 

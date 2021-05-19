@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import axios from "axios";
+import './SignUp.css';
+import PageHeader from "../components/PageHeader";
 
 function SignUp() {
     const [registerSuccess, toggleRegisterSuccess] = useState(false);
@@ -44,107 +46,118 @@ function SignUp() {
 
     return (
         <>
-            <h1 className="page-titles">sign up</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum debitis dolor dolore fuga id molestias qui quo unde?</p>
+            <div className="signup-container">
 
-            <form onSubmit={handleSubmit(onSubmit)}>
+                <PageHeader title="sign up" />
 
-                <label htmlFor="field-firstname">
-                    firstname
-                    <input
-                        type="text"
-                        id="firstname-field"
-                        name="firstname"
-                        {...register("firstname", {
-                            required: {
-                                value: true,
-                                message: 'This field should not be empty, please fill in your firstname, e.g. Ester',
-                            },
-                        })}
-                    />
-                </label>
-                {errors.firstname && <p>{errors.firstname.message}</p>}
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum debitis dolor dolore fuga id molestias qui quo unde?</p>
 
-                <label htmlFor="lastname-field">
-                    lastname
-                    <input
-                        type="text"
-                        id="lastname-field"
-                        name="lastname"
-                        {...register("lastname", {
-                            required: {
-                                value: true,
-                                message: 'This field should not be empty, please fill in your lastname, e.g. Mulder',
-                            },
-                        })}
-                    />
-                </label>
-                {errors.lastname && <p>{errors.lastname.message}</p>}
+                <div className="signup-form">
+                <form onSubmit={handleSubmit(onSubmit)}>
 
-                <label htmlFor="email-field">
-                    email
-                    <input
-                        type="email"
-                        id="email-field"
-                        name="email"
-                        {...register("email", {
-                            required: true,
-                                validate: (value) => value.includes('@'),
-                                message: 'A valid email address should contain @',
-                            },
-                        )}
-                    />
-                </label>
-                {errors.email && <p>{errors.email.message}</p>}
-
-                <label htmlFor="username-field">
-                    username
-                    <input
-                        type="text"
-                        id="username-field"
-                        name="username"
-                        {...register("username", {
-                            required: {
-                                value: true,
-                                message: 'This field should not be left empty'
-                            },
-                        })}
-                    />
-                </label>
-                {errors.username && <p>{errors.username.message}</p>}
-
-                <label htmlFor="password-field">
-                    password
-                    <input
-                        type="password"
-                        id="password-field"
-                        name="password"
-                        {...register("password", {
+                    <label htmlFor="field-firstname">
+                        firstname
+                        <input
+                            type="text"
+                            id="firstname-field"
+                            name="firstname"
+                            placeholder="first name"
+                            {...register("firstname", {
                                 required: {
                                     value: true,
-                                    min: 8,
-                                    message: 'Your password should contain at least one capital letter, a special character and it should be a minimum of 6 characters'
+                                    message: 'This field should not be empty, please fill in your firstname, e.g. Ester',
                                 },
-                            },
-                        )}
-                    />
-                </label>
-                {errors.username && <p>{errors.username.message}</p>}
+                            })}
+                        />
+                    </label>
+                    {errors.firstname && <p className="error-msg">{errors.firstname.message}</p>}
 
-                <button
-                    className="action-button"
-                    type="submit"
-                >
-                    register
-                </button>
+                    <label htmlFor="lastname-field">
+                        lastname
+                        <input
+                            type="text"
+                            id="lastname-field"
+                            name="lastname"
+                            placeholder="last name"
+                            {...register("lastname", {
+                                required: {
+                                    value: true,
+                                    message: 'This field should not be empty, please fill in your lastname, e.g. Mulder',
+                                },
+                            })}
+                        />
+                    </label>
+                    {errors.lastname && <p className="error-msg">{errors.lastname.message}</p>}
 
-                {registerSuccess && <p>Registration was successful, please log in!</p>}
+                    <label htmlFor="email-field">
+                        email
+                        <input
+                            type="email"
+                            id="email-field"
+                            name="email"
+                            placeholder="email"
+                            {...register("email", {
+                                required: true,
+                                    validate: (value) => value.includes('@'),
+                                    message: 'A valid email address should contain @',
+                                },
+                            )}
+                        />
+                    </label>
+                    {errors.email && <p className="error-msg">{errors.email.message}</p>}
 
-                {error && (<span className="wrong-registration-error">Something went wrong!</span>)}
-                {loading && (<span>Loading...</span>)}
+                    <label htmlFor="username-field">
+                        username
+                        <input
+                            type="text"
+                            id="username-field"
+                            name="username"
+                            placeholder="username"
+                            {...register("username", {
+                                required: {
+                                    value: true,
+                                    message: 'This field should not be left empty'
+                                },
+                            })}
+                        />
+                    </label>
+                    {errors.username && <p className="error-msg">{errors.username.message}</p>}
 
-            </form>
-            <p>already have an account? go to log in <Link to="/signin">hier</Link></p>
+                    <label htmlFor="password-field">
+                        password
+                        <input
+                            type="password"
+                            id="password-field"
+                            name="password"
+                            placeholder="password"
+                            {...register("password", {
+                                    required: {
+                                        value: true,
+                                        min: 8,
+                                        message: 'Your password should contain at least one capital letter, a special character and it should be a minimum of 6 characters'
+                                    },
+                                },
+                            )}
+                        />
+                    </label>
+                    {errors.username && <p className="error-msg">{errors.username.message}</p>}
+
+                    <button
+                        className="action-button"
+                        type="submit"
+                    >
+                        register
+                    </button>
+
+                    {registerSuccess && <p className="error-msg">Registration was successful, please log in!</p>}
+
+                    {error && (<span className="error-msg">Something went wrong!</span>)}
+                    {loading && (<span>Loading...</span>)}
+
+                </form>
+                </div>
+                <p>already have an account? log in <Link to="/signin">hier</Link></p>
+            </div>
         </>
     );
 }

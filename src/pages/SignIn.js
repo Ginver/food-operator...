@@ -35,56 +35,64 @@ function SignIn() {
 
     return (
         <>
-            <h1 className="page-titles">login</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum debitis dolor dolore fuga id molestias qui quo unde?</p>
+            <div className="signin-container">
 
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <label htmlFor="email-field">
-                    email
-                    <input
-                        type="email"
-                        id="email-field"
-                        name="email"
-                        {...register("email", {
-                                required: true,
-                                validate: (value) => value.includes('@'),
-                                message: 'A valid email address should contain @',
-                            },
-                        )}
-                    />
-                </label>
-                {errors.email && <p>{errors.email.message}</p>}
+                <h1 className="page-titles">login</h1>
 
-                <label htmlFor="password-field">
-                    password
-                    <input
-                        type="password"
-                        id="password-field"
-                        name="password"
-                        {...register("password", {
-                                required: {
-                                    value: true,
-                                    min: 8,
-                                    message: 'Your password should contain at least one capital letter, a special character and it should be a minimum of 6 characters'
-                                },
-                            },
-                        )}
-                    />
-                </label>
-                {errors.username && <p>{errors.username.message}</p>}
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum debitis dolor dolore fuga id molestias qui quo unde?</p>
 
-                <button
-                    className="action-button"
-                    type="submit"
-                >
-                    log in
-                </button>
+                <div className="signup-form">
 
-                {error && (<span className="wrong-img-error">Oops, something went wrong, please check your email and password!</span>)}
-                {loading && (<span>Loading...</span>)}
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <label htmlFor="email-field">
+                            email
+                            <input
+                                type="email"
+                                id="email-field"
+                                name="email"
+                                placeholder="e.g. susanna.koren@gmail.com"
+                                {...register("email", {
+                                        required: true,
+                                        validate: (value) => value.includes('@'),
+                                        message: 'A valid email address should contain @',
+                                    },
+                                )}
+                            />
+                        </label>
+                        {errors.email && <p className="error-msg">{errors.email.message}</p>}
 
-            </form>
-            {/*<p>If you don't have an account please, <Link to="/signup">register </Link> first.</p>*/}
+                        <label htmlFor="password-field">
+                            password
+                            <input
+                                type="password"
+                                id="password-field"
+                                name="password"
+                                placeholder="e.g. H74gdhTkd"
+                                {...register("password", {
+                                        required: {
+                                            value: true,
+                                            min: 8,
+                                            message: 'Your password should contain at least one capital letter, a special character and it should be a minimum of 6 characters'
+                                        },
+                                    },
+                                )}
+                            />
+                        </label>
+                        {errors.username && <p className="error-msg">{errors.username.message}</p>}
+
+                        <button
+                            className="action-button"
+                            type="submit"
+                        >
+                            log in
+                        </button>
+
+                        {error && (<span className="error-msg">Oops, something went wrong, please check your email and password!</span>)}
+                        {loading && (<span>Loading...</span>)}
+
+                    </form>
+                </div>
+            </div>
         </>
     );
 }

@@ -3,11 +3,11 @@ import axios from 'axios';
 import Balancemeallist from "../components/Balancemeallist";
 import DietVariations from "../components/DietVariations";
 import { useHistory} from "react-router-dom";
-// import PageHeader from '../components/PageHeader';
-// import workout from '../assets/bicycle.svg';
+import PageHeader from '../components/PageHeader';
+import balance from '..//assets/law-scale.png';
 
-const apiKey = '02105724086e470e88f525d3ba28227f'
-//process.env.REACT_APP_API_KEY
+const apiKey = process.env.REACT_APP_RECIPE_API_KEY
+
 
 function Balanceday() {
 
@@ -55,7 +55,7 @@ function Balanceday() {
     return (
         <div className="balance-container">
 
-            {/*<PageHeader icon={balance} title="balance day" />*/}
+            <PageHeader icon={balance} title="balance day" />
 
             <button className="action-button"
                 type="button"
@@ -65,7 +65,7 @@ function Balanceday() {
             </button>
 
             <section className="balance-day">
-                <h1>balance day</h1>
+                {/*<h1>balance day</h1>*/}
                 <p>In de regel heeft een gezonde vrouw gemiddeld 2.000 calorieën en een gezonde man gemiddeld 2.500 calorieën per dag nodig.
                     Het grote probleem is dat de meeste vrouwen en mannen niet gemiddeld zijn en het ligt nog aan meer criteria hoeveel calorieen je nodig hebt per dag.
                     Zie hieronder een tabel voor mannen en vrouwen:
@@ -134,7 +134,7 @@ function Balanceday() {
 
             {mealData && <Balancemeallist mealListData={mealData}/>}
 
-            {error && (<span className="error-balance">Oops, something went wrong!</span>)}
+            {error && (<span className="error-msg">Oops, something went wrong!</span>)}
 
             {loading && (<span className="loading-balance">Loading...</span>)}
 

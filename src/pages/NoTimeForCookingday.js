@@ -3,12 +3,11 @@ import axios from 'axios';
 import MealDataList from '../components/MealDataList';
 import DietVariations from "../components/DietVariations";
 import { useHistory } from "react-router-dom";
-// import './NoTimeForCookingday.css'
-// import PageHeader from '../components/PageHeader';
-// import workout from '../assets/bicycle.svg';
+import PageHeader from '../components/PageHeader';
+import notime from '../assets/alarm-clock.png';
 
-const apiKey = '02105724086e470e88f525d3ba28227f'
-//process.env.REACT_APP_API_KEY
+const apiKey = process.env.REACT_APP_RECIPE_API_KEY
+
 
 function NoTimeForCookingday() {
     const [noTimeMealData, setNoTimeMealData] = useState(null);
@@ -58,7 +57,7 @@ function NoTimeForCookingday() {
     return (
         <div className="no-time-container">
 
-            {/*<PageHeader icon={notime} title="no-time-for-cooking day" />*/}
+            <PageHeader icon={notime} title="no-time-for-cooking day" />
 
             <button className="action-button"
                     type="button"
@@ -83,7 +82,7 @@ function NoTimeForCookingday() {
             <DietVariations setDiettype={setDiet}/>
 
             <button
-                className="action-button"
+                className="recipes-button"
                 onClick={getMealData}>
                 show recipes
             </button>
@@ -97,7 +96,7 @@ function NoTimeForCookingday() {
 
             {noTimeMealData && <MealDataList meallistData={noTimeMealData}/>}
 
-            {error && (<span className="error-balance">Oops, something went wrong!</span>)}
+            {error && (<span className="error-msg">Oops, something went wrong!</span>)}
 
             {loading && (<span className="loading-balance">Loading...</span>)}
 

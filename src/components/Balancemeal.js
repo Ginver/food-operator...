@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './MealData.css';
 
-const apiKey = '02105724086e470e88f525d3ba28227f'
-//process.env.REACT_APP_API_KEY
+// const apiKey = '02105724086e470e88f525d3ba28227f'
+const apiKey = process.env.REACT_APP_RECIPE_API_KEY
 
 function Balancemeal({meal}) {
     const [imageUrl, setImageUrl] = useState('');

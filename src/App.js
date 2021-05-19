@@ -14,6 +14,7 @@ import Footer from './components/Footer';
 import './App.css';
 import {UserContext} from "./context/UserContext";
 
+
 function PrivateRoute({children, user}) {
   // omdat we nog steeds alle mogelijke properties zoals exact etc. op Route willen zetten, kunnen we met de ...rest operator zeggen:
   // al die andere props die je verder nog ontvangt, zet die ook allemaal maar op <Route>

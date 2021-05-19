@@ -3,11 +3,11 @@ import axios from "axios";
 import MealDataList from "../components/MealDataList";
 import DietVariations from "../components/DietVariations";
 import { useHistory } from "react-router-dom";
-// import PageHeader from '../components/PageHeader';
-// import workout from '../assets/bicycle.svg';
+import PageHeader from '../components/PageHeader';
+import comfort from '../assets/pacmannn.png';
 
-const apiKey = '02105724086e470e88f525d3ba28227f'
-//process.env.REACT_APP_API_KEY
+const apiKey = process.env.REACT_APP_RECIPE_API_KEY
+
 
 function Comfortfoodday() {
     const [comfortDayMeal, setComfortDayMeal] = useState('');
@@ -48,7 +48,7 @@ function Comfortfoodday() {
     return (
         <div className="comfort-container">
 
-            {/*<PageHeader icon={comfort} title="comfort-food day" />*/}
+            <PageHeader icon={comfort} title="comfort-food day" />
 
             <button className="action-button"
                     type="button"
@@ -80,7 +80,7 @@ function Comfortfoodday() {
             />
 
             <button
-                className="action-button"
+                className="recipes-button"
                 onClick={getComfortMealData}>
                 show recipes
             </button>
@@ -94,7 +94,7 @@ function Comfortfoodday() {
 
             {comfortDayMeal && <MealDataList meallistData={comfortDayMeal}/>}
 
-            {error && (<span className="error-balance">Oops, something went wrong!</span>)}
+            {error && (<span className="error-msg">Oops, something went wrong!</span>)}
 
             {loading && (<span className="loading-balance">Loading...</span>)}
 
