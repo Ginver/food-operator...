@@ -4,7 +4,7 @@ import MealDataList from "../components/MealDataList";
 import DietVariations from "../components/DietVariations";
 import { useHistory } from "react-router-dom";
 import PageHeader from '../components/PageHeader';
-import comfort from '../assets/pacmannn.png';
+import comfort from '../assets/pacman.png';
 
 const apiKey = process.env.REACT_APP_RECIPE_API_KEY
 

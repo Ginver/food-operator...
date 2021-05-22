@@ -1,5 +1,26 @@
+/*.footer-container {*/
+/*    background-color: #68530E;*/
+/*    color: #EEEDDD;*/
+/*    padding: 25px;*/
+/*}*/
+
 .footer-container {
+    display: flex;
+    justify-content: space-between;
     background-color: #68530E;
+    padding: 0;
+    height: 150px;
     color: #EEEDDD;
-    padding: 25px;
+    align-items: center;
+    align-content: stretch;
+    flex-direction: row;
+}
+
+.footer-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    align-content: flex-start;
+    border: none;
 }

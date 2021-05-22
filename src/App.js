@@ -13,17 +13,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import './App.css';
 import {UserContext} from "./context/UserContext";
+import PrivateRoute from "./components/PrivateRoute";
 
-
-function PrivateRoute({children, user}) {
-  // omdat we nog steeds alle mogelijke properties zoals exact etc. op Route willen zetten, kunnen we met de ...rest operator zeggen:
-  // al die andere props die je verder nog ontvangt, zet die ook allemaal maar op <Route>
-  return (
-      <Route>
-        {user !== null ? children : <Redirect to="/profile" />}
-      </Route>
-  )
-}
 
 function App() {
 

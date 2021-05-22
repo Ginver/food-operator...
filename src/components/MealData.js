@@ -42,9 +42,11 @@ function MealData({result}) {
     }, [result.id]);
 
     return(
-        <article>
+
+        <article className="meal-complete-container">
 
             <div className="meal-container">
+
                     <h1 className="meal-title">{mealData.title}</h1>
 
                     <img className="meal-photo" src={imageUrl} alt="recipe" />
@@ -65,8 +67,6 @@ function MealData({result}) {
             {error && (<span className="wrong-error">Something went wrong!</span>)}
 
             {loading && (<span>Loading...</span>)}
-
-
         </article>
     )
 };

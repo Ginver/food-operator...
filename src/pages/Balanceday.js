@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Balancemeallist from "../components/Balancemeallist";
 import DietVariations from "../components/DietVariations";
-import { useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import PageHeader from '../components/PageHeader';
-import balance from '..//assets/law-scale.png';
+import balance from '../assets/law-scale.png';
 
 const apiKey = process.env.REACT_APP_RECIPE_API_KEY
 

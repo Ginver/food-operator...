@@ -6,13 +6,11 @@ function MealDataList({meallistData}) {
 
     return (
         <main>
-
-            <section className="workout-meals">
+            <section className="meal-cards">
                 {meallistData.results.map((result) => {
                     return <MealData key={result.id} result={result} />
                 })}
             </section>
-
         </main>
     )
 };

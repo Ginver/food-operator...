@@ -1,21 +1,63 @@
 .header-container {
+    position: relative;
+    width: 100%;
+    height: 80vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    background-color: #A5A769;
-    height: 150px;
+    justify-content: flex-end;
+    align-items: center;
+    background: url('../assets/cooking achtergrond.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    opacity: 40px;
 }
+
+.header-appTitle {
+    border: 3px solid #EEEDDD;
+    background-color: white;
+    color: #68530E;
+    justify-content: center;
+    align-items: center;
+    padding-left: 15px;
+    font-size: 50px;
+    box-shadow: 0 4px 8px 2px rgba( 77, 77, 77, 0.15);
+    cursor: pointer;
+}
+
 .headerProfile-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 100%;
     margin-top: 10px;
     margin-left: 15px;
 }
 
-.headerInfo-container {
+.header-profile {
+    border: 3px solid #EEEDDD;
+    background-color: white;
+    color:  #68530E;
+}
+
+.logout-link {
+    border: 3px solid #EEEDDD;
+    background-color: white;
+    color: #68530E;
+    padding: 3px 8px 3px 8px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 30px;
+    cursor: pointer;
+    /*margin-right: 30px;*/
+    /*margin-top: 0;*/
+}
+
+
+
+/*navigatie bar*/
+.navBar-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     width: 100%;
 }
 
@@ -29,13 +71,12 @@
     /*top: 28px;*/
     z-index: 10;
     cursor: pointer;
-    background-color: #A5A769;
-    color: #EEEDDD;
+    background-color: transparent;
+    color: #68530E;
     border-style: none;
     /*padding-top: 70px;*/
     padding-right: -30px;
     margin-right: 15px;
-
 }
 
 .menuNav {
@@ -53,7 +94,7 @@
     max-width: 160px;
     max-length: 300px;
     z-index: 9;
-    opacity: 40px;
+    /*opacity: 40px;*/
 }
 
 .menuNav.showMenu {
@@ -71,39 +112,4 @@ nav a {
 
 nav a:hover {
     color: #68530E;
-}
-
-/*.menuNav li:first-child {*/
-/*    margin-top: 1rem;*/
-/*}*/
-
-
-
-.header-appTitle {
-    justify-content: flex-start;
-    align-items: center;
-    color: #EFC1CC;
-    /*padding-top: 100px;*/
-    padding-left: 15px;
-    font-size: 25px;
-    box-shadow: lightpink;
-    cursor: pointer;
-
-}
-
-.header-profile {
-    color: #EEEDDD;
-}
-
-.logout-button {
-    border: 3px solid #EEEDDD;
-    background-color: #EFC1CC;
-    border-radius: 13px;
-    padding: 3px 8px 3px 8px;
-    text-align: center;
-    color: #EEEDDD;
-    font-weight: bold;
-    cursor: pointer;
-    margin-right: 30px;
-    margin-top: 0;
 }

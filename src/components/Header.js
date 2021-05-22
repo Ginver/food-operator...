@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react';
-import { NavLink, useHistory } from 'react-router-dom';
+import { Link, NavLink, useHistory } from 'react-router-dom';
 import { UserContext } from "../context/UserContext";
 import './Header.css';
-// import { MdClose } from "react-icons/md"
+import { MdClose } from "react-icons/md"
 import { FiMenu } from "react-icons/fi"
 
 function Header() {
@@ -24,6 +24,11 @@ function Header() {
         <>
         <div className="header-container">
 
+            <h4 className="header-appTitle"
+                onClick={() => history.push('/')}
+            >recipe wizard...
+            </h4>
+
             <div className="headerProfile-container">
                 <section className="header-profile">
                     {user !== null &&
@@ -34,28 +39,23 @@ function Header() {
                     </>
                     }
                 </section>
+
                 <div>
-                    <button className="logout-button"
+                    <Link className="logout-link"
                             type="button"
                             onClick={logoutFunc}
                     >
                         log out
-                    </button>
+                    </Link>
                 </div>
             </div>
 
-                <div className="headerInfo-container">
-                    <h4
-                        className="header-appTitle"
-                    onClick={() => history.push('/')}
-                    >food operator...
-                    </h4>
-
+            <div className="navBar-container">
                     <nav className="navBar">
 
                         <button onClick={handleToggle}>
                             {navbarOpen ? (
-                                <FiMenu style={{ color: "#EEEDDD", width: "35px", height: "35px" }} />
+                                <MdClose style={{ color: "#EEEDDD", width: "35px", height: "35px" }} />
                             ) : (
                                 <FiMenu style={{ color: "#EEEDDD", width: "35px", height: "35px" }} />
                             )}

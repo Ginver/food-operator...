@@ -6,57 +6,106 @@
 }
 
 body {
-    background-color: #EEEDDD;
     font-family: 'Roboto', sans-serif;
     color: #68530E;
+    /*background: url('./assets/cooking achtergrond.jpg');*/
 }
 
 .content {
-    width: 650px;
+    width: 900px;
     margin: 0 auto;
+    /*background-color: #EEEDDD;*/
+
 }
 
 .action-button {
-    border: 3px solid #A5A769;
-    background-color: #EFC1CC;
-    border-radius: 13px;
-    padding: 3px 8px 3px 8px;
-    text-align: center;
-    color: #EEEDDD;
-    font-weight: bold;
-    cursor: pointer;
-    margin: 13px;
+border: 3px solid #A5A769;
+background-color: #EFC1CC;
+border-radius: 13px;
+padding: 3px 8px 3px 8px;
+text-align: center;
+color: #EEEDDD;
+font-weight: bold;
+cursor: pointer;
+margin: 13px;
 }
 
 .recipes-button {
-    border: 3px solid #A5A769;
-    background-color: #EFC1CC;
-    border-radius: 17px;
-    padding: 3px 8px 3px 8px;
-    text-align: center;
-    color: #EEEDDD;
-    font-weight: bold;
-    font-size: 25px;
-    cursor: pointer;
-    margin: 13px;
+border: 3px solid #A5A769;
+background-color: #EFC1CC;
+border-radius: 17px;
+padding: 3px 8px 3px 8px;
+text-align: center;
+color: #EEEDDD;
+font-weight: bold;
+font-size: 25px;
+cursor: pointer;
+margin: 13px;
 }
 
 input {
-    border: 2px solid #68530E;
-    background-color: #FFFFFF;
-    border-radius: 8px;
-    padding: 3px 8px 3px 8px;
-    text-align: center;
-    color: #68530E;
-    font-weight: bold;
-    margin: 13px;
+border: 2px solid #68530E;
+background-color: #FFFFFF;
+border-radius: 8px;
+padding: 3px 8px 3px 8px;
+text-align: center;
+color: #68530E;
+font-weight: bold;
+margin: 13px;
 }
 
 input:active {
-    border: 3px solid lightpink;
+border: 3px solid lightpink;
 }
 
 .error-msg {
-    color: red;
+color: red;
+}
+
+.home-container {
+margin: 150px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+
+/*nieuwe css*/
+/*meal cards rendering*/
+.meal-cards {
+    display: flex;
+}
+
+.meal-complete-container {
+    flex: 1;
+    margin: 10px;
+}
+
+.meal-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    margin: 0 1 rem;
+    max-width: 18rem;
+    box-shadow: 0 4px 8px 2px rgba( 77, 77, 77, 0.15);
+    background-color: #FFFFFF;
+}
+
+.meal-title {
+    text-align: center;
+    margin-bottom: 1rem;
+    height: 80px;
+}
+
+.meal-photo {
+    border: 2px solid #A5A769;
+    /*border-radius: 6px;*/
+    width: 85%;
+    margin-bottom: 1rem;
+}
+
+li {
+    list-style: none;
 }
 

@@ -41,7 +41,9 @@ function Balancemeal({meal}) {
     }, [meal.id]);
 
     return(
-        <article>
+
+        <article className="meal-complete-container">
+
             <div className="meal-container">
 
                 <h1 className="meal-title">{meal.title}</h1>

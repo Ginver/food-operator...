@@ -10,12 +10,12 @@
 }
 
 
-form {
+signUp form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 3px solid #A5A769;
-    border-radius: 8px;
+    /*border: 3px solid #A5A769;*/
+    /*border-radius: 8px;*/
     justify-content: center;
     align-items: flex-end;
 }

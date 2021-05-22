@@ -1,14 +1,17 @@
 .pageHeader-container {
-
+    display: flex;
+    justify-content: flex-start;
 }
 
-.pageHeader-titles {
-    color: #EEEDDD ;
+.pageHeader-title {
+    color: #68530E;
     font-size: 20px;
+    margin-top: 15px;
+    margin-left: 10px;
 }
 
 .pageHeader-icon {
-    width: 10px;
+    width: 25px;
     height: auto;
-    color: #EEEDDD;
+    margin-top: 15px;
 }
