@@ -27,6 +27,7 @@
 .headerProfile-container {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     width: 100%;
     margin-top: 10px;
     margin-left: 15px;
@@ -36,6 +37,12 @@
     border: 3px solid #EEEDDD;
     background-color: white;
     color:  #68530E;
+    padding: 3px 8px 3px 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    cursor: pointer;
+    /*margin-bottom: 8px;*/
 }
 
 .logout-link {
@@ -46,9 +53,9 @@
     text-align: center;
     text-decoration: none;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 20px;
     cursor: pointer;
-    /*margin-right: 30px;*/
+    margin-left: 5px;
     /*margin-top: 0;*/
 }
 
@@ -58,11 +65,15 @@
 .navBar-container {
     display: flex;
     justify-content: flex-end;
-    width: 100%;
+    /*width: 100%;*/
 }
 
 .navBar {
     position: relative;
+    background-color: #FFFFFF;
+    border: 3px solid #EEEDDD;
+    color: #68530E;
+    padding: 3px 8px 3px 8px;
 }
 
 .navBar button {

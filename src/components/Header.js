@@ -29,26 +29,21 @@ function Header() {
             >recipe wizard...
             </h4>
 
-            <div className="headerProfile-container">
-                <section className="header-profile">
+                <div className="headerProfile-container">
                     {user !== null &&
                     <>
-                        {/*<h1>profile</h1>*/}
-                        <p>hello<strong> {user && user.username}</strong>!</p>
+                        <p className="header-profile">hello<strong> {user && user.username}</strong>!</p>
                         {/*<p><strong>{user && user.email}</strong></p>*/}
+
+                            <Link className="logout-link"
+                                  type="button"
+                                  onClick={logoutFunc}
+                            >
+                                log out
+                            </Link>
                     </>
                     }
-                </section>
 
-                <div>
-                    <Link className="logout-link"
-                            type="button"
-                            onClick={logoutFunc}
-                    >
-                        log out
-                    </Link>
-                </div>
-            </div>
 
             <div className="navBar-container">
                     <nav className="navBar">
@@ -96,7 +91,7 @@ function Header() {
                         </ul>
                     </nav>
                 </div>
-
+                </div>
 
 
             </div>
