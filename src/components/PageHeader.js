@@ -3,10 +3,12 @@ import './PageHeader.css';
 
 function PageHeader({ icon, title }) {
     return (
-        <div className="pageHeader-container">
-            <img className="pageHeader-icon" src={icon} alt={title} />
-            <h1 className="pageHeader-title">{title}</h1>
-        </div>
+        <main className="pageHeader-container">
+            <article>
+                <img className="pageHeader-icon" src={icon} alt={title} />
+                <h1 className="pageHeader-title">{title}</h1>
+            </article>
+        </main>
     );
 }
 

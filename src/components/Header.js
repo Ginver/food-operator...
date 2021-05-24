@@ -22,79 +22,78 @@ function Header() {
 
     return (
         <>
-        <div className="header-container">
+        <main className="header-container">
 
             <h4 className="header-appTitle"
                 onClick={() => history.push('/')}
             >recipe wizard...
             </h4>
 
-                <div className="headerProfile-container">
+                <article className="headerProfile-container">
                     {user !== null &&
-                    <>
-                        <p className="header-profile">hello<strong> {user && user.username}</strong>!</p>
-                        {/*<p><strong>{user && user.email}</strong></p>*/}
+                        <>
+                            <p className="header-profile"
+                               onClick={() => history.push('/profile')}
+                            >hello<strong> {user && user.username}</strong>!</p>
+                            {/*<p><strong>{user && user.email}</strong></p>*/}
 
-                            <Link className="logout-link"
-                                  type="button"
-                                  onClick={logoutFunc}
-                            >
-                                log out
-                            </Link>
-                    </>
+                                <Link className="logout-link"
+                                      type="button"
+                                      onClick={logoutFunc}
+                                >
+                                    log out
+                                </Link>
+                        </>
                     }
 
+                    <div className="navBar-container">
+                        <nav className="navBar">
 
-            <div className="navBar-container">
-                    <nav className="navBar">
+                            <button onClick={handleToggle}>
+                                {navbarOpen ? (
+                                    <MdClose style={{ color: "#EEEDDD", width: "35px", height: "35px" }} />
+                                ) : (
+                                    <FiMenu style={{ color: "#EEEDDD", width: "35px", height: "35px" }} />
+                                )}
+                            </button>
 
-                        <button onClick={handleToggle}>
-                            {navbarOpen ? (
-                                <MdClose style={{ color: "#EEEDDD", width: "35px", height: "35px" }} />
-                            ) : (
-                                <FiMenu style={{ color: "#EEEDDD", width: "35px", height: "35px" }} />
-                            )}
-                        </button>
-
-                        <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
-                            <li>
-                                <NavLink exact to="/" activeClassName="active-link" onClick={() => closeMenu()}>home</NavLink>
-                            </li>
-                            <li>
-                                <NavLink exact to="/signin" activeClassName="active-link" onClick={() => closeMenu()}>log in</NavLink>
-                            </li>
-                            <li>
-                                <NavLink exact to="/signup" activeClassName="active-link" onClick={() => closeMenu()}>sign up</NavLink>
-                            </li>
-                            {user !== null &&
-                                <>
-                            <li>
-                                <NavLink exact to="/profile" activeClassName="active-link" onClick={() => closeMenu()}>overview</NavLink>
-                            </li>
-                            <li>
-                                <NavLink exact to="/balanceday" activeClassName="active-link" onClick={() => closeMenu()}>balance day</NavLink>
-                            </li>
-                            <li>
-                                <NavLink exact to="/workoutday" activeClassName="active-link" onClick={() => closeMenu()}>work-out day</NavLink>
-                            </li>
-                            <li>
-                                <NavLink exact to="/notimeforcookingday" activeClassName="active-link" onClick={() => closeMenu()}>no-time-for-cooking day</NavLink>
-                            </li>
-                            <li>
-                                <NavLink exact to="/comfortfoodday" activeClassName="active-link" onClick={() => closeMenu()}>comfort-food day</NavLink>
-                            </li>
-                                </>
-                            }
-                            <li>
-                                <NavLink exact to="/coaching" activeClassName="active-link" onClick={() => closeMenu()}>personal coaching</NavLink>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                </div>
-
-
-            </div>
+                            <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
+                                <li>
+                                    <NavLink exact to="/" activeClassName="active-link" onClick={() => closeMenu()}>home</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink exact to="/signin" activeClassName="active-link" onClick={() => closeMenu()}>log in</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink exact to="/signup" activeClassName="active-link" onClick={() => closeMenu()}>sign up</NavLink>
+                                </li>
+                                {user !== null &&
+                                    <>
+                                <li>
+                                    <NavLink exact to="/profile" activeClassName="active-link" onClick={() => closeMenu()}>overview</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink exact to="/balanceday" activeClassName="active-link" onClick={() => closeMenu()}>balance day</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink exact to="/workoutday" activeClassName="active-link" onClick={() => closeMenu()}>work-out day</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink exact to="/notimeforcookingday" activeClassName="active-link" onClick={() => closeMenu()}>no-time-for-cooking day</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink exact to="/comfortfoodday" activeClassName="active-link" onClick={() => closeMenu()}>comfort-food day</NavLink>
+                                </li>
+                                    </>
+                                }
+                                <li>
+                                    <NavLink exact to="/coaching" activeClassName="active-link" onClick={() => closeMenu()}>personal coaching</NavLink>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </article>
+            </main>
         </>
     );
 };

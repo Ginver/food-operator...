@@ -65,7 +65,7 @@ function Balanceday() {
             </button>
 
             <section className="balance-day">
-                {/*<h1>balance day</h1>*/}
+
                 <p>In de regel heeft een gezonde vrouw gemiddeld 2.000 calorieën en een gezonde man gemiddeld 2.500 calorieën per dag nodig.
                     Het grote probleem is dat de meeste vrouwen en mannen niet gemiddeld zijn en het ligt nog aan meer criteria hoeveel calorieen je nodig hebt per dag.
                     Zie hieronder een tabel voor mannen en vrouwen:
@@ -114,7 +114,6 @@ function Balanceday() {
                 <input
                     type="number"
                     placeholder="calories (e.g. 2000)"
-                    // onClick={() => }
                     onChange={handleChange}
                     // setting up the calory change> handleChange function
                     onKeyDown={keyPressCheck}
@@ -126,7 +125,9 @@ function Balanceday() {
 
             <button
                 className="recipes-button"
-                onClick={getMealData}>
+                onClick={getMealData}
+                // onClick={() => toggleResetDiet(true)}
+                >
                 show recipes
             </button>
 

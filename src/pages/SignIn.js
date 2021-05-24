@@ -50,7 +50,7 @@ function SignIn() {
                                 type="email"
                                 id="email-field"
                                 name="email"
-                                placeholder="e.g. susanna.koren@gmail.com"
+                                // placeholder="e.g. susanna.koren@gmail.com"
                                 {...register("email", {
                                         required: true,
                                         validate: (value) => value.includes('@'),

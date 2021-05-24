@@ -42,10 +42,9 @@ function MealData({result}) {
     }, [result.id]);
 
     return(
+        <main className="meal-complete-container">
 
-        <article className="meal-complete-container">
-
-            <div className="meal-container">
+            <article className="meal-container">
 
                     <h1 className="meal-title">{mealData.title}</h1>
 
@@ -62,12 +61,13 @@ function MealData({result}) {
 
                     <a href={mealData.sourceUrl}>go to recipe</a>
                 </div>
-            </div>
+            </article>
 
             {error && (<span className="wrong-error">Something went wrong!</span>)}
 
             {loading && (<span>Loading...</span>)}
-        </article>
+
+        </main>
     )
 };
 
