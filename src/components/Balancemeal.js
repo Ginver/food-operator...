@@ -9,6 +9,7 @@ function Balancemeal({meal}) {
     const [imageUrl, setImageUrl] = useState('');
     const [dietTypes, setDietTypes] = useState('');
     const [caloricBreakdown, setCaloricBreakdown] = useState('');
+    const [dishType, setDishType] = useState('lunch');
 
     const [error, setError] = useState(false);
     const [loading, toggleLoading] = useState(false);
@@ -27,6 +28,7 @@ function Balancemeal({meal}) {
                 setDietTypes(responseBalance.data.diets);
                 // console.log("Wat is setDietTypes?", setDietTypes)
                 setCaloricBreakdown(responseBalance.data.nutrition.caloricBreakdown);
+                setDishType(responseBalance.data.dishTypes[0]);
                 toggleLoading(false);
 
             } catch (e) {
@@ -45,7 +47,7 @@ function Balancemeal({meal}) {
             <article className="meal-complete-container">
 
                 <div className="meal-container">
-
+                    <div className="meal-type">{dishType}</div>
                     <h1 className="meal-title">{meal.title}</h1>
                     <img className="meal-photo" src={imageUrl} alt="recipe" />
 

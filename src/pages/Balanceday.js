@@ -117,6 +117,7 @@ function Balanceday() {
                     onChange={handleChange}
                     // setting up the calory change> handleChange function
                     onKeyDown={keyPressCheck}
+                    // disabled={calories < 0}
                     // when user presses enter it will also pull the request
                 />
             </section>
