@@ -1,3 +1,7 @@
 .home-container {
     background: url('./assets/cooking achtergrond.jpg');
 }
+
+.home-button, balance-button {
+    achtergrond: url('../assets/balance.jpg')
+}

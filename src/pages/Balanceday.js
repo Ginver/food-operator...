@@ -4,7 +4,7 @@ import Balancemeallist from "../components/Balancemeallist";
 import DietVariations from "../components/DietVariations";
 import { useHistory } from "react-router-dom";
 import PageHeader from '../components/PageHeader';
-import balance from '../assets/law-scale.png';
+import './Balanceday.css';
 
 const apiKey = process.env.REACT_APP_RECIPE_API_KEY
 
@@ -12,7 +12,7 @@ const apiKey = process.env.REACT_APP_RECIPE_API_KEY
 function Balanceday() {
 
     const [mealData, setMealData] = useState(null);
-    const [calories, setCalories] = useState(0);
+    const [calories, setCalories] = useState(1500);
     const [diet, setDiet] = useState('');
 
     const [error, setError] = useState(false);
@@ -40,7 +40,7 @@ function Balanceday() {
         try {
             const result = await axios.get(`https://api.spoonacular.com/mealplanner/generate?apiKey=${apiKey}&timeFrame=day&targetCalories=${calories}&diet=${diet}`);
             // console.log('Wat is result?', result);
-            // console.log('Wat is result.data?', result.data.meals);
+            console.log('Wat is result.data?', result.data);
             setMealData(result.data);
 
             toggleLoading(false);
@@ -55,62 +55,33 @@ function Balanceday() {
     return (
         <div className="balance-container">
 
-            <PageHeader icon={balance} title="balance day" />
+            <PageHeader title="balance day"/>
 
-            <button className="action-button"
-                type="button"
-                onClick={() => history.push('/profile')}
-            >
-                back to overview
-            </button>
+            <div className="overview-btn">
+                <button className="overview-button"
+                        type="button"
+                        onClick={() => history.push('/profile')}
+                >
+                    back to overview
+                </button>
+            </div>
 
-            <section className="balance-day">
+            <div className="balance-content">
+                <p>As a rule, a healthy woman needs an average of 2,000 calories and a healthy man an average of 2,500 calories per day.<br />
+                The problem is that most women and men are not average and it depends even more on how many calories you need per day.<br />
+                    To help out we made an overview:</p>
+                <table className="tableOfCalory">
+                    <tr><td></td><td>age</td><td>office job</td><td>moderate active</td><td>active</td></tr>
+                    <tr><td>female</td><td>14-18</td><td>1800</td><td>2000</td><td>2400</td></tr>
+                    <tr><td>female</td><td>19-30</td><td>2000</td><td>2000-2200</td><td>2400</td></tr>
+                    <tr><td>female</td><td>age: 31-50</td><td>1800</td><td>2000</td><td>2200</td></tr>
+                    <tr><td>female</td><td>age: 51+</td><td>1600</td><td>1800</td><td>2000-2200</td></tr>
+                    <tr><td>male</td><td>age: 14-18</td><td>2200</td><td>2400-2800</td><td>2800-3200</td></tr>
+                    <tr><td>male</td><td>age: 19-30</td><td>2400</td><td>2600-2800</td><td>2800-3000</td></tr>
+                    <tr><td>male</td><td>age: 31-50</td><td>2200</td><td>2400-2600</td><td>2800-3000</td></tr>
+                    <tr><td>male</td><td>age: 51+</td><td>2000</td><td>2200-2400</td><td>2400-2800</td></tr>
+                </table>
 
-                <p>In de regel heeft een gezonde vrouw gemiddeld 2.000 calorieën en een gezonde man gemiddeld 2.500 calorieën per dag nodig.
-                    Het grote probleem is dat de meeste vrouwen en mannen niet gemiddeld zijn en het ligt nog aan meer criteria hoeveel calorieen je nodig hebt per dag.
-                    Zie hieronder een tabel voor mannen en vrouwen:
-
-                    Vrouwen (14-18 jaar)
-                    Zittend beroep: 1800
-                    Licht actief: 2000
-                    Actief: 2400
-
-                    Mannen (14-18 jaar)
-                    Zittend beroep: 2200
-                    Licht actief: 2400-2800
-                    Actief: 2800-3200
-
-                    Vrouwen (19-30 jaar)
-                    Zittend beroep: 2000
-                    Licht actief: 2000-2200
-                    Actief: 2400
-
-                    Mannen (19-30 jaar)
-                    Zittend beroep: 2400
-                    Licht actief: 2600-2800
-                    Actief: 2800-3000
-
-                    Vrouwen (31-50 jaar)
-                    Zittend beroep: 1800
-                    Licht actief: 2000
-                    Actief: 2200
-
-                    Mannen (31-50 jaar)
-                    Zittend beroep: 2200
-                    Licht actief: 2400-2600
-                    Actief: 2800-3000
-
-                    Vrouwen (51+)
-                    Zittend beroep: 1600
-                    Licht actief: 1800
-                    Actief: 2000-2200
-
-                    Mannen (51+)
-                    Zittend beroep: 2000
-                    Licht actief: 2200-2400
-                    Actief: 2400-2800
-
-                </p>
                 <input
                     type="number"
                     placeholder="calories (e.g. 2000)"
@@ -120,10 +91,11 @@ function Balanceday() {
                     // disabled={calories < 0}
                     // when user presses enter it will also pull the request
                 />
-            </section>
+            </div>
 
             <DietVariations setDiettype={setDiet}/>
 
+            <div className="showRec-cont">
             <button
                 className="recipes-button"
                 onClick={getMealData}
@@ -131,8 +103,8 @@ function Balanceday() {
                 >
                 show recipes
             </button>
-
-            <h6>* if you don't like this recipe, hit the button again!</h6>
+            <h6>* if you don't like these recipes, hit the button again!</h6>
+            </div>
 
             {mealData && <Balancemeallist mealListData={mealData}/>}
 
@@ -140,13 +112,14 @@ function Balanceday() {
 
             {loading && (<span className="loading-balance">Loading...</span>)}
 
-            <button className="action-button"
+            <div className="overview-btn">
+            <button className="overview-button"
                 type="button"
                 onClick={() => history.push('/profile')}
             >
                 back to overview
             </button>
-
+            </div>
         </div>
     )
 }

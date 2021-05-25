@@ -1,17 +1,16 @@
-.protein-calculator {
+.no-time-container {
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    align-items: center;
 }
 
-.prot-calc, .prot-input {
+.noTime-input {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
 }
 
-.input-weight, .input-protein {
+.input-minutes {
     border: 2px solid #EEEDDD;
     background-color: white;
     color: #68530E;
@@ -22,6 +21,4 @@
     font-size: 15px;
     cursor: pointer;
     margin: 10px;
-    width: 35px;
 }
-

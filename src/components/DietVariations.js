@@ -6,11 +6,7 @@ import './DietVariations.css';
 function DietVariations({ setDiettype }) {
     // console.log('Wat is setDiettype?', setDiettype)
     const [typeOfDiet, setTypeOfDiet] = useState('');
-    // const [checked, toggleChecked] = useState(false);
 
-    // function resetDiet() {
-    //     toggleChecked(false)
-    // }
 
     return (
         <main className="diettypes">
@@ -63,16 +59,8 @@ function DietVariations({ setDiettype }) {
                    onChange={() => setDiettype('')}
                 // onClick={() => toggleResetDiet(!resetDiet)}
             />
-            <label className="diet-label">none</label>
+            <label className="diet-label">any diet</label>
 
-            {/*<button className="action-button"*/}
-            {/*        type="reset"*/}
-            {/*        name="reset-button"*/}
-            {/*        onClick={() => setDiettype('')}*/}
-
-            {/*>*/}
-            {/*    reset*/}
-            {/*</button>*/}
         </main>
     );
 };

@@ -4,16 +4,18 @@ import MealDataList from '../components/MealDataList';
 import DietVariations from "../components/DietVariations";
 import { useHistory } from "react-router-dom";
 import PageHeader from '../components/PageHeader';
-import notime from '../assets/alarm-clock.png';
+import DishTypes from "../components/DishTypes";
+import "./NoTimeForCookingday.css";
 
 const apiKey = process.env.REACT_APP_RECIPE_API_KEY
 
 
 function NoTimeForCookingday() {
     const [noTimeMealData, setNoTimeMealData] = useState(null);
-    const [minutes, setMinutes] = useState(30);
-    const [diet, setDiet] = useState('vegetarian');
+    const [minutes, setMinutes] = useState(20);
+    const [diet, setDiet] = useState('');
     const [totalResults, setTotalResults] = useState(0);
+    const [dishTypes, setDishTypes] = useState('main course');
 
     const [error, setError] = useState(false);
     const [loading, toggleLoading] = useState(false);
@@ -28,22 +30,22 @@ function NoTimeForCookingday() {
     // als je dus op enter drukt wordt de request uitgevoerd
     function keyPressCheck(e) {
         if (e.keyCode === 13) {
-            getMealData();
+            getNoTimeData();
         }
     }
 
-    async function getMealData() {
+    async function getNoTimeData() {
         // console.log("getmealdata?", getMealData);
         setError(false);
         toggleLoading(true);
 
         try {
-            const resultNotime = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&type=main course&number=3&maxReadyTime=${minutes}&diet=${diet}&sort=random`);
+            const resultNotime = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&type=${dishTypes}&number=3&maxReadyTime=${minutes}&diet=${diet}&sort=random`);
             // console.log("Wat is resultNotime?", resultNotime);
             setNoTimeMealData(resultNotime.data);
-
-            // console.log('Wat is resultNotime?', resultNotime.data.totalResults);
+            // console.log("what is setNoTimeMealData?", resultNotime.data)
             setTotalResults(resultNotime.data.totalResults);
+            // console.log('Wat is resultNotime?', resultNotime.data.totalResults);
 
             toggleLoading(false);
 
@@ -57,55 +59,55 @@ function NoTimeForCookingday() {
     return (
         <div className="no-time-container">
 
-            <PageHeader icon={notime} title="no-time-for-cooking day" />
+            <PageHeader title="no-time-for-cooking day" />
 
-            <button className="action-button"
-                    type="button"
-                    onClick={() => history.push('/profile')}
-            >
-                back to overview
-            </button>
+            <div className="overview-btn">
+                <button className="overview-button"
+                        type="button"
+                        onClick={() => history.push('/profile')}
+                >
+                    back to overview
+                </button>
+            </div>
 
-            <section className="no-time-day">
-                <h1>no-time-for-cooking day</h1>
-                <p>no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!no time!vno time!</p>
-                <input
-                    type="number"
-                    placeholder="minutes (e.g. 30)"
+            <section className="noTime-input">
+                <input className="input-minutes"
+                    type="text"
+                    placeholder="e.g. 20 minutes"
                     onChange={handleChange}
-                    // setting up the minutes change> handleChange function
                     onKeyDown={keyPressCheck}
-                    // when user presses enter it will also pull the request
                 />
             </section>
 
             <DietVariations setDiettype={setDiet}/>
+            <DishTypes setTypeOfDish={setDishTypes}/>
 
-            <button
-                className="recipes-button"
-                onClick={getMealData}>
-                show recipes
-            </button>
+            <div className="showRec-cont">
+                <button
+                    className="recipes-button"
+                    onClick={getNoTimeData}
+                >
+                    show recipes
+                </button>
+                <h6>* if you don't like these recipes, hit the button again!</h6>
 
-            <h6>* if you don't like this recipe, hit the button again!</h6>
-
-            <div className="totalresults">
-                <p>there are {totalResults} results.</p>
+                    <p>there are <strong>{totalResults}</strong> results:</p>
 
             </div>
 
             {noTimeMealData && <MealDataList meallistData={noTimeMealData}/>}
 
             {error && (<span className="error-msg">Oops, something went wrong!</span>)}
-
             {loading && (<span className="loading-balance">Loading...</span>)}
 
-            <button className="action-button"
-                    type="button"
-                    onClick={() => history.push('/profile')}
-            >
-                back to overview
-            </button>
+            <div className="overview-btn">
+                <button className="overview-button"
+                        type="button"
+                        onClick={() => history.push('/profile')}
+                >
+                    back to overview
+                </button>
+            </div>
 
         </div>
     )

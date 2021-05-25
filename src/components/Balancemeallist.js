@@ -8,21 +8,21 @@ function Balancemeallist({mealListData}) {
 
     return (
         <main>
-            <section>
-                <h1>Nutrients for the day</h1>
-                <ul>
-                    <li>Calory: {nutrients.calories.toFixed(0)}</li>
-                    <li>Carbohydrates: {nutrients.carbohydrates.toFixed(0)}</li>
-                    <li>Fat: {nutrients.fat.toFixed(0)}</li>
-                    <li>Protein: {nutrients.protein.toFixed(0)}</li>
+            <div className="nutrients-info">
+                <h3>Nutrients for the day</h3>
+                <ul className="nutrients-list">
+                    <li>calory: <strong>{nutrients.calories.toFixed(0)}</strong> kcal</li>
+                    <li>protein: <strong>{nutrients.protein.toFixed(0)}</strong> g</li>
+                    <li>fat: <strong>{nutrients.fat.toFixed(0)}</strong> g</li>
+                    <li>carbs: <strong>{nutrients.carbohydrates.toFixed(0)}</strong> g</li>
                 </ul>
-            </section>
+            </div>
 
-            <section className="meal-cards">
+            <div className="meal-cards">
                 {mealListData.meals.map((meal) => {
                     return <Balancemeal key={meal.id} meal={meal} />
                 })}
-            </section>
+            </div>
         </main>
     )
 };

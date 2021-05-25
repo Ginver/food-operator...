@@ -4,14 +4,14 @@ import MealDataList from "../components/MealDataList";
 import DietVariations from "../components/DietVariations";
 import { useHistory } from "react-router-dom";
 import PageHeader from '../components/PageHeader';
-import comfort from '../assets/pacman.png';
+import "./Comfortfoodday.css";
 
 const apiKey = process.env.REACT_APP_RECIPE_API_KEY
 
 
 function Comfortfoodday() {
     const [comfortDayMeal, setComfortDayMeal] = useState('');
-    const [calories, setCalories] = useState('2500')
+    const [calories, setCalories] = useState('3000')
     const [dishType, setDishType] = useState('main course');
     const [diet, setDiet] = useState('');
 
@@ -31,8 +31,6 @@ function Comfortfoodday() {
             const resultComfort = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&type=${dishType}&targetCalories=${calories}&number=3&diet=${diet}&sort=random`);
             // console.log("Wat is resultComfort?", resultComfort);
             setComfortDayMeal(resultComfort.data);
-
-            // console.log('Wat is resultComfort total?', resultComfort.data.totalResults);
             setTotalResults(resultComfort.data.totalResults);
 
             toggleLoading(false);
@@ -48,62 +46,61 @@ function Comfortfoodday() {
     return (
         <div className="comfort-container">
 
-            <PageHeader icon={comfort} title="comfort-food day" />
+            <PageHeader title="comfort-food day"/>
 
-            <button className="action-button"
-                    type="button"
-                    onClick={() => history.push('/profile')}
-            >
-                back to overview
-            </button>
+            <div className="overview-btn">
+                <button className="overview-button"
+                        type="button"
+                        onClick={() => history.push('/profile')}
+                >
+                    back to overview
+                </button>
+            </div>
 
-            <section className="comfort-day">
-
-                <h1>comfort-food day</h1>
+            <section className="comfort-content">
                 <h3>Just enjoy</h3>
-                <p>Enjoy of a nice, warm, delicious meal or if you feel like just have a dessert as a treat!</p>
+                <p>Enjoy a nice, warm, delicious meal or if you feel like have a dessert as a treat!</p>
             </section>
 
             <DietVariations setDiettype={setDiet}/>
-
-            <label htmlFor="dessert-checkbox">Just wanna have a dessert</label>
 
             <input className="dessert-checkbox"
                    type="checkbox"
                    id="dessert-checkbox"
                    name="dessert-checkbox"
                    value={dishType}
-                   // checked={setDishType('dessert')}
                    onChange={() => {
                        dishType && dishType === 'main course' ? setDishType('dessert') : setDishType('main course')
                    }}
             />
+            <label htmlFor="dessert-checkbox">show me only desserts</label>
 
-            <button
-                className="recipes-button"
-                onClick={getComfortMealData}>
-                show recipes
-            </button>
+            <div className="showRec-cont">
+                <button
+                    className="recipes-button"
+                    onClick={getComfortMealData}
+                >
+                    show recipes
+                </button>
+                <h6>* if you don't like these recipes, hit the button again!</h6>
 
-            <h6>* if you don't like this recipe, hit the button again!</h6>
-
-            <div className="totalresults">
-                <p>there are {totalResults} results</p>
+                    <p>there are <strong>{totalResults}</strong> results:</p>
 
             </div>
 
             {comfortDayMeal && <MealDataList meallistData={comfortDayMeal}/>}
 
             {error && (<span className="error-msg">Oops, something went wrong!</span>)}
-
             {loading && (<span className="loading-balance">Loading...</span>)}
 
-            <button className="action-button"
-                    type="button"
-                    onClick={() => history.push('/profile')}
-            >
-                back to overview
-            </button>
+            <div className="overview-btn">
+                <button className="overview-button"
+                        type="button"
+                        onClick={() => history.push('/profile')}
+                >
+                    back to overview
+                </button>
+            </div>
         </div>
     )
 };

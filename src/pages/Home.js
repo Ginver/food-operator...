@@ -1,17 +1,18 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import PageHeader from "../components/PageHeader";
 
 function Home() {
     const history = useHistory();
     return (
         <>
             <div className="home-container">
-                <h1 className="page-titles">home</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum debitis dolor dolore fuga id molestias qui quo unde? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum debitis dolor dolore fuga id molestias qui quo unde?
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum debitis dolor dolore fuga id molestias qui quo unde? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum debitis dolor dolore fuga id molestias qui quo unde?</p>
-                {/*<p>Als je ingelogd bent, bekijk dan de <Link to="/profile">profile</Link></p>*/}
-                {/*<p>Je kunt ook <Link to="/signin">Log in</Link> of jezelf <Link to="/signup">Register</Link> als je nog geen account hebt.</p>*/}
-                <p>let's get you started!</p>
+
+                <PageHeader title="home"/>
+
+                <button className="planner-button balance-button" onClick={() => history.push('/balanceday')}>balance day</button>
+
+                <h4>let's get you started!</h4>
 
 
                 <div className="home-button">
@@ -28,6 +29,7 @@ function Home() {
                         register
                     </button>
                 </div>
+
             </div>
         </>
     );

@@ -48,9 +48,7 @@ function SignUp() {
         <>
             <div className="signup-container">
 
-                <PageHeader title="sign up" />
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum debitis dolor dolore fuga id molestias qui quo unde?</p>
+                <PageHeader title="sign up"/>
 
                 <div className="signup-form">
                 <form onSubmit={handleSubmit(onSubmit)}>
@@ -95,7 +93,7 @@ function SignUp() {
                             type="email"
                             id="email-field"
                             name="email"
-                            placeholder="email"
+                            placeholder="jip.koren@gmail.com"
                             {...register("email", {
                                 required: true,
                                     validate: (value) => value.includes('@'),
@@ -156,7 +154,20 @@ function SignUp() {
 
                 </form>
                 </div>
-                <p>already have an account? log in <Link to="/signin">hier</Link></p>
+
+                <p>already have an account? go to
+                    <button className="action-button"
+                            type="button"
+                            onClick={() => history.push('/signin')}
+                    >
+                    log in
+                    </button> or go back to
+                    <button className="action-button"
+                            type="button"
+                            onClick={() => history.push('/home')}
+                    >
+                        home
+                    </button></p>
             </div>
         </>
     );

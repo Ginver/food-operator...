@@ -39,8 +39,6 @@ function SignIn() {
 
                 <h1 className="page-titles">login</h1>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum debitis dolor dolore fuga id molestias qui quo unde?</p>
-
                 <div className="signup-form">
 
                     <form onSubmit={handleSubmit(onSubmit)}>
@@ -50,7 +48,7 @@ function SignIn() {
                                 type="email"
                                 id="email-field"
                                 name="email"
-                                // placeholder="e.g. susanna.koren@gmail.com"
+                                placeholder="jip.koren@gmail.com"
                                 {...register("email", {
                                         required: true,
                                         validate: (value) => value.includes('@'),

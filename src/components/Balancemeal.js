@@ -47,29 +47,26 @@ function Balancemeal({meal}) {
             <article className="meal-complete-container">
 
                 <div className="meal-container">
-                    <div className="meal-type">{dishType}</div>
+                    {/*<div className="meal-type">{dishType}</div>*/}
                     <h1 className="meal-title">{meal.title}</h1>
                     <img className="meal-photo" src={imageUrl} alt="recipe" />
 
                     <div className="meal-info">
                         <ul>
-                            <li>Preparation time: {meal.readyInMinutes} minutes</li>
-                            {/*<li>Diets: {dietTypes && dietTypes.map((dietType) => {*/}
-                            {/*    return dietType*/}
-                            {/*})}</li>*/}
+                            <li>prep time: <strong>{meal.readyInMinutes}</strong> minutes</li>
                         </ul>
 
-                        <ul>Caloric breakdown per meal:
-                            <li>Percent protein: {caloricBreakdown.percentProtein}</li>
-                            <li>Percent fat: {caloricBreakdown.percentFat}</li>
-                            <li>Percent carbs: {caloricBreakdown.percentCarbs}</li>
+                        <ul>caloric breakdown per meal
+                            <li>protein: {caloricBreakdown.percentProtein}%</li>
+                            <li>fat: {caloricBreakdown.percentFat}%</li>
+                            <li>carbs: {caloricBreakdown.percentCarbs}%</li>
                         </ul>
                         <a href={meal.sourceUrl}>show recipe</a>
                     </div>
 
                     {error && (<span className="wrong-error">Something went wrong!</span>)}
-
                     {loading && (<span>Loading...</span>)}
+
                 </div>
             </article>
         </main>

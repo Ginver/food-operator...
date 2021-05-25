@@ -33,7 +33,7 @@ function Footer() {
                         />I'd like to receive your newsbrief'
                     </label>
 
-                    <button className="action-button"
+                    <button className="overview-button"
                             type="submit"
                             disabled={!checkedTerms}
                             onClick={() => setSubmitted(true)}
@@ -42,7 +42,7 @@ function Footer() {
                 </form>
 
                 <div className="footer-contact">
-                    <p>Contact<br /> Gigi Lukacs 1034LJ Amsterdam<br />  Bramzeilhof 66 <br /> gy.lakilukacs@gmail.com</p>
+                    <p>Contact<br /> Gigi Lukacs <br />1034LJ Amsterdam<br />  Bramzeilhof 66 <br /> gy.lakilukacs@gmail.com</p>
                 </div>
 
             </div>

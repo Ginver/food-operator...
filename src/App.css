@@ -33,6 +33,28 @@ body {
     margin: 10px 0 10px 10px;
 }
 
+.overview-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.overview-button {
+    border: 3px solid #EEEDDD;
+    background-color: white;
+    color: #68530E;
+    padding: 3px 8px 3px 8px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 10px 0 10px 10px;
+}
+
+.overview-button:hover {
+    font-size: 17px;
+}
+
 .recipes-button {
     border: 3px solid #EEEDDD;
     background-color: white;
@@ -108,9 +130,19 @@ align-items: center;
 
 .meal-photo {
     border: 2px solid #A5A769;
-    /*border-radius: 6px;*/
     width: 85%;
     margin-bottom: 1rem;
+}
+
+.meal-type {
+    border: 3px solid #EEEDDD;
+    background-color: white;
+    color: #68530E;
+    padding: 3px 8px 3px 8px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 li {
@@ -124,5 +156,17 @@ flex-direction: column;
 }
 
 h6 {
-    margin-top: 5px;
+    margin: 8px 0 8px 0;
+}
+
+::placeholder {
+    font-size: 13px;
+    color: #A5A769;
+}
+
+.showRec-cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
