@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Balancemeallist from "../components/Balancemeallist";
+import BalanceMealList from "../components/BalanceMealList";
 import DietVariations from "../components/DietVariations";
 import { useHistory } from "react-router-dom";
 import PageHeader from '../components/PageHeader';
@@ -67,9 +67,7 @@ function Balanceday() {
             </div>
 
             <div className="balance-content">
-                <p>As a rule, a healthy woman needs an average of 2,000 calories and a healthy man an average of 2,500 calories per day.<br />
-                The problem is that most women and men are not average and it depends even more on how many calories you need per day.<br />
-                    To help out we made an overview:</p>
+
                 <table className="tableOfCalory">
                     <tr><td></td><td>age</td><td>office job</td><td>moderate active</td><td>active</td></tr>
                     <tr><td>female</td><td>14-18</td><td>1800</td><td>2000</td><td>2400</td></tr>
@@ -83,13 +81,11 @@ function Balanceday() {
                 </table>
 
                 <input
-                    type="number"
-                    placeholder="calories (e.g. 2000)"
+                    type="text"
+                    placeholder="calories (e.g. 1500kcal)"
                     onChange={handleChange}
                     // setting up the calory change> handleChange function
                     onKeyDown={keyPressCheck}
-                    // disabled={calories < 0}
-                    // when user presses enter it will also pull the request
                 />
             </div>
 
@@ -106,7 +102,7 @@ function Balanceday() {
             <h6>* if you don't like these recipes, hit the button again!</h6>
             </div>
 
-            {mealData && <Balancemeallist mealListData={mealData}/>}
+            {mealData && <BalanceMealList mealListData={mealData}/>}
 
             {error && (<span className="error-msg">Oops, something went wrong!</span>)}
 

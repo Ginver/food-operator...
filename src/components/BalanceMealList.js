@@ -1,15 +1,15 @@
 import React from 'react';
-// import './Balancemeallist.css';
+import './BalanceMealList.css';
 import Balancemeal from "./Balancemeal";
 
-function Balancemeallist({mealListData}) {
+function BalanceMealList({mealListData}) {
     const nutrients = mealListData.nutrients;
     // console.log(nutrients)
 
     return (
-        <main>
+        <main className="balance-main">
             <div className="nutrients-info">
-                <h3>Nutrients for the day</h3>
+                <h3>nutrients for the day:</h3>
                 <ul className="nutrients-list">
                     <li>calory: <strong>{nutrients.calories.toFixed(0)}</strong> kcal</li>
                     <li>protein: <strong>{nutrients.protein.toFixed(0)}</strong> g</li>
@@ -27,4 +27,4 @@ function Balancemeallist({mealListData}) {
     )
 };
 
-export default Balancemeallist;
+export default BalanceMealList;

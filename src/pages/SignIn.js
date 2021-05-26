@@ -1,8 +1,9 @@
 import React, { useState, useContext } from 'react';
 import { useForm } from 'react-hook-form';
-// import { Link } from 'react-router-dom';
 import axios from "axios";
 import { UserContext } from "../context/UserContext";
+import "./SignIn.css";
+import PageHeader from "../components/PageHeader";
 
 function SignIn() {
     const { loginFunc } = useContext(UserContext);
@@ -10,7 +11,6 @@ function SignIn() {
     const [error, setError] = useState(false);
     const [loading, toggleLoading] = useState(false);
 
-    // const  history = useHistory(); // niet meer nodig, kan weg nadat we het in de context component hebben geplaatsd
     const { handleSubmit, register, formState: { errors } } = useForm({mode: "onBlur"});
 
     async function onSubmit(data) {
@@ -37,7 +37,7 @@ function SignIn() {
         <>
             <div className="signin-container">
 
-                <h1 className="page-titles">login</h1>
+                <PageHeader title="sign in form"/>
 
                 <div className="signup-form">
 

@@ -48,7 +48,7 @@ function SignUp() {
         <>
             <div className="signup-container">
 
-                <PageHeader title="sign up"/>
+                <PageHeader title="sign up form"/>
 
                 <div className="signup-form">
                 <form onSubmit={handleSubmit(onSubmit)}>
@@ -155,6 +155,7 @@ function SignUp() {
                 </form>
                 </div>
 
+                <div className="signup-rerouting-form">
                 <p>already have an account? go to
                     <button className="action-button"
                             type="button"
@@ -164,10 +165,11 @@ function SignUp() {
                     </button> or go back to
                     <button className="action-button"
                             type="button"
-                            onClick={() => history.push('/home')}
+                            onClick={() => history.push('/')}
                     >
                         home
                     </button></p>
+                </div>
             </div>
         </>
     );
