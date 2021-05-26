@@ -11,3 +11,9 @@
     flex-direction: column;
     align-items: center;
 }
+
+.dessert-checkbox {
+    display: flex;
+    align-items: center;
+
+}

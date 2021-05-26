@@ -22,16 +22,22 @@ function Footer() {
                 {/*</div>*/}
 
                 <form className="footer-form">
-                    <label >
+
+                        <input
+                            type="email"
+                            id="email-field"
+                            name="email"
+                            placeholder="jip.koren@gmail.com"
+                        />
+
+
                         <input htmlFor="footer-terms-and-conditions"
                                type="checkbox"
                                id="footer-terms-and-conditions"
                                name="footer-and-conditions"
                                checked={checkedTerms}
                                onChange={() => toggleCheckedTerms(!checkedTerms)}
-                               // disabled={messageValue.length < 20}
                         />I'd like to receive your newsbrief'
-                    </label>
 
                     <button className="overview-button"
                             type="submit"
@@ -42,7 +48,7 @@ function Footer() {
                 </form>
 
                 <div className="footer-contact">
-                    <p>Contact<br /> Gigi Lukacs <br />1034LJ Amsterdam<br />  Bramzeilhof 66 <br /> gy.lakilukacs@gmail.com</p>
+                    <p>Contact: <br /> Gigi Lukacs <br />1034LJ Amsterdam<br />  Bramzeilhof 66 <br /> gy.lakilukacs@gmail.com</p>
                 </div>
 
             </div>

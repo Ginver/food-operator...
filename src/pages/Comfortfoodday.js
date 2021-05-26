@@ -64,16 +64,19 @@ function Comfortfoodday() {
 
             <DietVariations setDiettype={setDiet}/>
 
-            <input className="dessert-checkbox"
-                   type="checkbox"
-                   id="dessert-checkbox"
-                   name="dessert-checkbox"
-                   value={dishType}
-                   onChange={() => {
-                       dishType && dishType === 'main course' ? setDishType('dessert') : setDishType('main course')
-                   }}
-            />
-            <label htmlFor="dessert-checkbox">show me only desserts</label>
+            <div className="dessert-checkbox">
+                <input
+                       type="checkbox"
+                       id="dessert-checkbox"
+                       name="dessert-checkbox"
+                       value={dishType}
+                       onChange={() => {
+                           dishType && dishType === 'main course' ? setDishType('dessert') : setDishType('main course')
+                       }}
+                />
+                <label htmlFor="dessert-checkbox">show me only desserts</label>
+            </div>
+
 
             <div className="showRec-cont">
                 <button
