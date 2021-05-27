@@ -3,7 +3,6 @@ import { Link, useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import axios from "axios";
 import './SignUp.css';
-import PageHeader from "../components/PageHeader";
 
 function SignUp() {
     const [registerSuccess, toggleRegisterSuccess] = useState(false);
@@ -47,9 +46,7 @@ function SignUp() {
     return (
         <>
             <div className="signup-container">
-
-                <PageHeader title="sign up form"/>
-
+                <h1>sign up form</h1>
                 <div className="signup-form">
                 <form onSubmit={handleSubmit(onSubmit)}>
 

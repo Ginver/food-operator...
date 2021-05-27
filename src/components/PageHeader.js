@@ -1,13 +1,13 @@
 import React from 'react';
 import './PageHeader.css';
 
-function PageHeader({ title }) {
+function PageHeader({ picture, title }) {
     return (
-        <main className="pageHeader-container">
-            <article>
-                {/*<img className="pageHeader-icon" src={icon} alt={title} />*/}
+        <main>
+            <div className="pageHeader-container">
                 <h1 className="pageHeader-title">{title}</h1>
-            </article>
+                <img className="categoryIntro-image" src={picture} alt={title} />
+            </div>
         </main>
     );
 }

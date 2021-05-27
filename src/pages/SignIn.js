@@ -3,7 +3,6 @@ import { useForm } from 'react-hook-form';
 import axios from "axios";
 import { UserContext } from "../context/UserContext";
 import "./SignIn.css";
-import PageHeader from "../components/PageHeader";
 
 function SignIn() {
     const { loginFunc } = useContext(UserContext);
@@ -37,7 +36,7 @@ function SignIn() {
         <>
             <div className="signin-container">
 
-                <PageHeader title="sign in form"/>
+                <h1>sign in form</h1>
 
                 <div className="signup-form">
 

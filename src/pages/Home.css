@@ -1,1 +1,15 @@
+.home-container {
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.home-text {
+    padding: 15px;
+}
+
+.home-text h1, h2 {
+    margin-bottom: 25px;
+}

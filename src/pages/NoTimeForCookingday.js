@@ -5,6 +5,7 @@ import DietVariations from "../components/DietVariations";
 import { useHistory } from "react-router-dom";
 import PageHeader from '../components/PageHeader';
 import DishTypes from "../components/DishTypes";
+import notime from "../assets/clock.jpg"
 import "./NoTimeForCookingday.css";
 
 const apiKey = process.env.REACT_APP_RECIPE_API_KEY
@@ -59,8 +60,6 @@ function NoTimeForCookingday() {
     return (
         <div className="no-time-container">
 
-            <PageHeader title="no-time-for-cooking day" />
-
             <div className="overview-btn">
                 <button className="overview-button"
                         type="button"
@@ -70,7 +69,10 @@ function NoTimeForCookingday() {
                 </button>
             </div>
 
+            <PageHeader picture={notime} title="no-time-for-cooking day" />
+
             <section className="noTime-input">
+                <label>How much time do you have for cooking?</label>
                 <input className="input-minutes"
                     type="text"
                     placeholder="e.g. 20 minutes"

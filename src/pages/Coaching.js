@@ -13,35 +13,7 @@ function Coaching() {
        <>
            <div className="coaching-container">
            <form onSubmit={handleSubmit(onFormSubmit)}>
-               {/*<h1>Share your thoughts!</h1>*/}
-               {/*<label htmlFor="messageOfUser">*/}
-               {/*    <input*/}
-               {/*    type="text"*/}
-               {/*    placeholder="Type your message here"*/}
-               {/*    name="message"*/}
-               {/*    id="messageOfUser"*/}
-               {/*    className={messageValue.length > 200 ? 'input-error' : ''}*/}
-               {/*    value={messageValue}*/}
-               {/*    // onChange={(e) => setMessageValue(e.target.value)}*/}
-               {/*    onChange={handleChange}*/}
-               {/*    />*/}
-               {/*    {messageValue.length > 200 && <p className="error-message">Please, keep your message under 200 characters!</p>}*/}
-               {/*</label>*/}
 
-
-
-               {/* Please, contact me for an appointment*/}
-               {/* </label>*/}
-
-               {/* <button*/}
-               {/*     className="action-button"*/}
-               {/*     type="submit"*/}
-               {/*     disabled={!checkedTerms}*/}
-               {/*     // onClick={sendForm}*/}
-               {/* >*/}
-               {/*     send*/}
-               {/* </button>*/}
-               <fieldset>
                    <legend>Your review</legend>
                    <label htmlFor="referrer">
                        How did you find us?
@@ -64,21 +36,22 @@ function Coaching() {
                            {...register({required: true})}
                            />
                    )}
+
                     {/*<label htmlFor="terms-and-conditions">*/}
-                    {/*    I'd like to get in touch someone for personal coaching*/}
+                    {/*    I'd like to get in touch to make an appointment for personal coaching*/}
                     {/*<input*/}
                     {/*    type="checkbox"*/}
                     {/*    name="terms-and-conditions"*/}
-                    {/*    id="terms-and-conditions"*/}
+                    {/*    // id="terms-and-conditions"*/}
                     {/*    {...register({required: true})}*/}
                     {/*/>*/}
                     {/*</label>*/}
 
                    <label htmlFor="recipe-comments">
-                       share your thougts
+                       let us know if you would like to plan a personal coaching appointment
                        <textarea
                            id="recipe-comments"
-                           rows="5"
+                           rows="10"
                            cols="40"
                            placeholder="type hier your text"
                            {...register("comments")}
@@ -91,7 +64,7 @@ function Coaching() {
                            type="submit">
                            send
                         </button>
-                    </fieldset>
+
                 </form>
             </div>
        </>

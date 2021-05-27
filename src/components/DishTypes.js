@@ -14,7 +14,9 @@ function DishTypes({ setTypeOfDish }) {
 
     return (
         <main className="diettypes">
-
+            <p>dish types</p>
+            <ul>
+                <li>
             <input className="dish-radio"
                    type="radio"
                    name="dish-radio"
@@ -24,7 +26,8 @@ function DishTypes({ setTypeOfDish }) {
                 // onClick={() => toggleResetDiet(true)}
             />
             <label className="diet-label">breakfast</label>
-
+                </li>
+                <li>
             <input className="dish-radio"
                    type="radio"
                    name="dish-radio"
@@ -34,7 +37,8 @@ function DishTypes({ setTypeOfDish }) {
                 // onClick={() => toggleResetDiet(true)}
             />
             <label className="diet-label">soup</label>
-
+            </li>
+                <li>
             <input className="dish-radio"
                    type="radio"
                    name="dish-radio"
@@ -44,7 +48,8 @@ function DishTypes({ setTypeOfDish }) {
                 // onClick={() => toggleResetDiet(true)}
             />
             <label className="diet-label">main course</label>
-
+        </li>
+                <li>
             <input className="dish-radio"
                    type="radio"
                    name="dish-radio"
@@ -54,7 +59,8 @@ function DishTypes({ setTypeOfDish }) {
                 // onClick={() => toggleResetDiet(!resetDiet)}
             />
             <label className="diet-label">salad</label>
-
+</li>
+                <li>
             <input className="dish-radio"
                    type="radio"
                    name="dish-radio"
@@ -64,7 +70,8 @@ function DishTypes({ setTypeOfDish }) {
                 // onClick={() => toggleResetDiet(!resetDiet)}
             />
             <label className="diet-label">dessert</label>
-
+</li>
+            </ul>
         </main>
     );
 };

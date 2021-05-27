@@ -1,9 +1,7 @@
 import React from 'react';
 import "./CategoryIntro.css";
-import { useHistory } from "react-router-dom";
 
 function CategoryIntro({ url, picture, title, info }) {
-    const history = useHistory();
 
     return (
         <main className="categoryIntro-container" >

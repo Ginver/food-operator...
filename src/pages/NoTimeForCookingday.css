@@ -1,13 +1,8 @@
-.no-time-container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
 .noTime-input {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px;
 }
 
 .input-minutes {

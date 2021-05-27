@@ -3,7 +3,7 @@ import { UserContext } from "../context/UserContext";
 import './Profile.css';
 import CategoryIntro from "../components/CategoryIntro";
 import balance from "../assets/balance.jpg";
-import workout from "../assets/workout.jpg";
+import workout from "../assets/yoga.jpg";
 import comfort from "../assets/comfort.jpg";
 import clock from "../assets/clock.jpg";
 

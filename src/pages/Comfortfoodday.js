@@ -3,7 +3,8 @@ import axios from "axios";
 import MealDataList from "../components/MealDataList";
 import DietVariations from "../components/DietVariations";
 import { useHistory } from "react-router-dom";
-import PageHeader from '../components/PageHeader';
+import PageHeader from "../components/PageHeader";
+import comfort from "../assets/comfort.jpg";
 import "./Comfortfoodday.css";
 
 const apiKey = process.env.REACT_APP_RECIPE_API_KEY
@@ -46,8 +47,6 @@ function Comfortfoodday() {
     return (
         <div className="comfort-container">
 
-            <PageHeader title="comfort-food day"/>
-
             <div className="overview-btn">
                 <button className="overview-button"
                         type="button"
@@ -56,6 +55,8 @@ function Comfortfoodday() {
                     back to overview
                 </button>
             </div>
+
+            <PageHeader picture={comfort} title="comfort-food day"/>
 
             <section className="comfort-content">
                 <h3>Just enjoy</h3>
@@ -74,7 +75,7 @@ function Comfortfoodday() {
                            dishType && dishType === 'main course' ? setDishType('dessert') : setDishType('main course')
                        }}
                 />
-                <label htmlFor="dessert-checkbox">show me only desserts</label>
+                <label htmlFor="dessert-checkbox">show only desserts</label>
             </div>
 
 

@@ -15,11 +15,6 @@ function Footer() {
     return (
         <>
             <div className="footer-container">
-                {/*<div className="footer-icon">*/}
-                    {/*<h5>facebook</h5>*/}
-                    {/*<h5>instagram</h5>*/}
-                    {/*<h5>pinterest</h5>*/}
-                {/*</div>*/}
 
                 <form className="footer-form">
 
@@ -30,14 +25,17 @@ function Footer() {
                             placeholder="jip.koren@gmail.com"
                         />
 
+                        <div className="footer-checkbox">
+                            <input htmlFor="footer-terms-and-conditions"
+                                    type="checkbox"
+                                    id="footer-terms-and-conditions"
+                                    name="footer-and-conditions"
+                                    checked={checkedTerms}
+                                    onChange={() => toggleCheckedTerms(!checkedTerms)}
+                        />
+                            <label>I'd like to receive your newsbrief'</label>
+                        </div>
 
-                        <input htmlFor="footer-terms-and-conditions"
-                               type="checkbox"
-                               id="footer-terms-and-conditions"
-                               name="footer-and-conditions"
-                               checked={checkedTerms}
-                               onChange={() => toggleCheckedTerms(!checkedTerms)}
-                        />I'd like to receive your newsbrief'
 
                     <button className="overview-button"
                             type="submit"
@@ -48,7 +46,7 @@ function Footer() {
                 </form>
 
                 <div className="footer-contact">
-                    <p>Contact: <br /> Gigi Lukacs <br />1034LJ Amsterdam<br />  Bramzeilhof 66 <br /> gy.lakilukacs@gmail.com</p>
+                    <p>Contact: <br /> Gigi Lukacs <br />1034LJ Amsterdam <br />  Bramzeilhof 66 <br /> gy.lakilukacs@gmail.com</p>
                 </div>
 
             </div>

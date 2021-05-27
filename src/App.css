@@ -8,7 +8,6 @@
 body {
     font-family: 'Roboto', sans-serif;
     color: #68530E;
-    /*background: url('./assets/cooking achtergrond.jpg');*/
 }
 
 .content {
@@ -57,14 +56,15 @@ body {
 
 .recipes-button {
     border: 3px solid #EEEDDD;
-    background-color: white;
-    color: #68530E;
-    padding: 3px 8px 3px 8px;
+    background-color: #a0ab39;
+    color: #fbf9fb;
+    padding: 10px 20px;
     text-align: center;
     text-decoration: none;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 27px;
     cursor: pointer;
+    border-radius: 30px;
 }
 
 .action-button:hover, .recipes-button:hover {
@@ -92,18 +92,13 @@ border: 3px solid lightpink;
 color: red;
 }
 
-.home-container {
-margin: 150px;
-display: flex;
-flex-direction: column;
-align-items: center;
-}
 
 
 /*nieuwe css*/
 /*meal cards rendering*/
 .meal-cards {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .meal-complete-container {
@@ -116,7 +111,7 @@ align-items: center;
     flex-direction: column;
     align-items: center;
     padding: 2rem;
-    margin: 0 1 rem;
+    margin: 0 1rem;
     max-width: 18rem;
     box-shadow: 0 4px 8px 2px rgba( 77, 77, 77, 0.15);
     background-color: #FFFFFF;

@@ -4,6 +4,7 @@ import BalanceMealList from "../components/BalanceMealList";
 import DietVariations from "../components/DietVariations";
 import { useHistory } from "react-router-dom";
 import PageHeader from '../components/PageHeader';
+import balance from "../assets/balance.jpg";
 import './Balanceday.css';
 
 const apiKey = process.env.REACT_APP_RECIPE_API_KEY
@@ -54,17 +55,16 @@ function Balanceday() {
 
     return (
         <div className="balance-container">
-
-            <PageHeader title="balance day"/>
-
             <div className="overview-btn">
+
                 <button className="overview-button"
                         type="button"
-                        onClick={() => history.push('/profile')}
+                        onClick={() => history.push('/')}
                 >
-                    back to overview
+                    back to home
                 </button>
             </div>
+            <PageHeader picture={balance} title="balance day"/>
 
             <div className="balance-content">
 
@@ -84,7 +84,6 @@ function Balanceday() {
                     type="text"
                     placeholder="calories (e.g. 1500kcal)"
                     onChange={handleChange}
-                    // setting up the calory change> handleChange function
                     onKeyDown={keyPressCheck}
                 />
             </div>
@@ -95,7 +94,6 @@ function Balanceday() {
             <button
                 className="recipes-button"
                 onClick={getMealData}
-                // onClick={() => toggleResetDiet(true)}
                 >
                 show recipes
             </button>
@@ -108,12 +106,25 @@ function Balanceday() {
 
             {loading && (<span className="loading-balance">Loading...</span>)}
 
+            <div className="see-more-unit">
+                <h3>sign up to see more!</h3>
+                <div className="home-button">
+
+                    <button className="action-button"
+                            type="button"
+                            onClick={() => history.push('/signup')}
+                    >
+                        sign up
+                    </button>
+                </div>
+
+            </div>
             <div className="overview-btn">
             <button className="overview-button"
                 type="button"
-                onClick={() => history.push('/profile')}
+                onClick={() => history.push('/')}
             >
-                back to overview
+                back to home
             </button>
             </div>
         </div>

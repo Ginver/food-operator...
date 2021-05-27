@@ -26,7 +26,7 @@ function Header() {
 
             <h4 className="header-appTitle"
                 onClick={() => history.push('/')}
-            >recipe wizard...
+            >food operator...
             </h4>
 
                 <div className="headerProfile-container">
@@ -59,11 +59,18 @@ function Header() {
                     <nav className="navBar">
 
                             <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
+                                <li onClick={() => closeMenu()}><button onClick={handleToggle}>
+                                    {navbarOpen ? (
+                                        <MdClose style={{ color: "#68530E", width: "40px", height: "40px" }} />
+                                    ) : (
+                                        <FiMenu style={{ color: "#68530E", width: "40px", height: "40px" }} />
+                                    )}
+                                </button></li>
                                 <li>
                                     <NavLink exact to="/" activeClassName="active-link" onClick={() => closeMenu()}>home</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink exact to="/signin" activeClassName="active-link" onClick={() => closeMenu()}>sing in</NavLink>
+                                    <NavLink exact to="/signin" activeClassName="active-link" onClick={() => closeMenu()}>sign in</NavLink>
                                 </li>
                                 <li>
                                     <NavLink exact to="/signup" activeClassName="active-link" onClick={() => closeMenu()}>sign up</NavLink>
@@ -73,9 +80,7 @@ function Header() {
                                 </li>
                                 {user !== null &&
                                     <>
-                                <li>
-                                    <NavLink exact to="/profile" activeClassName="active-link" onClick={() => closeMenu()}>overview</NavLink>
-                                </li>
+
                                 <li>
                                     <NavLink exact to="/workoutday" activeClassName="active-link" onClick={() => closeMenu()}>work-out day</NavLink>
                                 </li>
@@ -84,6 +89,9 @@ function Header() {
                                 </li>
                                 <li>
                                     <NavLink exact to="/comfortfoodday" activeClassName="active-link" onClick={() => closeMenu()}>comfort-food day</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink exact to="/profile" activeClassName="active-link" onClick={() => closeMenu()}>overview</NavLink>
                                 </li>
                                     </>
                                 }

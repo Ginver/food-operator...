@@ -1,11 +1,18 @@
 .diettypes {
-    border-radius: 12px;
     padding: 3px;
     text-align: center;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    background-color: #EEEDDD;
+    margin: 10px;
+}
+
+.diettypes ul {
+    display: flex;
+
 }
 
 .diet-label {
@@ -18,4 +25,11 @@
 
 .diet-radio {
     border: 3px solid #A5A769;
+}
+
+@media only screen and (max-width: 400px) {
+    .diettypes ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }

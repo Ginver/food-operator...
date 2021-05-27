@@ -6,6 +6,7 @@ import DietVariations from "../components/DietVariations";
 import MealDataList from "../components/MealDataList";
 import PageHeader from '../components/PageHeader';
 import DishTypes from "../components/DishTypes";
+import workout from "../assets/yoga.jpg";
 import "./Workoutday.css";
 
 
@@ -69,8 +70,6 @@ function Workoutday() {
     return (
         <div className="workout-container">
 
-            <PageHeader title="work-out day"/>
-
             <div className="overview-btn">
                 <button className="overview-button"
                         type="button"
@@ -79,6 +78,8 @@ function Workoutday() {
                     back to overview
                 </button>
             </div>
+
+            <PageHeader picture={workout} title="work-out day"/>
 
             <section className="workout-day">
 

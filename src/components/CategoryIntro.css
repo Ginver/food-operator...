@@ -16,21 +16,19 @@
 }
 
 .categoryIntro-title {
-    background-color: #EEEDDD;
-    backgrond-opacity: 40px;
-    color: #CFB345;
+    /*background-color: #EEEDDD;*/
+    color: #a0ab39;
     padding: 3px 8px 3px 8px;
     text-align: center;
     text-decoration: none;
     font-weight: bold;
     font-size: 35px;
     cursor: pointer;
-    margin-top: -90px;
+    margin-top: -140px;
 }
 
 .categoryIntro-info {
     width: 80%;
-    /*border: 3px solid #EEEDDD;*/
     background-color: white;
     color: #A5A769;
     mso-border-shadow: yes;
@@ -50,10 +48,12 @@
     text-decoration: none;
 }
 
-.categoryIntro-image-title a:visited {
-    color: darkorange;
-}
-
 .categoryIntro-image-title a:hover {
     font-size: 38px;
+}
+
+@media only screen and (max-width: 400px) {
+    .categoryIntro-container {
+        width: 350px;
+    }
 }

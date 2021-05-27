@@ -10,8 +10,9 @@ function DietVariations({ setDiettype }) {
 
     return (
         <main className="diettypes">
-
-            <input className="diet-radio"
+            <p>diet types</p>
+            <ul>
+            <li><input className="diet-radio"
                     type="radio"
                     name="radio"
                     value={typeOfDiet}
@@ -20,7 +21,8 @@ function DietVariations({ setDiettype }) {
                    // onClick={() => toggleResetDiet(true)}
                 />
             <label className="diet-label">vegetarian</label>
-
+            </li>
+                <li>
             <input className="diet-radio"
                     type="radio"
                     name="radio"
@@ -30,7 +32,8 @@ function DietVariations({ setDiettype }) {
                    // onClick={() => toggleResetDiet(true)}
                 />
             <label className="diet-label">vegan</label>
-
+            </li>
+                <li>
             <input className="diet-radio"
                     type="radio"
                     name="radio"
@@ -40,7 +43,8 @@ function DietVariations({ setDiettype }) {
                    // onClick={() => toggleResetDiet(true)}
                 />
             <label className="diet-label">dairy free</label>
-
+        </li>
+                <li>
             <input className="diet-radio"
                     type="radio"
                     name="radio"
@@ -50,7 +54,8 @@ function DietVariations({ setDiettype }) {
                     // onClick={() => toggleResetDiet(!resetDiet)}
                 />
             <label className="diet-label">gluten free</label>
-
+</li>
+            <li>
             <input className="diet-radio"
                    type="radio"
                    name="radio"
@@ -60,7 +65,8 @@ function DietVariations({ setDiettype }) {
                 // onClick={() => toggleResetDiet(!resetDiet)}
             />
             <label className="diet-label">any diet</label>
-
+            </li>
+            </ul>
         </main>
     );
 };

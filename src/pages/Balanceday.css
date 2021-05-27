@@ -1,4 +1,4 @@
-.balance-content {
+.balance-content input {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -18,4 +18,7 @@ tr, td {
     height: 30px;
 }
 
+.see-more-unit {
+    padding: 10px;
+}
 
