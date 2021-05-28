@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './MealData.css';
 
-// const apiKey = '02105724086e470e88f525d3ba28227f'
 const apiKey = process.env.REACT_APP_RECIPE_API_KEY
 
 function Balancemeal({meal}) {
@@ -16,7 +15,7 @@ function Balancemeal({meal}) {
 
     useEffect (() => {
         async function fetchMeal() {
-            // console.log("wat is fetchMeal?", fetchMeal)
+
             setError(false);
             toggleLoading(true);
 
@@ -42,12 +41,10 @@ function Balancemeal({meal}) {
         }
     }, [meal.id]);
 
-    return(
-        <main>
-            <article className="meal-complete-container">
+    return (
+        <main className="meal-complete-container">
+            <article className="meal-container">
 
-                <div className="meal-container">
-                    {/*<div className="meal-type">{dishType}</div>*/}
                     <h1 className="meal-title">{meal.title}</h1>
                     <img className="meal-photo" src={imageUrl} alt="recipe" />
 
@@ -61,13 +58,12 @@ function Balancemeal({meal}) {
                             <li>fat: {caloricBreakdown.percentFat}%</li>
                             <li>carbs: {caloricBreakdown.percentCarbs}%</li>
                         </ul>
-                        <a href={meal.sourceUrl} target="_blank">show recipe</a>
+                        <a href={meal.sourceUrl} target="_blank" rel="noreferrer">show recipe</a>
                     </div>
 
                     {error && (<span className="wrong-error">Something went wrong!</span>)}
                     {loading && (<span>Loading...</span>)}
 
-                </div>
             </article>
         </main>
     )

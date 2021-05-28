@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import './DietVariations.css';
 
-
 function DietVariations({ setDietType }) {
-    // console.log('Wat is setDiettype?', setDiettype)
-    const [typeOfDiet, setTypeOfDiet] = useState('');
 
 
     return (
@@ -15,7 +12,7 @@ function DietVariations({ setDietType }) {
                     <input className="diet-radio"
                         type="radio"
                         name="radio"
-                        value={typeOfDiet}
+                        value="vegetarian"
                         onChange={() => (setDietType('vegetarian'))}
                     />
                     <label className="diet-label">vegetarian</label>
@@ -24,7 +21,7 @@ function DietVariations({ setDietType }) {
                     <input className="diet-radio"
                         type="radio"
                         name="radio"
-                        value={typeOfDiet}
+                        value="vegan"
                         onChange={() => setDietType('vegan')}
                     />
                     <label className="diet-label">vegan</label>
@@ -33,7 +30,7 @@ function DietVariations({ setDietType }) {
                     <input className="diet-radio"
                         type="radio"
                         name="radio"
-                        value={typeOfDiet}
+                        value="dairy free"
                         onChange={() => setDietType('dairy free')}
                     />
                     <label className="diet-label">dairy free</label>
@@ -42,7 +39,7 @@ function DietVariations({ setDietType }) {
                     <input className="diet-radio"
                         type="radio"
                         name="radio"
-                        value={typeOfDiet}
+                        value="gluten free"
                         onChange={() => setDietType('gluten free')}
                     />
                     <label className="diet-label">gluten free</label>
@@ -51,7 +48,7 @@ function DietVariations({ setDietType }) {
                     <input className="diet-radio"
                        type="radio"
                        name="radio"
-                       value={typeOfDiet}
+                       value="any diet"
                        onChange={() => setDietType('')}
                     />
                     <label className="diet-label">any diet</label>
