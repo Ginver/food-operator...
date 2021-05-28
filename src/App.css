@@ -1,38 +1,165 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #68530E;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.content {
+    max-width: 900px;
+    margin: 0 auto;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.action-button {
+    border: 3px solid #EEEDDD;
+    background-color: white;
+    color: #68530E;
+    padding: 3px 8px 3px 8px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px 0 10px 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.overview-btn {
+    display: flex;
+    justify-content: flex-end;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.overview-button {
+    border: 3px solid #EEEDDD;
+    background-color: white;
+    color: #68530E;
+    padding: 3px 8px 3px 8px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.overview-button:hover {
+    font-size: 17px;
+}
+
+.recipes-button {
+    border: 3px solid #EEEDDD;
+    background-color: #a0ab39;
+    color: #fbf9fb;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 27px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.action-button:hover, .recipes-button:hover {
+    font-size: 23px;
+}
+
+input {
+    border: 2px solid #EEEDDD;
+    background-color: white;
+    color: #68530E;
+    padding: 3px 8px 3px 8px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+input:hover {
+    border: 3px solid #a0ab39;
+}
+
+/*meal cards*/
+.meal-cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.meal-complete-container {
+    flex: 1;
+    margin: 10px;
+}
+
+.meal-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    margin: 0 1rem;
+    max-width: 18rem;
+    box-shadow: 0 4px 8px 2px rgba( 77, 77, 77, 0.15);
+    background-color: #FFFFFF;
+}
+
+.meal-title {
+    text-align: center;
+    margin-bottom: 1rem;
+    height: 80px;
+}
+
+.meal-photo {
+    border: 2px solid #A5A769;
+    width: 85%;
+    margin-bottom: 1rem;
+}
+
+.meal-type {
+    border: 3px solid #EEEDDD;
+    background-color: white;
+    color: #68530E;
+    padding: 3px 8px 3px 8px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/*general*/
+li {
+    list-style: none;
+}
+
+form {
+display: flex;
+align-items: flex-end;
+flex-direction: column;
+}
+
+h6 {
+    margin: 8px 0 8px 0;
+}
+
+::placeholder {
+    font-size: 13px;
+    color: #A5A769;
+}
+
+.showRec-cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.error-msg {
+    color: red;
 }

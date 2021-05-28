@@ -1,0 +1,18 @@
+.balance-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.nutrients-list li {
+    float: left;
+    margin-right: 10px;
+}
+
+.nutrients-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 8px 0 8px 0;
+    padding: 10px;
+}

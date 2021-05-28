@@ -1,0 +1,28 @@
+.protein-calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.prot-calc, .prot-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.input-weight, .input-protein {
+    border: 2px solid #EEEDDD;
+    background-color: white;
+    color: #68530E;
+    padding: 3px 8px 3px 8px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 10px;
+    width: 35px;
+}
+

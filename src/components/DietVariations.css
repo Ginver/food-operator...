@@ -1,0 +1,38 @@
+.diet-types {
+    padding: 3px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: #EEEDDD;
+    margin: 10px;
+}
+
+.diet-types p {
+    font-weight: bold;
+}
+
+.diet-types ul {
+    display: flex;
+}
+
+.diet-label {
+    color: #A5A769;
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 4px;
+    margin-right: 15px;
+}
+
+.diet-radio {
+    border: 3px solid #A5A769;
+}
+
+@media only screen and (max-width: 400px) {
+    .diet-types ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

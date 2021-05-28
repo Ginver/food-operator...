@@ -1,0 +1,15 @@
+.aboutUs-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.aboutUs-container h1 {
+    margin: 30px;
+}
+
+.aboutUs-container h3 {
+    margin-top: 30px;
+}

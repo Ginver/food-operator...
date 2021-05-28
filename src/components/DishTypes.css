@@ -1,0 +1,38 @@
+.dish-types {
+    padding: 3px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: #EEEDDD;
+    margin: 10px;
+}
+
+.dish-types p {
+    font-weight: bold;
+}
+
+.dish-types ul {
+    display: flex;
+}
+
+.dish-label {
+    color: #A5A769;
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 4px;
+    margin-right: 15px;
+}
+
+.dish-radio {
+    border: 3px solid #A5A769;
+}
+
+@media only screen and (max-width: 400px) {
+    .dish-types ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

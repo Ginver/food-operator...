@@ -1,0 +1,21 @@
+.pageHeader-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.pageHeader-title {
+    color: #68530E;
+    font-size: 30px;
+    margin-top: 15px;
+}
+
+.pageHeader-container img {
+    margin-left: 10px;
+}
+
+article {
+    display: flex;
+    align-items: center;
+}

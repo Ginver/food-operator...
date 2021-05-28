@@ -1,0 +1,24 @@
+.balance-content input {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tableOfCalory {
+    border: 2px solid #EEEDDD;
+    background-color: white;
+    color: #68530E;
+    font-size: 15px;
+    display: none;
+}
+
+tr, td {
+    width: 220px;
+    height: 30px;
+}
+
+.see-more-unit {
+    padding: 10px;
+}
+
