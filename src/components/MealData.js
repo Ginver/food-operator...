@@ -59,7 +59,7 @@ function MealData({result}) {
                         <li>carbs: {caloricBreakdown.percentCarbs}%</li>
                     </ul>
 
-                    <a href={mealData.sourceUrl}>go to recipe</a>
+                    <a href={mealData.sourceUrl} target="_blank">go to recipe</a>
                 </div>
             </article>
 

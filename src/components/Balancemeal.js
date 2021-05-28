@@ -61,7 +61,7 @@ function Balancemeal({meal}) {
                             <li>fat: {caloricBreakdown.percentFat}%</li>
                             <li>carbs: {caloricBreakdown.percentCarbs}%</li>
                         </ul>
-                        <a href={meal.sourceUrl}>show recipe</a>
+                        <a href={meal.sourceUrl} target="_blank">show recipe</a>
                     </div>
 
                     {error && (<span className="wrong-error">Something went wrong!</span>)}

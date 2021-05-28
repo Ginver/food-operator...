@@ -85,17 +85,10 @@ input {
 }
 
 input:hover {
-border: 3px solid lightpink;
+    border: 3px solid #a0ab39;
 }
 
-.error-msg {
-color: red;
-}
-
-
-
-/*nieuwe css*/
-/*meal cards rendering*/
+/*meal cards*/
 .meal-cards {
     display: flex;
     flex-wrap: wrap;
@@ -140,6 +133,7 @@ color: red;
     font-size: 20px;
 }
 
+/*general*/
 li {
     list-style: none;
 }
@@ -164,4 +158,8 @@ h6 {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+.error-msg {
+    color: red;
 }

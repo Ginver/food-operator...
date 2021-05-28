@@ -1,11 +1,11 @@
-.nutrients-list li {
-    float: left;
-    margin-right: 10px;
-}
-
 .balance-main {
     display: flex;
     flex-direction: column;
+}
+
+.nutrients-list li {
+    float: left;
+    margin-right: 10px;
 }
 
 .nutrients-info {
