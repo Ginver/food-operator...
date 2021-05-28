@@ -34,11 +34,11 @@ function SignIn() {
 
     return (
         <>
-            <div className="signin-container">
+            <div className="signIn-container">
 
                 <h1>sign in form</h1>
 
-                <div className="signup-form">
+                <div className="signIn-form">
 
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <label htmlFor="email-field">
@@ -47,7 +47,7 @@ function SignIn() {
                                 type="email"
                                 id="email-field"
                                 name="email"
-                                placeholder="jip.koren@gmail.com"
+                                placeholder="jip.morsink@gmail.com"
                                 {...register("email", {
                                         required: true,
                                         validate: (value) => value.includes('@'),
@@ -81,7 +81,7 @@ function SignIn() {
                             className="action-button"
                             type="submit"
                         >
-                            log in
+                            sign in
                         </button>
 
                         {error && (<span className="error-msg">Oops, something went wrong, please check your email and password!</span>)}

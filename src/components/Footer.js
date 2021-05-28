@@ -3,14 +3,7 @@ import './Footer.css';
 
 
 function Footer() {
-    const [messageValue, setMessageValue] = useState('');
     const [checkedTerms, toggleCheckedTerms] = useState(false);
-    const [submitted, setSubmitted] = useState(false);
-
-    function sendForm() {
-        console.log(`The message: "${messageValue}" has been sent successfully.`);
-        setSubmitted(true);
-    }
 
     return (
         <>
@@ -22,7 +15,7 @@ function Footer() {
                             type="email"
                             id="email-field"
                             name="email"
-                            placeholder="jip.koren@gmail.com"
+                            placeholder="jip.morsink@gmail.com"
                         />
 
                         <div className="footer-checkbox">
@@ -33,15 +26,14 @@ function Footer() {
                                     checked={checkedTerms}
                                     onChange={() => toggleCheckedTerms(!checkedTerms)}
                         />
-                            <label>I'd like to receive your newsbrief'</label>
+                            <label>I'd like to receive your newsletter'</label>
                         </div>
 
 
                     <button className="overview-button"
                             type="submit"
                             disabled={!checkedTerms}
-                            onClick={() => setSubmitted(true)}
-                    >send
+                     >send
                     </button>
                 </form>
 

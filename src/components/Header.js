@@ -1,9 +1,9 @@
 import React, { useState, useContext } from 'react';
 import { Link, NavLink, useHistory } from 'react-router-dom';
 import { UserContext } from "../context/UserContext";
-import './Header.css';
 import { MdClose } from "react-icons/md"
 import { FiMenu } from "react-icons/fi"
+import './Header.css';
 
 function Header() {
     const history = useHistory()
@@ -34,7 +34,7 @@ function Header() {
                         {user !== null &&
                         <>
                             <p className="header-profile"
-                               onClick={() => history.push('/profile')}
+                               onClick={() => history.push('/overview')}
                             >hello<strong> {user && user.username}</strong>!</p>
                                 <Link className="logout-link"
                                       type="button"
@@ -43,8 +43,9 @@ function Header() {
                                     log out
                                 </Link>
                         </>
-                    }
+                        }
                     </div>
+
                     <div>
                     <button onClick={handleToggle}>
                         {navbarOpen ? (
@@ -59,13 +60,15 @@ function Header() {
                     <nav className="navBar">
 
                             <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
-                                <li onClick={() => closeMenu()}><button onClick={handleToggle}>
+                                <li onClick={() => closeMenu()}>
+                                    <button onClick={handleToggle}>
                                     {navbarOpen ? (
                                         <MdClose style={{ color: "#68530E", width: "40px", height: "40px" }} />
                                     ) : (
                                         <FiMenu style={{ color: "#68530E", width: "40px", height: "40px" }} />
                                     )}
-                                </button></li>
+                                    </button>
+                                </li>
                                 <li>
                                     <NavLink exact to="/" activeClassName="active-link" onClick={() => closeMenu()}>home</NavLink>
                                 </li>
@@ -80,23 +83,22 @@ function Header() {
                                 </li>
                                 {user !== null &&
                                     <>
-
-                                <li>
-                                    <NavLink exact to="/workoutday" activeClassName="active-link" onClick={() => closeMenu()}>work-out day</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink exact to="/notimeforcookingday" activeClassName="active-link" onClick={() => closeMenu()}>no-time-for-cooking day</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink exact to="/comfortfoodday" activeClassName="active-link" onClick={() => closeMenu()}>comfort-food day</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink exact to="/profile" activeClassName="active-link" onClick={() => closeMenu()}>overview</NavLink>
-                                </li>
+                                        <li>
+                                            <NavLink exact to="/workoutday" activeClassName="active-link" onClick={() => closeMenu()}>work-out day</NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink exact to="/notimeforcookingday" activeClassName="active-link" onClick={() => closeMenu()}>no-time-for-cooking day</NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink exact to="/comfortfoodday" activeClassName="active-link" onClick={() => closeMenu()}>comfort-food day</NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink exact to="/overview" activeClassName="active-link" onClick={() => closeMenu()}>overview</NavLink>
+                                        </li>
                                     </>
                                 }
                                 <li>
-                                    <NavLink exact to="/coaching" activeClassName="active-link" onClick={() => closeMenu()}>personal coaching</NavLink>
+                                    <NavLink exact to="/aboutus" activeClassName="active-link" onClick={() => closeMenu()}>about us</NavLink>
                                 </li>
                             </ul>
                         </nav>

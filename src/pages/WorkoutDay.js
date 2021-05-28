@@ -7,24 +7,22 @@ import MealDataList from "../components/MealDataList";
 import PageHeader from '../components/PageHeader';
 import DishTypes from "../components/DishTypes";
 import workout from "../assets/yoga.jpg";
-import "./Workoutday.css";
-
+import "./WorkoutDay.css";
 
 const apiKey = process.env.REACT_APP_RECIPE_API_KEY
 
-function Workoutday() {
+function WorkoutDay() {
+    const history = useHistory();
+
     const [workoutDayMeal, setWorkoutDayMeal] = useState('');
     const [protein, setProtein] = useState(0);
     const [kilogram, setKilogram] = useState(0);
     const [dishTypes, setDishTypes] = useState('');
-    const [text, setText] = useState('')
     const [diet, setDiet] = useState('vegetarian');
     const [totalResults, setTotalResults] = useState(0);
 
     const [error, setError] = useState(false);
     const [loading, toggleLoading] = useState(false);
-
-    const history = useHistory();
 
     function handleChange(e) {
         setProtein(e.target.value)
@@ -66,14 +64,14 @@ function Workoutday() {
         }
     }
 
-
     return (
         <div className="workout-container">
 
             <div className="overview-btn">
-                <button className="overview-button"
-                        type="button"
-                        onClick={() => history.push('/profile')}
+                <button
+                    className="overview-button"
+                    type="button"
+                    onClick={() => history.push('/overview')}
                 >
                     back to overview
                 </button>
@@ -84,13 +82,13 @@ function Workoutday() {
             <section className="workout-day">
 
                 <div className="protein-calculator">
-
                     <h3>How much protein do I actually need after my workout?</h3>
                     <h6>*Our calculation is based on 1.5g protein / kg / 3 meals a day</h6>
 
                     <div className="prot-calc">
                         <label>your weight:</label>
-                        <input className="input-weight"
+                        <input
+                            className="input-weight"
                             type="text"
                             placeholder="kg"
                             onChange={handleChangeP}
@@ -101,17 +99,20 @@ function Workoutday() {
 
                     <div className="prot-input">
                     <label>your protein:</label>
-                        <input className="input-protein"
+                        <input
+                            className="input-protein"
                             type="text"
                             placeholder="0.0g"
                             onChange={handleChange}
                             onKeyDown={keyPressCheck}
                         />
                     </div>
+
                 </div>
             </section>
 
-            <DietVariations setDiettype={setDiet}/>
+            <DietVariations setDietType={setDiet}/>
+
             <DishTypes setTypeOfDish={setDishTypes}/>
 
             <div className="showRec-cont">
@@ -122,9 +123,7 @@ function Workoutday() {
                     show recipes
                 </button>
                 <h6>* if you don't like these recipes, hit the button again!</h6>
-
-                    <p>there are <strong>{totalResults}</strong> results:</p>
-
+                <p>there are <strong>{totalResults}</strong> results:</p>
             </div>
 
             {workoutDayMeal && <MealDataList meallistData={workoutDayMeal}/>}
@@ -133,16 +132,16 @@ function Workoutday() {
             {loading && (<span className="loading-balance">Loading...</span>)}
 
             <div className="overview-btn">
-                <button className="overview-button"
-                        type="button"
-                        onClick={() => history.push('/profile')}
+                <button
+                    className="overview-button"
+                    type="button"
+                    onClick={() => history.push('/overview')}
                 >
                     back to overview
                 </button>
             </div>
-
         </div>
     )
 };
 
-export default Workoutday;
+export default WorkoutDay;

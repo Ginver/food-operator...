@@ -1,16 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import BalanceMealList from "../components/BalanceMealList";
 import DietVariations from "../components/DietVariations";
 import { useHistory } from "react-router-dom";
 import PageHeader from '../components/PageHeader';
 import balance from "../assets/balance.jpg";
-import './Balanceday.css';
+import { UserContext } from "../context/UserContext";
+import './BalanceDay.css';
 
 const apiKey = process.env.REACT_APP_RECIPE_API_KEY
 
 
-function Balanceday() {
+function BalanceDay() {
+    const { user } = useContext(UserContext);
+    console.log(user)
+
+    const history = useHistory();
 
     const [mealData, setMealData] = useState(null);
     const [calories, setCalories] = useState(1500);
@@ -19,14 +24,10 @@ function Balanceday() {
     const [error, setError] = useState(false);
     const [loading, toggleLoading] = useState(false);
 
-    const history = useHistory();
-
-    // value changes when this function is called
     function handleChange(e) {
         setCalories(e.target.value)
     };
 
-    // als je dus op enter drukt wordt de request uitgevoerd
     function keyPressCheck(e) {
         if (e.keyCode === 13) {
             getMealData();
@@ -55,15 +56,17 @@ function Balanceday() {
 
     return (
         <div className="balance-container">
-            <div className="overview-btn">
 
-                <button className="overview-button"
-                        type="button"
-                        onClick={() => history.push('/')}
+            <div className="overview-btn">
+                <button
+                    className="overview-button"
+                    type="button"
+                    onClick={() => history.push('/')}
                 >
                     back to home
                 </button>
             </div>
+
             <PageHeader picture={balance} title="balance day"/>
 
             <div className="balance-content">
@@ -91,13 +94,13 @@ function Balanceday() {
             <DietVariations setDiettype={setDiet}/>
 
             <div className="showRec-cont">
-            <button
-                className="recipes-button"
-                onClick={getMealData}
-                >
-                show recipes
-            </button>
-            <h6>* if you don't like these recipes, hit the button again!</h6>
+                <button
+                    className="recipes-button"
+                    onClick={getMealData}
+                    >
+                    show recipes
+                </button>
+                <h6>* if you don't like these recipes, hit the button again!</h6>
             </div>
 
             {mealData && <BalanceMealList mealListData={mealData}/>}
@@ -106,29 +109,34 @@ function Balanceday() {
 
             {loading && (<span className="loading-balance">Loading...</span>)}
 
-            <div className="see-more-unit">
-                <h3>sign up to see more!</h3>
-                <div className="home-button">
+            {user === null &&
+                <>
+                    <div className="see-more-unit">
+                        <h3>sign up to see more!</h3>
+                        <div className="home-button">
+                            <button
+                                className="action-button"
+                                type="button"
+                                onClick={() => history.push('/signup')}
+                            >
+                                sign up
+                            </button>
+                        </div>
+                    </div>
+                </>
+            }
 
-                    <button className="action-button"
-                            type="button"
-                            onClick={() => history.push('/signup')}
+                <div className="overview-btn">
+                    <button
+                        className="overview-button"
+                        type="button"
+                        onClick={() => history.push('/')}
                     >
-                        sign up
+                        back to home
                     </button>
                 </div>
-
-            </div>
-            <div className="overview-btn">
-            <button className="overview-button"
-                type="button"
-                onClick={() => history.push('/')}
-            >
-                back to home
-            </button>
-            </div>
         </div>
     )
-}
+};
 
-export default Balanceday;
+export default BalanceDay;

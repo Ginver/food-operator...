@@ -43,7 +43,6 @@ function UserContextProvider({ children }) {
                     email: result.data.email,
                     username: result.data.username,
                     id: result.data.id,
-                    country: result.data.country,
                 },
                 status: 'done',
             });
@@ -89,7 +88,7 @@ function UserContextProvider({ children }) {
         fetchUserData(jwtToken);
 
         // doorlinken naar de profiel pagina
-        history.push('/profile');
+        history.push('/overview');
     };
 
     //----------------------------------------------------------------------------------------------------------------

@@ -5,12 +5,13 @@ import DietVariations from "../components/DietVariations";
 import { useHistory } from "react-router-dom";
 import PageHeader from "../components/PageHeader";
 import comfort from "../assets/comfort.jpg";
-import "./Comfortfoodday.css";
+import "./ComfortFoodDay.css";
 
 const apiKey = process.env.REACT_APP_RECIPE_API_KEY
 
+function ComfortFoodDay() {
+    const history = useHistory();
 
-function Comfortfoodday() {
     const [comfortDayMeal, setComfortDayMeal] = useState('');
     const [calories, setCalories] = useState('3000')
     const [dishType, setDishType] = useState('main course');
@@ -20,8 +21,6 @@ function Comfortfoodday() {
 
     const [error, setError] = useState(false);
     const [loading, toggleLoading] = useState(false);
-
-    const history = useHistory();
 
     async function getComfortMealData() {
         // console.log("getComfortMealData?", getComfortMealData);
@@ -43,14 +42,14 @@ function Comfortfoodday() {
         }
     }
 
-
     return (
         <div className="comfort-container">
 
             <div className="overview-btn">
-                <button className="overview-button"
-                        type="button"
-                        onClick={() => history.push('/profile')}
+                <button
+                    className="overview-button"
+                    type="button"
+                    onClick={() => history.push('/overview')}
                 >
                     back to overview
                 </button>
@@ -63,7 +62,7 @@ function Comfortfoodday() {
                 <p>Enjoy a nice, warm, delicious meal or if you feel like have a dessert as a treat!</p>
             </section>
 
-            <DietVariations setDiettype={setDiet}/>
+            <DietVariations setDietType={setDiet}/>
 
             <div className="dessert-checkbox">
                 <input
@@ -80,6 +79,7 @@ function Comfortfoodday() {
 
 
             <div className="showRec-cont">
+
                 <button
                     className="recipes-button"
                     onClick={getComfortMealData}
@@ -88,7 +88,7 @@ function Comfortfoodday() {
                 </button>
                 <h6>* if you don't like these recipes, hit the button again!</h6>
 
-                    <p>there are <strong>{totalResults}</strong> results:</p>
+                <p>there are <strong>{totalResults}</strong> results:</p>
 
             </div>
 
@@ -98,9 +98,10 @@ function Comfortfoodday() {
             {loading && (<span className="loading-balance">Loading...</span>)}
 
             <div className="overview-btn">
-                <button className="overview-button"
-                        type="button"
-                        onClick={() => history.push('/profile')}
+                <button
+                    className="overview-button"
+                    type="button"
+                    onClick={() => history.push('/overview')}
                 >
                     back to overview
                 </button>
@@ -109,4 +110,4 @@ function Comfortfoodday() {
     )
 };
 
-export default Comfortfoodday;
+export default ComfortFoodDay;

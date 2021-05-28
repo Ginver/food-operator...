@@ -6,7 +6,7 @@ function PrivateRoute({children, user}) {
     // al die andere props die je verder nog ontvangt, zet die ook allemaal maar op <Route>
     return (
         <Route>
-            {user !== null ? children : <Redirect to="/profile" />}
+            {user !== null ? children : <Redirect to="/overview" />}
         </Route>
     )
 };

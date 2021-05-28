@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import axios from "axios";
 import './SignUp.css';
@@ -9,7 +9,8 @@ function SignUp() {
     const [error, setError] = useState(false);
     const [loading, toggleLoading] = useState(false);
 
-    const history = useHistory(); // to push someone to another page to login
+    const history = useHistory();
+
     const { handleSubmit, register,  formState: { errors } } = useForm({
         mode: 'onchange'
     });
@@ -26,13 +27,12 @@ function SignUp() {
                 email: data.email,
                 password: data.password,
                 username: data.username,
-                country: 'Hungary',
             });
 
             console.log(result);
             toggleRegisterSuccess(true);
             setTimeout(() => {history.push('/signin')
-            }, 2000); // handmatig vertragen zodat de user dit ziet voordat ie doorgaat
+            }, 2000);
 
             toggleLoading(false);
 
@@ -45,9 +45,9 @@ function SignUp() {
 
     return (
         <>
-            <div className="signup-container">
+            <div className="signUp-container">
                 <h1>sign up form</h1>
-                <div className="signup-form">
+                <div className="signUp-form">
                 <form onSubmit={handleSubmit(onSubmit)}>
 
                     <label htmlFor="field-firstname">
@@ -141,7 +141,7 @@ function SignUp() {
                         className="action-button"
                         type="submit"
                     >
-                        register
+                        sign up
                     </button>
 
                     {registerSuccess && <p className="error-msg">Registration was successful, please log in!</p>}
@@ -152,13 +152,13 @@ function SignUp() {
                 </form>
                 </div>
 
-                <div className="signup-rerouting-form">
+                <div className="signUp-rerouting-form">
                 <p>already have an account? go to
                     <button className="action-button"
                             type="button"
                             onClick={() => history.push('/signin')}
                     >
-                    log in
+                    sign in
                     </button> or go back to
                     <button className="action-button"
                             type="button"

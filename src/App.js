@@ -1,23 +1,21 @@
 import React, { useContext } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
-import Profile from './pages/Profile';
-import Balanceday from './pages/Balanceday';
-import Workoutday from './pages/Workoutday';
-import NoTimeForCookingday from './pages/NoTimeForCookingday';
-import Comfortfoodday from './pages/Comfortfoodday';
-import Coaching from './pages/Coaching';
+import Overview from './pages/Overview';
+import BalanceDay from './pages/BalanceDay';
+import WorkoutDay from './pages/WorkoutDay';
+import NoTimeForCookingDay from './pages/NoTimeForCookingDay';
+import ComfortFoodDay from './pages/ComfortFoodDay';
+import AboutUs from './pages/AboutUs';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import './App.css';
 import {UserContext} from "./context/UserContext";
 import PrivateRoute from "./components/PrivateRoute";
-
+import './App.css';
 
 function App() {
-
   const { user } = useContext(UserContext);
 
   return (
@@ -28,8 +26,8 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <PrivateRoute path="/profile" user={user}>
-              <Profile />
+            <PrivateRoute path="/overview" user={user}>
+              <Overview />
             </PrivateRoute>
             <Route path="/signin">
               <SignIn />
@@ -38,19 +36,19 @@ function App() {
               <SignUp />
             </Route>
             <Route path="/balanceday">
-              <Balanceday />
+              <BalanceDay />
             </Route>
             <Route path="/notimeforcookingday">
-              <NoTimeForCookingday />
+              <NoTimeForCookingDay />
             </Route>
             <Route path="/workoutday">
-              <Workoutday />
+              <WorkoutDay />
             </Route>
             <Route path="/comfortfoodday">
-              <Comfortfoodday />
+              <ComfortFoodDay />
             </Route>
-            <Route path="/coaching">
-              <Coaching />
+            <Route path="/aboutus">
+              <AboutUs />
             </Route>
           </Switch>
         </div>

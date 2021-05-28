@@ -6,12 +6,13 @@ import { useHistory } from "react-router-dom";
 import PageHeader from '../components/PageHeader';
 import DishTypes from "../components/DishTypes";
 import notime from "../assets/clock.jpg"
-import "./NoTimeForCookingday.css";
+import "./NoTimeForCookingDay.css";
 
 const apiKey = process.env.REACT_APP_RECIPE_API_KEY
 
+function NoTimeForCookingDay() {
+    const history = useHistory();
 
-function NoTimeForCookingday() {
     const [noTimeMealData, setNoTimeMealData] = useState(null);
     const [minutes, setMinutes] = useState(20);
     const [diet, setDiet] = useState('');
@@ -21,14 +22,10 @@ function NoTimeForCookingday() {
     const [error, setError] = useState(false);
     const [loading, toggleLoading] = useState(false);
 
-    const history = useHistory();
-
-    // value changes when this function is called
     function handleChange(e) {
         setMinutes(e.target.value)
     };
 
-    // als je dus op enter drukt wordt de request uitgevoerd
     function keyPressCheck(e) {
         if (e.keyCode === 13) {
             getNoTimeData();
@@ -44,9 +41,7 @@ function NoTimeForCookingday() {
             const resultNotime = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&type=${dishTypes}&number=3&maxReadyTime=${minutes}&diet=${diet}&sort=random`);
             // console.log("Wat is resultNotime?", resultNotime);
             setNoTimeMealData(resultNotime.data);
-            // console.log("what is setNoTimeMealData?", resultNotime.data)
             setTotalResults(resultNotime.data.totalResults);
-            // console.log('Wat is resultNotime?', resultNotime.data.totalResults);
 
             toggleLoading(false);
 
@@ -61,9 +56,10 @@ function NoTimeForCookingday() {
         <div className="no-time-container">
 
             <div className="overview-btn">
-                <button className="overview-button"
-                        type="button"
-                        onClick={() => history.push('/profile')}
+                <button
+                    className="overview-button"
+                    type="button"
+                    onClick={() => history.push('/overview')}
                 >
                     back to overview
                 </button>
@@ -73,7 +69,8 @@ function NoTimeForCookingday() {
 
             <section className="noTime-input">
                 <label>How much time do you have for cooking?</label>
-                <input className="input-minutes"
+                <input
+                    className="input-minutes"
                     type="text"
                     placeholder="e.g. 20 minutes"
                     onChange={handleChange}
@@ -81,7 +78,8 @@ function NoTimeForCookingday() {
                 />
             </section>
 
-            <DietVariations setDiettype={setDiet}/>
+            <DietVariations setDietType={setDiet}/>
+
             <DishTypes setTypeOfDish={setDishTypes}/>
 
             <div className="showRec-cont">
@@ -92,8 +90,7 @@ function NoTimeForCookingday() {
                     show recipes
                 </button>
                 <h6>* if you don't like these recipes, hit the button again!</h6>
-
-                    <p>there are <strong>{totalResults}</strong> results:</p>
+                <p>there are <strong>{totalResults}</strong> results:</p>
 
             </div>
 
@@ -103,9 +100,10 @@ function NoTimeForCookingday() {
             {loading && (<span className="loading-balance">Loading...</span>)}
 
             <div className="overview-btn">
-                <button className="overview-button"
-                        type="button"
-                        onClick={() => history.push('/profile')}
+                <button
+                    className="overview-button"
+                    type="button"
+                    onClick={() => history.push('/overview')}
                 >
                     back to overview
                 </button>
@@ -115,4 +113,4 @@ function NoTimeForCookingday() {
     )
 }
 
-export default NoTimeForCookingday;
+export default NoTimeForCookingDay;
