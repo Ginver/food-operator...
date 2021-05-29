@@ -4,7 +4,6 @@ import Balancemeal from "./Balancemeal";
 
 function BalanceMealList({mealListData}) {
     const nutrients = mealListData.nutrients;
-    // console.log(nutrients)
 
     return (
         <main className="balance-main">

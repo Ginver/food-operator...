@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './MealData.css';
 
 const apiKey = process.env.REACT_APP_RECIPE_API_KEY
 

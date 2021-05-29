@@ -10,7 +10,6 @@ import './BalanceDay.css';
 
 const apiKey = process.env.REACT_APP_RECIPE_API_KEY
 
-
 function BalanceDay() {
     const { user } = useContext(UserContext);
     console.log(user)

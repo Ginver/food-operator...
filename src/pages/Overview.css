@@ -15,11 +15,9 @@
     height: 250px;
     margin: 15px;
     cursor: pointer;
-
 }
 
 .balance-button {
-    /*background-color: #657F92;*/
     background: url("../assets/balance.jpg");
 }
 

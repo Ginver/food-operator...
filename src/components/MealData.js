@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './MealData.css';
 
 const apiKey = process.env.REACT_APP_RECIPE_API_KEY
 
@@ -14,19 +13,14 @@ function MealData({result}) {
 
     useEffect (() => {
         async function fetchMeal() {
-            // console.log("wat is fetchMeal:", fetchMeal)
             setError(false);
             toggleLoading(true);
 
             try {
                 const responseMeal = await axios.get(`https://api.spoonacular.com/recipes/${result.id}/information?apiKey=${apiKey}&includeNutrition=true`);
-                // console.log('Wat is responseMeal?', responseMeal.data);
                 setMealData(responseMeal.data);
-                console.log("Wat is setMealData?", responseMeal.data)
                 setImageUrl(responseMeal.data.image);
-                // console.log(setImageUrl)
-                setCaloricBreakdown(responseMeal.data.nutrition.caloricBreakdown);
-                // console.log(responseMeal.data.nutrition.caloricBreakdown);
+                 setCaloricBreakdown(responseMeal.data.nutrition.caloricBreakdown);
 
                 toggleLoading(false);
 

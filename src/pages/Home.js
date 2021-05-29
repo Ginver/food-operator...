@@ -1,10 +1,10 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import CategoryIntro from "../components/CategoryIntro";
-import balance from "../assets/balance.jpg";
-import workout from "../assets/yoga.jpg";
-import clock from "../assets/clock.jpg";
-import comfort from "../assets/comfort.jpg";
+import balance from "../assets/balance_shade.jpg";
+import workout from "../assets/yoga_shade.jpg";
+import clock from "../assets/clock_shade.jpg";
+import comfort from "../assets/comfort_shade.jpg";
 import "./Home.css";
 
 function Home() {

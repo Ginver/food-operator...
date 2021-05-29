@@ -49,7 +49,7 @@ function Header() {
                     <div>
                     <button onClick={handleToggle}>
                         {navbarOpen ? (
-                            <MdClose style={{ color: "#68530E", width: "40px", height: "40px" }} />
+                            <FiMenu style={{ color: "#68530E", width: "40px", height: "40px" }} />
                         ) : (
                             <FiMenu style={{ color: "#68530E", width: "40px", height: "40px" }} />
                         )}
@@ -63,9 +63,9 @@ function Header() {
                                 <li onClick={() => closeMenu()}>
                                     <button onClick={handleToggle}>
                                     {navbarOpen ? (
-                                        <MdClose style={{ color: "#68530E", width: "40px", height: "40px" }} />
+                                        <MdClose style={{ color: "#68530E", width: "30px", height: "30px" }} />
                                     ) : (
-                                        <FiMenu style={{ color: "#68530E", width: "40px", height: "40px" }} />
+                                        <FiMenu style={{ color: "#68530E", width: "30px", height: "30px" }} />
                                     )}
                                     </button>
                                 </li>

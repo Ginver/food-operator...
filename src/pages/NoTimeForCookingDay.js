@@ -39,7 +39,6 @@ function NoTimeForCookingDay() {
 
         try {
             const resultNotime = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&type=${dishTypes}&number=3&maxReadyTime=${minutes}&diet=${diet}&sort=random`);
-            // console.log("Wat is resultNotime?", resultNotime);
             setNoTimeMealData(resultNotime.data);
             setTotalResults(resultNotime.data.totalResults);
 
