@@ -10,7 +10,6 @@ import './BalanceDay.css';
 
 const apiKey = process.env.REACT_APP_RECIPE_API_KEY
 
-
 function BalanceDay() {
     const { user } = useContext(UserContext);
     console.log(user)
@@ -57,6 +56,19 @@ function BalanceDay() {
     return (
         <div className="balance-container">
 
+            {user !== null &&
+            <div className="overview-btn">
+                <button
+                    className="overview-button"
+                    type="button"
+                    onClick={() => history.push('/overview')}
+                >
+                    back to overview
+                </button>
+            </div>
+            }
+
+            {user === null &&
             <div className="overview-btn">
                 <button
                     className="overview-button"
@@ -66,22 +78,11 @@ function BalanceDay() {
                     back to home
                 </button>
             </div>
+            }
 
             <PageHeader picture={balance} title="balance day"/>
 
             <div className="balance-content">
-
-                <table className="tableOfCalory">
-                    <tr><td></td><td>age</td><td>office job</td><td>moderate active</td><td>active</td></tr>
-                    <tr><td>female</td><td>14-18</td><td>1800</td><td>2000</td><td>2400</td></tr>
-                    <tr><td>female</td><td>19-30</td><td>2000</td><td>2000-2200</td><td>2400</td></tr>
-                    <tr><td>female</td><td>age: 31-50</td><td>1800</td><td>2000</td><td>2200</td></tr>
-                    <tr><td>female</td><td>age: 51+</td><td>1600</td><td>1800</td><td>2000-2200</td></tr>
-                    <tr><td>male</td><td>age: 14-18</td><td>2200</td><td>2400-2800</td><td>2800-3200</td></tr>
-                    <tr><td>male</td><td>age: 19-30</td><td>2400</td><td>2600-2800</td><td>2800-3000</td></tr>
-                    <tr><td>male</td><td>age: 31-50</td><td>2200</td><td>2400-2600</td><td>2800-3000</td></tr>
-                    <tr><td>male</td><td>age: 51+</td><td>2000</td><td>2200-2400</td><td>2400-2800</td></tr>
-                </table>
 
                 <input
                     type="text"
@@ -91,7 +92,7 @@ function BalanceDay() {
                 />
             </div>
 
-            <DietVariations setDiettype={setDiet}/>
+            <DietVariations setDietType={setDiet}/>
 
             <div className="showRec-cont">
                 <button
@@ -126,15 +127,30 @@ function BalanceDay() {
                 </>
             }
 
-                <div className="overview-btn">
-                    <button
-                        className="overview-button"
-                        type="button"
-                        onClick={() => history.push('/')}
-                    >
-                        back to home
-                    </button>
-                </div>
+            {user !== null &&
+            <div className="overview-btn">
+                <button
+                    className="overview-button"
+                    type="button"
+                    onClick={() => history.push('/overview')}
+                >
+                    back to overview
+                </button>
+            </div>
+            }
+
+            {user === null &&
+            <div className="overview-btn">
+                <button
+                    className="overview-button"
+                    type="button"
+                    onClick={() => history.push('/')}
+                >
+                    back to home
+                </button>
+            </div>
+            }
+
         </div>
     )
 };

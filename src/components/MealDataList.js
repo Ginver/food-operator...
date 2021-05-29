@@ -2,7 +2,6 @@ import React from 'react';
 import MealData from './MealData';
 
 function MealDataList({meallistData}) {
-    // console.log("meallistData?", meallistData);
 
     return (
         <main>

@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import './DishTypes.css';
 
-
 function DishTypes({ setTypeOfDish }) {
-    const [dish, setDish] = useState('');
 
     return (
         <main className="dish-types">
@@ -13,7 +11,7 @@ function DishTypes({ setTypeOfDish }) {
                     <input className="dish-radio"
                            type="radio"
                            name="dish-radio"
-                           value={dish}
+                           value='breakfast'
                            onChange={() => setTypeOfDish('breakfast')}
                     />
                     <label className="dish-label">breakfast</label>
@@ -22,7 +20,7 @@ function DishTypes({ setTypeOfDish }) {
                     <input className="dish-radio"
                            type="radio"
                            name="dish-radio"
-                           value={dish}
+                           value='soup'
                            onChange={() => setTypeOfDish('soup')}
                     />
                     <label className="dish-label">soup</label>
@@ -31,7 +29,7 @@ function DishTypes({ setTypeOfDish }) {
                     <input className="dish-radio"
                            type="radio"
                            name="dish-radio"
-                           value={dish}
+                           value='main course'
                            onChange={() => setTypeOfDish('main course')}
                     />
                     <label className="dish-label">main course</label>
@@ -40,7 +38,7 @@ function DishTypes({ setTypeOfDish }) {
                     <input className="dish-radio"
                        type="radio"
                        name="dish-radio"
-                       value={dish}
+                       value='salad'
                        onChange={() => setTypeOfDish('salad')}
                     />
                 <label className="dish-label">salad</label>
@@ -49,7 +47,7 @@ function DishTypes({ setTypeOfDish }) {
                     <input className="dish-radio"
                        type="radio"
                        name="dish-radio"
-                       value={dish}
+                       value='dessert'
                        onChange={() => setTypeOfDish('dessert')}
                     />
                     <label className="dish-label">dessert</label>
