@@ -21,8 +21,7 @@ Nep database server:
 https://github.com/hogeschoolnovi/frontend-fake-server.git
 
 API-key 
-Eigen API-key bij Spoonacular. Je moet jezelf aan te melden bij Spoonacular.
-
+Eigen API-key bij Spoonacular. Je moet jezelf aan te melden bij https://spoonacular.com/food-api  Spoonacular.
 ## Stappenplan
 
 Het project is opgezet met Create React App.
