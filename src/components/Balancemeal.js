@@ -20,8 +20,7 @@ function Balancemeal({meal}) {
 
             try {
                 const responseBalance = await axios.get(`https://api.spoonacular.com/recipes/${meal.id}/information?apiKey=${apiKey}&includeNutrition=true`);
-
-                console.log('Wat is responseBalance?', responseBalance.data);
+                // console.log('Wat is responseBalance?', responseBalance.data);
                 setImageUrl(responseBalance.data.image);
                 setDietTypes(responseBalance.data.diets);
                 // console.log("Wat is setDietTypes?", setDietTypes)
