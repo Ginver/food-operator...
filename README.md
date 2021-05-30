@@ -61,7 +61,7 @@ React zal dan automatisch vragen om dat project op een andere port te draaien.
 API-key
 Om deze app te kunnen gebruiken, heb je een API-key nodig. 
 Deze kun je gemakkelijk verkrijgen door jezelf aan te melden bij Spoonacular. 
-Doe dat via de volgende link.
+Doe dat via de volgende link: https://spoonacular.com/food-api
 
 ## Met welke gegevens er ingelogd kan worden of kan de gebruiker een nieuwe account registreren?
 
