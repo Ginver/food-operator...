@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import axios from "axios";
 import './SignUp.css';
 import InputField from "../components/InputField";
+import Buttons from "../components/Buttons";
 
 function SignUp() {
     const [registerSuccess, toggleRegisterSuccess] = useState(false);
@@ -49,6 +50,7 @@ function SignUp() {
             <div className="signUp-container">
                 <h1>sign up form</h1>
                 <div className="signUp-form">
+
                 <form onSubmit={handleSubmit(onSubmit)}>
 
                     <InputField
@@ -126,14 +128,18 @@ function SignUp() {
                                     },
                                 )}
                     />
-                    {errors.username && <p className="error-msg">{errors.username.message}</p>}
+                    {errors.password && <p className="error-msg">{errors.password.message}</p>}
 
-                    <button
-                        className="action-button"
-                        type="submit"
-                    >
-                        sign up
-                    </button>
+                  <Buttons
+                      label="sign up"
+                  />
+
+                    {/*<button*/}
+                    {/*    className="action-button"*/}
+                    {/*    type="submit"*/}
+                    {/*>*/}
+                    {/*    sign up*/}
+                    {/*</button>*/}
 
                     {registerSuccess && <p className="error-msg">Registration was successful, please log in!</p>}
 

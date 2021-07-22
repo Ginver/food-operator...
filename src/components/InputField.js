@@ -1,7 +1,7 @@
 import React  from "react";
 import './InputField.css';
 
-function InputField({ label, type, id, name, placeholder }) {
+function InputField({ register, label, type, id, name, placeholder }) {
 
  return (
      <>
@@ -12,6 +12,8 @@ function InputField({ label, type, id, name, placeholder }) {
             id={id}
             name={name}
             placeholder={placeholder}
+            register={register}
+
         />
     </div>
      </>
