@@ -1,13 +1,15 @@
 import React from 'react';
 import './Buttons.css';
 
-function Buttons({label, type}) {
+
+function Buttons({onClick, label, type}) {
 
     return (
         <>
         <button className="action-button">
-           {label}
-            {type}
+           type={type}
+            {onClick}
+            {label}
         </button>
         </>
     )

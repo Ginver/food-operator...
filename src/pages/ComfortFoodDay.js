@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import PageHeader from "../components/PageHeader";
 import comfort from "../assets/comfort.jpg";
 import "./ComfortFoodDay.css";
+import ShowRecBtn from "../components/ShowRecBtn";
 
 const apiKey = process.env.REACT_APP_RECIPE_API_KEY
 
@@ -80,15 +81,16 @@ function ComfortFoodDay() {
 
             <div className="showRec-cont">
 
-                <button
-                    className="recipes-button"
-                    onClick={getComfortMealData}
-                >
-                    show recipes
-                </button>
-                <h6>* if you don't like these recipes, hit the button again!</h6>
+                <ShowRecBtn showGetMealData={getComfortMealData}/>
+                {/*<button*/}
+                {/*    className="recipes-button"*/}
+                {/*    onClick={getComfortMealData}*/}
+                {/*>*/}
+                {/*    show recipes*/}
+                {/*</button>*/}
+                {/*<h6>* if you don't like these recipes, hit the button again!</h6>*/}
 
-                <p>there are <strong>{totalResults}</strong> results:</p>
+                <p>there are <strong>{totalResults}</strong> results</p>
 
             </div>
 

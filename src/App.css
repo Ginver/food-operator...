@@ -43,23 +43,6 @@ body {
     font-size: 17px;
 }
 
-.recipes-button {
-    border: 3px solid #EEEDDD;
-    background-color: #a0ab39;
-    color: #fbf9fb;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 27px;
-    cursor: pointer;
-    border-radius: 30px;
-}
-
-.action-button:hover, .recipes-button:hover {
-    font-size: 23px;
-}
-
 /*meal cards*/
 .meal-cards {
     display: flex;

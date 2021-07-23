@@ -6,6 +6,7 @@ import workout from "../assets/yoga_shade.jpg";
 import clock from "../assets/clock_shade.jpg";
 import comfort from "../assets/comfort_shade.jpg";
 import "./Home.css";
+import Buttons from "../components/Buttons";
 
 function Home() {
 
@@ -31,18 +32,28 @@ function Home() {
                     <div className="see-more-unit">
                         <h3>sign up to see more!</h3>
                         <div className="home-button">
-                            <button className="action-button"
-                                    type="button"
-                                    onClick={() => history.push('/signin')}
-                            >
-                                sign in
-                            </button>
-                            <button className="action-button"
-                                    type="button"
-                                    onClick={() => history.push('/signup')}
-                            >
-                                sign up
-                            </button>
+
+                            <Buttons
+                                label="sign in"
+                                onClick={() => history.push('/signin')}
+                                />
+
+                            <Buttons
+                                label="sign up"
+                                onClick={() => history.push('/signup')}
+                                />
+                            {/*<button className="action-button"*/}
+                            {/*        type="button"*/}
+                            {/*        onClick={() => history.push('/signin')}*/}
+                            {/*>*/}
+                            {/*    sign in*/}
+                            {/*</button>*/}
+                            {/*<button className="action-button"*/}
+                            {/*        type="button"*/}
+                            {/*        onClick={() => history.push('/signup')}*/}
+                            {/*>*/}
+                            {/*    sign up*/}
+                            {/*</button>*/}
                         </div>
                     </div>
 

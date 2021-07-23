@@ -7,6 +7,7 @@ import PageHeader from '../components/PageHeader';
 import balance from "../assets/balance.jpg";
 import { UserContext } from "../context/UserContext";
 import './BalanceDay.css';
+import ShowRecBtn from "../components/ShowRecBtn";
 
 const apiKey = process.env.REACT_APP_RECIPE_API_KEY
 
@@ -94,15 +95,17 @@ function BalanceDay() {
 
             <DietVariations setDietType={setDiet}/>
 
-            <div className="showRec-cont">
-                <button
-                    className="recipes-button"
-                    onClick={getMealData}
-                    >
-                    show recipes
-                </button>
-                <h6>* if you don't like these recipes, hit the button again!</h6>
-            </div>
+            <ShowRecBtn showGetMealData={getMealData}/>
+
+            {/*<div className="showRec-cont">*/}
+            {/*    <button*/}
+            {/*        className="recipes-button"*/}
+            {/*        onClick={getMealData}*/}
+            {/*        >*/}
+            {/*        show recipes*/}
+            {/*    </button>*/}
+            {/*    <h6>* if you don't like these recipes, hit the button again!</h6>*/}
+            {/*</div>*/}
 
             {mealData && <BalanceMealList mealListData={mealData}/>}
 

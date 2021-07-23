@@ -1,7 +1,11 @@
 import React  from "react";
 import './InputField.css';
-
-function InputField({ register, label, type, id, name, placeholder }) {
+// import { useForm } from 'react-hook-form';
+//
+// const { handleSubmit, register,  formState: { errors } } = useForm({
+//     mode: 'onchange'
+// });
+function InputField({ onSubmit, register, label, type, id, name, placeholder }) {
 
  return (
      <>
@@ -13,6 +17,7 @@ function InputField({ register, label, type, id, name, placeholder }) {
             name={name}
             placeholder={placeholder}
             register={register}
+            onSubmit={onSubmit}
 
         />
     </div>
