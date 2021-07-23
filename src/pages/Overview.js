@@ -7,11 +7,9 @@ import workout from "../assets/yoga.jpg";
 import comfort from "../assets/comfort.jpg";
 import clock from "../assets/clock.jpg";
 
-
 function Overview() {
     const { user } = useContext(UserContext);
     console.log(user);
-
 
     return (
         <>
@@ -29,14 +27,12 @@ function Overview() {
                     info="How much protein do I actually need after my workout? Plan your meals based on the protein, fat and carbs you need."
                     url="/workoutday"
                 />
-
                 <CategoryIntro
                     picture={clock}
                     title="no-time-for-cooking day"
                     info="After a long day at the office you wanna cook something quickly. Plan your meal based on the time you actually got."
                     url="/notimeforcookingday"
                 />
-
                 <CategoryIntro
                     picture={comfort}
                     title="comfort-food day"
@@ -45,7 +41,7 @@ function Overview() {
                 />
                 </main>
         </>
-    );
-}
+    )
+};
 
 export default Overview;

@@ -37,7 +37,7 @@ function Header() {
                                onClick={() => history.push('/overview')}
                             >hello<strong> {user && user.username}</strong>!</p>
                                 <Link className="logout-link"
-                                      type="button"
+                                      // type="button"
                                       onClick={logoutFunc}
                                 >
                                     log out
