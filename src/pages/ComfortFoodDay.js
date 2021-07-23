@@ -79,9 +79,9 @@ function ComfortFoodDay() {
             </div>
 
 
-            <div className="showRec-cont">
+            <ShowRecBtn showGetMealData={getComfortMealData}
+                results={totalResults}/>
 
-                <ShowRecBtn showGetMealData={getComfortMealData}/>
                 {/*<button*/}
                 {/*    className="recipes-button"*/}
                 {/*    onClick={getComfortMealData}*/}
@@ -90,9 +90,7 @@ function ComfortFoodDay() {
                 {/*</button>*/}
                 {/*<h6>* if you don't like these recipes, hit the button again!</h6>*/}
 
-                <p>there are <strong>{totalResults}</strong> results</p>
-
-            </div>
+                {/*<p>there are <strong>{totalResults}</strong> results</p>*/}
 
             {comfortDayMeal && <MealDataList meallistData={comfortDayMeal}/>}
 

@@ -41,8 +41,7 @@ function BalanceDay() {
 
         try {
             const result = await axios.get(`https://api.spoonacular.com/mealplanner/generate?apiKey=${apiKey}&timeFrame=day&targetCalories=${calories}&diet=${diet}`);
-            // console.log('Wat is result?', result);
-            // console.log('Wat is result.data?', result.data);
+            console.log(result.data);
             setMealData(result.data);
 
             toggleLoading(false);

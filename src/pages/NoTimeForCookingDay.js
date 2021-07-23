@@ -82,21 +82,8 @@ function NoTimeForCookingDay() {
 
             <DishTypes setTypeOfDish={setDishTypes}/>
 
-            <div className="showRec-cont">
-
-                <ShowRecBtn showGetMealData={getNoTimeData}/>
-                
-                {/*<button*/}
-                {/*    className="recipes-button"*/}
-                {/*    onClick={getNoTimeData}*/}
-                {/*>*/}
-                {/*    show recipes*/}
-                {/*</button>*/}
-                {/*<h6>* if you don't like these recipes, hit the button again!</h6>*/}
-
-                <p>there are <strong>{totalResults}</strong> results</p>
-
-            </div>
+            <ShowRecBtn showGetMealData={getNoTimeData}
+                results={totalResults}/>
 
             {noTimeMealData && <MealDataList meallistData={noTimeMealData}/>}
 

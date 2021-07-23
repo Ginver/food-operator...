@@ -116,20 +116,9 @@ function WorkoutDay() {
 
             <DishTypes setTypeOfDish={setDishTypes}/>
 
-            <div className="showRec-cont">
-
-                <ShowRecBtn showGetMealData={getWorkoutMealData}/>
-
-                {/*<button*/}
-                {/*    className="recipes-button"*/}
-                {/*    onClick={getWorkoutMealData}*/}
-                {/*>*/}
-                {/*    show recipes*/}
-                {/*</button>*/}
-                {/*<h6>* if you don't like these recipes, hit the button again!</h6>*/}
-
-                <p>there are <strong>{totalResults}</strong> results</p>
-            </div>
+                <ShowRecBtn
+                    showGetMealData={getWorkoutMealData}
+                    results={totalResults}/>
 
             {workoutDayMeal && <MealDataList meallistData={workoutDayMeal}/>}
 

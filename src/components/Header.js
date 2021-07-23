@@ -81,7 +81,7 @@ function Header() {
                                 <li>
                                     <NavLink exact to="/balanceday" activeClassName="active-link" onClick={() => closeMenu()}>balance day</NavLink>
                                 </li>
-                                {user !== null &&
+                                {/*{user !== null &&*/}
                                     <>
                                         <li>
                                             <NavLink exact to="/workoutday" activeClassName="active-link" onClick={() => closeMenu()}>work-out day</NavLink>
@@ -96,7 +96,7 @@ function Header() {
                                             <NavLink exact to="/overview" activeClassName="active-link" onClick={() => closeMenu()}>overview</NavLink>
                                         </li>
                                     </>
-                                }
+                                {/*}*/}
                                 <li>
                                     <NavLink exact to="/aboutus" activeClassName="active-link" onClick={() => closeMenu()}>about us</NavLink>
                                 </li>
