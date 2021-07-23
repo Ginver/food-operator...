@@ -8,6 +8,7 @@ import balance from "../assets/balance.jpg";
 import { UserContext } from "../context/UserContext";
 import './BalanceDay.css';
 import ShowRecBtn from "../components/ShowRecBtn";
+import BackToBtn from "../components/BackToBtn";
 
 const apiKey = process.env.REACT_APP_RECIPE_API_KEY
 
@@ -57,27 +58,15 @@ function BalanceDay() {
         <div className="balance-container">
 
             {user !== null &&
-            <div className="overview-btn">
-                <button
-                    className="overview-button"
-                    type="button"
-                    onClick={() => history.push('/overview')}
-                >
-                    back to overview
-                </button>
-            </div>
+                <div className="overview-btn">
+                    <BackToBtn className="overview-button" label="back to overview" path="/overview"/>
+                </div>
             }
 
             {user === null &&
-            <div className="overview-btn">
-                <button
-                    className="overview-button"
-                    type="button"
-                    onClick={() => history.push('/')}
-                >
-                    back to home
-                </button>
-            </div>
+                <div className="overview-btn">
+                    <BackToBtn className="overview-button" label="back to home" path="/"/>
+                </div>
             }
 
             <PageHeader picture={balance} title="balance day"/>
@@ -96,16 +85,6 @@ function BalanceDay() {
 
             <ShowRecBtn showGetMealData={getMealData}/>
 
-            {/*<div className="showRec-cont">*/}
-            {/*    <button*/}
-            {/*        className="recipes-button"*/}
-            {/*        onClick={getMealData}*/}
-            {/*        >*/}
-            {/*        show recipes*/}
-            {/*    </button>*/}
-            {/*    <h6>* if you don't like these recipes, hit the button again!</h6>*/}
-            {/*</div>*/}
-
             {mealData && <BalanceMealList mealListData={mealData}/>}
 
             {error && (<span className="error-msg">Oops, something went wrong!</span>)}
@@ -116,41 +95,23 @@ function BalanceDay() {
                 <>
                     <div className="see-more-unit">
                         <h3>sign up to see more!</h3>
-                        <div className="home-button">
-                            <button
-                                className="action-button"
-                                type="button"
-                                onClick={() => history.push('/signup')}
-                            >
-                                sign up
-                            </button>
+                        <div>
+                            <BackToBtn label="sign up" path="/signup"/>
                         </div>
                     </div>
                 </>
             }
 
             {user !== null &&
-            <div className="overview-btn">
-                <button
-                    className="overview-button"
-                    type="button"
-                    onClick={() => history.push('/overview')}
-                >
-                    back to overview
-                </button>
-            </div>
+                <div className="overview-btn">
+                    <BackToBtn className="overview-button" label="back to overview" path="/overview"/>
+                 </div>
             }
 
             {user === null &&
-            <div className="overview-btn">
-                <button
-                    className="overview-button"
-                    type="button"
-                    onClick={() => history.push('/')}
-                >
-                    back to home
-                </button>
-            </div>
+                <div className="overview-btn">
+                    <BackToBtn className="overview-button" label="back to home" path="/"/>
+                </div>
             }
 
         </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import "./AboutUs.css";
+import BackToBtn from "../components/BackToBtn";
 
 function AboutUs() {
 

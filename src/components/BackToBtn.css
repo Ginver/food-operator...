@@ -1,0 +1,21 @@
+.overview-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.overview-button {
+    border: 3px solid #EEEDDD;
+    background-color: white;
+    color: #68530E;
+    padding: 3px 8px 3px 8px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.overview-button:hover {
+    font-size: 17px;
+}

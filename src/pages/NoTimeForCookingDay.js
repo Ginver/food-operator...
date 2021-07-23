@@ -8,6 +8,7 @@ import DishTypes from "../components/DishTypes";
 import notime from "../assets/clock.jpg"
 import "./NoTimeForCookingDay.css";
 import ShowRecBtn from "../components/ShowRecBtn";
+import BackToBtn from "../components/BackToBtn";
 
 const apiKey = process.env.REACT_APP_RECIPE_API_KEY
 
@@ -56,13 +57,7 @@ function NoTimeForCookingDay() {
         <div className="no-time-container">
 
             <div className="overview-btn">
-                <button
-                    className="overview-button"
-                    type="button"
-                    onClick={() => history.push('/overview')}
-                >
-                    back to overview
-                </button>
+                <BackToBtn className="overview-button" label="back to overview" path="/overview"/>
             </div>
 
             <PageHeader picture={notime} title="no-time-for-cooking day" />
@@ -91,15 +86,8 @@ function NoTimeForCookingDay() {
             {loading && (<span className="loading-balance">Loading...</span>)}
 
             <div className="overview-btn">
-                <button
-                    className="overview-button"
-                    type="button"
-                    onClick={() => history.push('/overview')}
-                >
-                    back to overview
-                </button>
+                <BackToBtn className="overview-button" label="back to overview" path="/overview"/>
             </div>
-
         </div>
     )
 }

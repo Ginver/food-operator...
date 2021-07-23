@@ -4,6 +4,7 @@ import axios from "axios";
 import { UserContext } from "../context/UserContext";
 import "./SignIn.css";
 import InputField from "../components/InputField";
+import SubmitButtons from "../components/SubmitButtons";
 
 function SignIn() {
     const { loginFunc } = useContext(UserContext);
@@ -111,12 +112,14 @@ function SignIn() {
                         {/*</label>*/}
                         {/*{errors.username && <p className="error-msg">{errors.username.message}</p>}*/}
 
-                        <button
-                            className="action-button"
-                            type="submit"
-                        >
-                            sign in
-                        </button>
+                        <SubmitButtons label="sign in" type="submit"/>
+
+                        {/*<button*/}
+                        {/*    className="action-button"*/}
+                        {/*    type="submit"*/}
+                        {/*>*/}
+                        {/*    sign in*/}
+                        {/*</button>*/}
 
                         {error && (<span className="error-msg">Oops, something went wrong, please check your email and password!</span>)}
                         {loading && (<span>Loading...</span>)}

@@ -4,7 +4,8 @@ import { useForm } from 'react-hook-form';
 import axios from "axios";
 import './SignUp.css';
 import InputField from "../components/InputField";
-import Buttons from "../components/Buttons";
+import SubmitButtons from "../components/SubmitButtons";
+import BackToBtn from "../components/BackToBtn";
 
 function SignUp() {
     const [registerSuccess, toggleRegisterSuccess] = useState(false);
@@ -59,7 +60,7 @@ function SignUp() {
                         id="input-field"
                         name="firstname"
                         placeholder="Hilda"
-                                {...register("firstname", {
+                        {...register("firstname", {
                                     required: {
                                         value: true,
                                         message: 'This field should not be empty',
@@ -80,7 +81,7 @@ function SignUp() {
                                         message: 'This field should not be empty',
                                     },
                                 })}
-                            />
+                    />
                     {errors.lastname && <p className="error-msg">{errors.lastname.message}</p>}
 
                     <InputField
@@ -104,7 +105,7 @@ function SignUp() {
                         id="input-field"
                         name="username"
                         placeholder="Hildafro"
-                                {...register("username", {
+                        {...register("username", {
                                     required: {
                                         value: true,
                                         message: 'This field should not be left empty'
@@ -130,9 +131,7 @@ function SignUp() {
                     />
                     {errors.password && <p className="error-msg">{errors.password.message}</p>}
 
-                  <Buttons
-                      label="sign up"
-                  />
+                  <SubmitButtons label="sign up" type="submit"/>
 
                     {/*<button*/}
                     {/*    className="action-button"*/}
@@ -151,18 +150,10 @@ function SignUp() {
 
                 <div className="signUp-rerouting-form">
                 <p>already have an account? go to
-                    <button className="action-button"
-                            type="button"
-                            onClick={() => history.push('/signin')}
-                    >
-                    sign in
-                    </button> or go back to
-                    <button className="action-button"
-                            type="button"
-                            onClick={() => history.push('/')}
-                    >
-                        home
-                    </button></p>
+                    <BackToBtn label="sign in" path='/signin'/>
+                or go back to
+                    <BackToBtn label="home" path='/'/>
+                </p>
                 </div>
             </div>
         </>

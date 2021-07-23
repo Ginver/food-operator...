@@ -7,6 +7,7 @@ import PageHeader from "../components/PageHeader";
 import comfort from "../assets/comfort.jpg";
 import "./ComfortFoodDay.css";
 import ShowRecBtn from "../components/ShowRecBtn";
+import BackToBtn from "../components/BackToBtn";
 
 const apiKey = process.env.REACT_APP_RECIPE_API_KEY
 
@@ -47,13 +48,7 @@ function ComfortFoodDay() {
         <div className="comfort-container">
 
             <div className="overview-btn">
-                <button
-                    className="overview-button"
-                    type="button"
-                    onClick={() => history.push('/overview')}
-                >
-                    back to overview
-                </button>
+                <BackToBtn className="overview-button" label="back to overview" path="/overview"/>
             </div>
 
             <PageHeader picture={comfort} title="comfort-food day"/>
@@ -78,19 +73,7 @@ function ComfortFoodDay() {
                 <label htmlFor="dessert-checkbox">show only desserts</label>
             </div>
 
-
-            <ShowRecBtn showGetMealData={getComfortMealData}
-                results={totalResults}/>
-
-                {/*<button*/}
-                {/*    className="recipes-button"*/}
-                {/*    onClick={getComfortMealData}*/}
-                {/*>*/}
-                {/*    show recipes*/}
-                {/*</button>*/}
-                {/*<h6>* if you don't like these recipes, hit the button again!</h6>*/}
-
-                {/*<p>there are <strong>{totalResults}</strong> results</p>*/}
+            <ShowRecBtn showGetMealData={getComfortMealData} results={totalResults}/>
 
             {comfortDayMeal && <MealDataList meallistData={comfortDayMeal}/>}
 
@@ -98,13 +81,7 @@ function ComfortFoodDay() {
             {loading && (<span className="loading-balance">Loading...</span>)}
 
             <div className="overview-btn">
-                <button
-                    className="overview-button"
-                    type="button"
-                    onClick={() => history.push('/overview')}
-                >
-                    back to overview
-                </button>
+                <BackToBtn className="overview-button" label="back to overview" path="/overview"/>
             </div>
         </div>
     )
