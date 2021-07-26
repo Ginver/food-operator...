@@ -7,7 +7,7 @@ function Footer() {
 
     return (
         <>
-            <div className="footer-container">
+            <footer className="footer-container">
 
                 <form className="footer-form">
 
@@ -41,7 +41,7 @@ function Footer() {
                     <p>Contact: <br /> Gigi Lukacs <br />1034LJ Amsterdam <br />  Bramzeilhof 66 <br /> gy.lakilukacs@gmail.com</p>
                 </div>
 
-            </div>
+            </footer>
         </>
     )
 };

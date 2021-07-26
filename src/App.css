@@ -19,75 +19,6 @@ body {
     justify-content: center;
 }
 
-.action-button {
-    border: 3px solid #EEEDDD;
-    background-color: white;
-    color: #68530E;
-    padding: 3px 8px 3px 8px;
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-    cursor: pointer;
-    margin: 10px 0 10px 10px;
-}
-
-.overview-btn {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.overview-button {
-    border: 3px solid #EEEDDD;
-    background-color: white;
-    color: #68530E;
-    padding: 3px 8px 3px 8px;
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
-    cursor: pointer;
-    margin: 10px;
-}
-
-.overview-button:hover {
-    font-size: 17px;
-}
-
-.recipes-button {
-    border: 3px solid #EEEDDD;
-    background-color: #a0ab39;
-    color: #fbf9fb;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 27px;
-    cursor: pointer;
-    border-radius: 30px;
-}
-
-.action-button:hover, .recipes-button:hover {
-    font-size: 23px;
-}
-
-input {
-    border: 2px solid #EEEDDD;
-    background-color: white;
-    color: #68530E;
-    padding: 3px 8px 3px 8px;
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 15px;
-    cursor: pointer;
-    margin: 10px;
-}
-
-input:hover {
-    border: 3px solid #a0ab39;
-}
-
 /*meal cards*/
 .meal-cards {
     display: flex;
@@ -162,4 +93,21 @@ h6 {
 
 .error-msg {
     color: red;
+}
+
+input {
+    border: 2px solid #EEEDDD;
+    background-color: white;
+    color: #68530E;
+    padding: 3px 8px 3px 8px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+input:hover {
+    border: 3px solid #a0ab39;
 }

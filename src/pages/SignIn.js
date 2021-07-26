@@ -3,10 +3,10 @@ import { useForm } from 'react-hook-form';
 import axios from "axios";
 import { UserContext } from "../context/UserContext";
 import "./SignIn.css";
+import SubmitButtons from "../components/SubmitButtons";
 
 function SignIn() {
     const { loginFunc } = useContext(UserContext);
-
     const [error, setError] = useState(false);
     const [loading, toggleLoading] = useState(false);
 
@@ -18,12 +18,11 @@ function SignIn() {
         toggleLoading(true);
 
         try {
-            const result = await axios.post('http://localhost:3000/signin', data);
+            const result = await axios.post('https://polar-lake-14365.herokuapp.com/api/auth/signin', data);
             // console.log(result.data.accessToken);
-
             loginFunc(result.data.accessToken);
-
             toggleLoading(false);
+            localStorage.setItem('token', result.data.accessToken)
 
         } catch(e) {
             console.error(e)
@@ -35,28 +34,26 @@ function SignIn() {
     return (
         <>
             <div className="signIn-container">
-
                 <h1>sign in form</h1>
-
                 <div className="signIn-form">
-
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <label htmlFor="email-field">
-                            email
+
+                        <label htmlFor="username-field">
+                            username
                             <input
-                                type="email"
-                                id="email-field"
-                                name="email"
-                                placeholder="jip.morsink@gmail.com"
-                                {...register("email", {
-                                        required: true,
-                                        validate: (value) => value.includes('@'),
-                                        message: 'A valid email address should contain @',
+                                type="text"
+                                id="username-field"
+                                name="username"
+                                placeholder="username"
+                                {...register("username", {
+                                    required: {
+                                        value: true,
+                                        message: 'This field should not be left empty'
                                     },
-                                )}
+                                })}
                             />
                         </label>
-                        {errors.email && <p className="error-msg">{errors.email.message}</p>}
+                        {errors.username && <p className="error-msg">{errors.username.message}</p>}
 
                         <label htmlFor="password-field">
                             password
@@ -77,12 +74,7 @@ function SignIn() {
                         </label>
                         {errors.username && <p className="error-msg">{errors.username.message}</p>}
 
-                        <button
-                            className="action-button"
-                            type="submit"
-                        >
-                            sign in
-                        </button>
+                        <SubmitButtons label="sign in"/>
 
                         {error && (<span className="error-msg">Oops, something went wrong, please check your email and password!</span>)}
                         {loading && (<span>Loading...</span>)}

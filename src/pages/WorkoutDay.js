@@ -8,6 +8,8 @@ import PageHeader from '../components/PageHeader';
 import DishTypes from "../components/DishTypes";
 import workout from "../assets/yoga.jpg";
 import "./WorkoutDay.css";
+import ShowRecBtn from "../components/ShowRecBtn";
+import BackToBtn from "../components/BackToBtn";
 
 const apiKey = process.env.REACT_APP_RECIPE_API_KEY
 
@@ -68,13 +70,7 @@ function WorkoutDay() {
         <div className="workout-container">
 
             <div className="overview-btn">
-                <button
-                    className="overview-button"
-                    type="button"
-                    onClick={() => history.push('/overview')}
-                >
-                    back to overview
-                </button>
+                <BackToBtn className="overview-button" label="back to overview" path="/overview"/>
             </div>
 
             <PageHeader picture={workout} title="work-out day"/>
@@ -115,16 +111,9 @@ function WorkoutDay() {
 
             <DishTypes setTypeOfDish={setDishTypes}/>
 
-            <div className="showRec-cont">
-                <button
-                    className="recipes-button"
-                    onClick={getWorkoutMealData}
-                >
-                    show recipes
-                </button>
-                <h6>* if you don't like these recipes, hit the button again!</h6>
-                <p>there are <strong>{totalResults}</strong> results:</p>
-            </div>
+                <ShowRecBtn
+                    showGetMealData={getWorkoutMealData}
+                    results={totalResults}/>
 
             {workoutDayMeal && <MealDataList meallistData={workoutDayMeal}/>}
 
@@ -132,13 +121,7 @@ function WorkoutDay() {
             {loading && (<span className="loading-balance">Loading...</span>)}
 
             <div className="overview-btn">
-                <button
-                    className="overview-button"
-                    type="button"
-                    onClick={() => history.push('/overview')}
-                >
-                    back to overview
-                </button>
+                <BackToBtn className="overview-button" label="back to overview" path="/overview"/>
             </div>
         </div>
     )

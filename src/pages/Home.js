@@ -1,15 +1,16 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import CategoryIntro from "../components/CategoryIntro";
 import balance from "../assets/balance_shade.jpg";
 import workout from "../assets/yoga_shade.jpg";
 import clock from "../assets/clock_shade.jpg";
 import comfort from "../assets/comfort_shade.jpg";
 import "./Home.css";
+import BackToBtn from "../components/BackToBtn";
 
 function Home() {
 
-    const history = useHistory();
+    // const history = useHistory();
 
     return (
         <>
@@ -30,20 +31,8 @@ function Home() {
 
                     <div className="see-more-unit">
                         <h3>sign up to see more!</h3>
-                        <div className="home-button">
-                            <button className="action-button"
-                                    type="button"
-                                    onClick={() => history.push('/signin')}
-                            >
-                                sign in
-                            </button>
-                            <button className="action-button"
-                                    type="button"
-                                    onClick={() => history.push('/signup')}
-                            >
-                                sign up
-                            </button>
-                        </div>
+                        <BackToBtn label="sign in" path='/signin'/>
+                        <BackToBtn label="sign up" path="/signup"/>
                     </div>
 
                     <CategoryIntro

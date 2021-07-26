@@ -7,7 +7,11 @@
 
 .signUp-form {
     width: 330px;
-    margin: 20px auto;
+    margin: 2px auto;
+    display: flex;
+    justify-content: space-between;
+    align-content: stretch;
+    align-items: center;
 }
 
 .signUp-rerouting-form {

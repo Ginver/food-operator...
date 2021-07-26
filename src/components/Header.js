@@ -22,7 +22,7 @@ function Header() {
 
     return (
         <>
-        <main className="header-container">
+        <header className="header-container">
 
             <h4 className="header-appTitle"
                 onClick={() => history.push('/')}
@@ -37,7 +37,7 @@ function Header() {
                                onClick={() => history.push('/overview')}
                             >hello<strong> {user && user.username}</strong>!</p>
                                 <Link className="logout-link"
-                                      type="button"
+                                      // type="button"
                                       onClick={logoutFunc}
                                 >
                                     log out
@@ -103,7 +103,7 @@ function Header() {
                             </ul>
                         </nav>
 
-            </main>
+            </header>
         </>
     )
 };
