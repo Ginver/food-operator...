@@ -13,7 +13,6 @@ function BackToBtn ({label, path}) {
         >
             {label}
         </button>
-
     )
 };
 

@@ -13,14 +13,26 @@ function UserContextProvider({ children }) {
         status: 'pending',
     });
 
-    async function fetchUserData(jwtToken) {
+    useEffect(() => {
+        const token = localStorage.getItem('JWT_token');
 
-        const decoded = jwt_decode(jwtToken)
-        const userId = decoded.sub;
+        if (token !== null && userAuth.user === null) {
+            loginFunction(token)
+        } else {
+            setUserAuth({
+                user: null,
+                status: 'done',
+            });
+        }
+    }, []);
+
+    async function fetchUserData(jwtToken) {
+        const decoded = jwt_decode(jwtToken);
+        console.log('DECODED JWT', decoded);
+        localStorage.setItem('JWT_token', jwtToken);
 
         try {
-            // console.log('hallllloooo!')
-            const result = await axios.get(`http://localhost:3000/600/users/${userId}`, {
+             const result = await axios.get(`https://polar-lake-14365.herokuapp.com/api/user`, {
                 headers: {
                     "Content-Type": "application/json",
                     Authorization: `Bearer ${jwtToken}`,
@@ -58,10 +70,8 @@ function UserContextProvider({ children }) {
     }, []);
 
     async function loginFunction(jwtToken) {
-
         localStorage.setItem('token', jwtToken);
         fetchUserData(jwtToken);
-
         history.push('/overview');
     };
 
@@ -84,7 +94,6 @@ function UserContextProvider({ children }) {
     return (
         <UserContext.Provider value={data}>
             {userAuth.status === 'done' ? children : <p>Loading...</p>}
-            {/*{children}*/}
         </UserContext.Provider>
     );
 }

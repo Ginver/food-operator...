@@ -1,13 +1,13 @@
 import React from 'react';
 import './SubmitButtons.css';
 
-function SubmitButtons({label}) {
+function SubmitButtons({label, onSubmit}) {
 
     return (
         <>
-        <button
-            className="submit-button"
+        <button className="action-button"
             type="submit"
+            onClick={onSubmit}
         >
         {label}
         </button>
