@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import axios from "axios";
 import './SignUp.css';
 import InputField from "../components/InputField";
-import SubmitButtons from "../components/SubmitButtons";
+// import SubmitButtons from "../components/SubmitButtons";
 import BackToBtn from "../components/BackToBtn";
 
 function SignUp() {
@@ -24,7 +24,7 @@ function SignUp() {
         toggleLoading(true);
 
         try {
-            const result = await axios.post('http://localhost:3000/signup',{
+            const result = await axios.post('https://polar-lake-14365.herokuapp.com/api/auth/signup',{
                 firstname: data.firstname,
                 lastname: data.lastname,
                 email: data.email,
@@ -131,14 +131,14 @@ function SignUp() {
                     />
                     {errors.password && <p className="error-msg">{errors.password.message}</p>}
 
-                  <SubmitButtons label="sign up" type="submit"/>
+                  {/*<SubmitButtons label="sign up" type="submit"/>*/}
 
-                    {/*<button*/}
-                    {/*    className="action-button"*/}
-                    {/*    type="submit"*/}
-                    {/*>*/}
-                    {/*    sign up*/}
-                    {/*</button>*/}
+                    <button
+                        className="action-button"
+                        type="submit"
+                    >
+                        sign up
+                    </button>
 
                     {registerSuccess && <p className="error-msg">Registration was successful, please log in!</p>}
 

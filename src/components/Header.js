@@ -22,7 +22,7 @@ function Header() {
 
     return (
         <>
-        <main className="header-container">
+        <header className="header-container">
 
             <h4 className="header-appTitle"
                 onClick={() => history.push('/')}
@@ -103,7 +103,7 @@ function Header() {
                             </ul>
                         </nav>
 
-            </main>
+            </header>
         </>
     )
 };

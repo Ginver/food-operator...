@@ -5,8 +5,11 @@ function SubmitButtons({label}) {
 
     return (
         <>
-        <button className="submit-button">
-            {label}
+        <button
+            className="submit-button"
+            type="submit"
+        >
+        {label}
         </button>
         </>
     )

@@ -20,7 +20,7 @@ function SignIn() {
         toggleLoading(true);
 
         try {
-            const result = await axios.post('http://localhost:3000/signin', data);
+            const result = await axios.post('https://polar-lake-14365.herokuapp.com/api/auth/signin', data);
             // console.log(result.data.accessToken);
 
             loginFunc(result.data.accessToken);
