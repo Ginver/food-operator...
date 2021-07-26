@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
 import ProteinPerKilogram from "../helpers/ProteinPerKilogram";
 import DietVariations from "../components/DietVariations";
 import MealDataList from "../components/MealDataList";
@@ -14,7 +13,6 @@ import BackToBtn from "../components/BackToBtn";
 const apiKey = process.env.REACT_APP_RECIPE_API_KEY
 
 function WorkoutDay() {
-    const history = useHistory();
 
     const [workoutDayMeal, setWorkoutDayMeal] = useState('');
     const [protein, setProtein] = useState(0);

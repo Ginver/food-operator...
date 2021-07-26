@@ -2,7 +2,6 @@ import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import BalanceMealList from "../components/BalanceMealList";
 import DietVariations from "../components/DietVariations";
-import { useHistory } from "react-router-dom";
 import PageHeader from '../components/PageHeader';
 import balance from "../assets/balance.jpg";
 import { UserContext } from "../context/UserContext";
@@ -15,8 +14,6 @@ const apiKey = process.env.REACT_APP_RECIPE_API_KEY
 function BalanceDay() {
     const { user } = useContext(UserContext);
     console.log(user)
-
-    const history = useHistory();
 
     const [mealData, setMealData] = useState(null);
     const [calories, setCalories] = useState(1500);
