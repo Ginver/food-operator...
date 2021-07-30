@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import MealDataList from "../components/MealDataList";
 import DietVariations from "../components/DietVariations";
-import { useHistory } from "react-router-dom";
 import PageHeader from "../components/PageHeader";
 import comfort from "../assets/comfort.jpg";
 import "./ComfortFoodDay.css";
@@ -12,7 +11,6 @@ import BackToBtn from "../components/BackToBtn";
 const apiKey = process.env.REACT_APP_RECIPE_API_KEY
 
 function ComfortFoodDay() {
-    const history = useHistory();
 
     const [comfortDayMeal, setComfortDayMeal] = useState('');
     const [calories, setCalories] = useState('3000')

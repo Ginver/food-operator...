@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import MealDataList from '../components/MealDataList';
 import DietVariations from "../components/DietVariations";
-import { useHistory } from "react-router-dom";
 import PageHeader from '../components/PageHeader';
 import DishTypes from "../components/DishTypes";
 import notime from "../assets/clock.jpg"
@@ -13,7 +12,6 @@ import BackToBtn from "../components/BackToBtn";
 const apiKey = process.env.REACT_APP_RECIPE_API_KEY
 
 function NoTimeForCookingDay() {
-    const history = useHistory();
 
     const [noTimeMealData, setNoTimeMealData] = useState(null);
     const [minutes, setMinutes] = useState(20);

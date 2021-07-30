@@ -1,5 +1,4 @@
 import React from 'react';
-// import { useHistory } from 'react-router-dom';
 import CategoryIntro from "../components/CategoryIntro";
 import balance from "../assets/balance_shade.jpg";
 import workout from "../assets/yoga_shade.jpg";
@@ -9,8 +8,6 @@ import "./Home.css";
 import BackToBtn from "../components/BackToBtn";
 
 function Home() {
-
-    // const history = useHistory();
 
     return (
         <>
