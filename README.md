@@ -69,4 +69,3 @@ React icons library
 Er wordt gebruik gemaakt van de React icons library, die kan je installeren om de volgende in de terminal te typen:
 
 'npm install react-icons'
-![img.png](img.png)
