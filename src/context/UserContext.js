@@ -13,36 +13,35 @@ function UserContextProvider({ children }) {
         status: 'pending',
     });
 
-    useEffect(() => {
-        const token = localStorage.getItem('JWT_token');
 
+    useEffect(() => {
+
+        const token = localStorage.getItem('JWT_token');
         if (token !== null && userAuth.user === null) {
-            loginFunction(token)
+            loginFunc(token)
         } else {
             setUserAuth({
                 user: null,
                 status: 'done',
-            });
+            })
         }
     }, []);
 
-    async function fetchUserData(jwtToken) {
-        const decoded = jwt_decode(jwtToken);
+
+    async function loginFunc(token) {
+        const decoded = jwt_decode(token);
         console.log('DECODED JWT', decoded);
-        localStorage.setItem('JWT_token', jwtToken);
 
         try {
              const result = await axios.get(`https://polar-lake-14365.herokuapp.com/api/user`, {
                 headers: {
                     "Content-Type": "application/json",
-                    Authorization: `Bearer ${jwtToken}`,
+                    "Authorization": `Bearer ` + token,
                 }
             });
 
             setUserAuth({
                 user: {
-                    firstname: result.data.firstname,
-                    lastname: result.data.lastname,
                     email: result.data.email,
                     username: result.data.username,
                     id: result.data.id,
@@ -56,27 +55,7 @@ function UserContextProvider({ children }) {
 
     };
 
-    useEffect(() => {
-
-            const token = localStorage.getItem('token');
-            if (token !== null && userAuth.user === null) {
-                fetchUserData(token);
-            } else {
-                 setUserAuth({
-                    user: null,
-                    status: 'done',
-                })
-        }
-    }, []);
-
-    async function loginFunction(jwtToken) {
-        localStorage.setItem('token', jwtToken);
-        fetchUserData(jwtToken);
-        history.push('/overview');
-    };
-
-    function logoutFunction() {
-        console.log("Logout")
+    function logoutFunc() {
          localStorage.clear();
         setUserAuth ({
             user: null,
@@ -87,8 +66,8 @@ function UserContextProvider({ children }) {
 
     const data = {
         ...userAuth,
-        loginFunc: loginFunction,
-        logoutFunc: logoutFunction,
+        loginFunc,
+        logoutFunc
     }
 
     return (

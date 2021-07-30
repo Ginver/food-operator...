@@ -4,16 +4,17 @@ import axios from "axios";
 import { UserContext } from "../context/UserContext";
 import "./SignIn.css";
 import SubmitButtons from "../components/SubmitButtons";
+import { Redirect } from "react-router-dom";
 
 function SignIn() {
-    const { loginFunc } = useContext(UserContext);
+    const {loginFunc, user} = useContext(UserContext);
     const [error, setError] = useState(false);
     const [loading, toggleLoading] = useState(false);
 
-    const { handleSubmit, register, formState: { errors } } = useForm({mode: "onBlur"});
+    const {handleSubmit, register, formState: {errors}} = useForm({mode: "onBlur"});
 
     async function onSubmit(data) {
-        console.log(data);
+        // console.log(data);
         setError(false);
         toggleLoading(true);
 
@@ -21,15 +22,20 @@ function SignIn() {
             const result = await axios.post('https://polar-lake-14365.herokuapp.com/api/auth/signin', data);
             // console.log(result.data.accessToken);
             loginFunc(result.data.accessToken);
+            localStorage.setItem('JWT_token', result.data.accessToken)
             toggleLoading(false);
-            localStorage.setItem('token', result.data.accessToken)
 
-        } catch(e) {
+        } catch (e) {
             console.error(e)
-            setError(e);
+            setError(e.response.data);
             toggleLoading(false);
         }
     }
+
+    if (user) {
+        return <Redirect to="/overview"/>
+    }
+
 
     return (
         <>
