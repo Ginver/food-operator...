@@ -12,11 +12,11 @@ You can also see how one of the category works:  No-time-for-cooking day.
 The user can search for recipes based on the time limit he/she has. Further, it is also possible in every category give preferences for the diet types. 
 In this category the dish types as well:
 
-![screenshot](./src/assets/no-time-page.png) 
+![screenshot](./src/assets/no-time-page-1.png) 
 
 Oops, we have only 15 minutes...Let's search for recipes for vegan soups! 
 
-![screenshot](./src/assets/no-time-result.png) 
+![screenshot](./src/assets/no-time-result-1.png) 
 
 ## Lijst van de benodigdheden om de app te kunnen runnen:
 
