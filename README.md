@@ -1,17 +1,20 @@
 # food operator...
 
 
-## Inleiding
+## Intro
 
-Een applicatie om recepten snel en makkelijk te zoeken aangepast aan je activiteiten en volgens de dynamiek  van de dag. Op basis van 4 categorieën kan de gebruiker recepten zoeken.  
+Quick and easy search for recipes adapted to your activities and the dynamics of the day. The user can choose from 4 categories: 
+balance day, work-out day, no-time-for-cooking day and comfort-food day:
 
-![screenshot](./src/assets/food-operator-overview.png)
+![screenshot](./src/assets/foodop_overview.png)
 
-Hier kan je een voorbeeld zien van de No-time-for-cooking day hoe een categorie werkt. De gebruiker kan op basis van de aangegeven tijd recepten laten zoeken. In alle categorieen is het mogelijk om een selectie te maken van diet types en in deze categorie ook nog van dish types:
+You can also see how one of the category works:  No-time-for-cooking day.
+The user can search for recipes based on the time limit he/she has. Further, it is also possible in every category give preferences for the diet types. 
+In this category the dish types as well:
 
 ![screenshot](./src/assets/no-time-page.png) 
 
-Resultaat:
+Oops, we have only 15 minutes...Let's search for recipes for vegan soups! 
 
 ![screenshot](./src/assets/no-time-result.png) 
 
