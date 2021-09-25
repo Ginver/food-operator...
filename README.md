@@ -1,6 +1,5 @@
 # food operator...
 
-
 ## Intro
 
 Quick and easy search for recipes adapted to your activities and the dynamics of the day. The user can choose from 4 categories: 
