@@ -16,3 +16,12 @@ In this category the dish types as well:
 Oops, we have only 15 minutes...Let's search for recipes for vegan soups! 
 
 ![screenshot](./src/assets/no-time-result-1.png) 
+
+
+## NPM commando's
+
+'npm install react-hook-form'
+'npm install react-router-dom'
+'npm install axios'
+'npm install jwt-decode'
+'npm install react-icons'
